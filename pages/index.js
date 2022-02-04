@@ -19,6 +19,10 @@ export default function Home() {
     height: hashnode.height,
   });
 
+  const changeCropperDimensions = () => {
+    console.log("Hashnode clicked");
+  };
+
   var cropperRef = useRef();
   var onCrop = () => {
     var imageElement =
@@ -46,7 +50,7 @@ export default function Home() {
           ref={cropperRef}
         />
       </div>
-      <h1>Hashnode</h1>
+      <h1 onClick={changeCropperDimensions}>Hashnode</h1>
       <h1>DEV</h1>
     </div>
   );
