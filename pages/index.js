@@ -5,7 +5,20 @@ import React, { useState, useRef } from "react";
 import Cropper from "react-cropper";
 import "cropperjs/dist/cropper.css";
 
+const hashnode = {
+  width: 1920,
+  height: 720,
+  // ratio: this.width / this.height,
+};
+const dev = {};
+const medium = {};
+
 export default function Home() {
+  const [cropper, setCropper] = useState({
+    width: hashnode.width,
+    height: hashnode.height,
+  });
+
   var cropperRef = useRef();
   var onCrop = () => {
     var imageElement =
@@ -25,10 +38,10 @@ export default function Home() {
       <div style={{ width: "800px", margin: "0 auto", marginTop: "30px" }}>
         <Cropper
           src="https://picsum.photos/seed/picsum/500/500"
-          style={{ height: 400, width: "100%" }}
+          style={{ height: cropper.height, width: "100%" }}
           // Cropper.js options
           initialAspectRatio={16 / 9}
-          guides={false}
+          guides={true}
           crop={onCrop}
           ref={cropperRef}
         />
