@@ -22,9 +22,10 @@ Download
 ## Tech Stack
 
 NextJS
-React-cropper, which is a wrapper of JS-wrapper.
+React-cropper, which is a wrapper of js-cropper.
 Netlify
 GitHub
+NameCheap
 
 ## License
 

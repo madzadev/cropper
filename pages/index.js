@@ -6,14 +6,17 @@ import Cropper from "react-cropper";
 import "cropperjs/dist/cropper.css";
 
 const hashnode = {
-  width: 1920,
-  height: 720,
+  width: 720,
+  height: 480,
   // ratio: this.width / this.height,
 };
 const dev = {};
 const medium = {};
 
+const defaultImage = "https://picsum.photos/seed/picsum/720/480";
+
 export default function Home() {
+  const [image, setImage] = useState(defaultImage);
   const [cropper, setCropper] = useState({
     width: hashnode.width,
     height: hashnode.height,
@@ -39,19 +42,27 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>The image resizer</h1>
-      <div style={{ width: "800px", margin: "0 auto", marginTop: "30px" }}>
+      <p>Leave the image resizing issues at bay</p>
+      <div
+        style={{
+          width: `${cropper.width}px`,
+          margin: "0 auto",
+          marginTop: "30px",
+        }}
+      >
         <Cropper
-          src="https://picsum.photos/seed/picsum/500/500"
+          src={image}
           style={{ height: cropper.height, width: "100%" }}
           // Cropper.js options
           initialAspectRatio={16 / 9}
           guides={true}
           crop={onCrop}
           ref={cropperRef}
+          disable={true}
         />
       </div>
-      <h1 onClick={changeCropperDimensions}>Hashnode</h1>
-      <h1>DEV</h1>
+      <h3 onClick={changeCropperDimensions}>Hashnode</h3>
+      <h3>DEV</h3>
     </div>
   );
 }
