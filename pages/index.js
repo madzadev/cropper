@@ -26,9 +26,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>The image resizer</h1>
-      {/* <div>
-        <img id="image" src="https://picsum.photos/seed/picsum/500/500" />
-      </div> */}
       <div style={{ width: "800px", margin: "0 auto", marginTop: "30px" }}>
         <Cropper
           src="https://picsum.photos/seed/picsum/500/500"
