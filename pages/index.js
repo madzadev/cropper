@@ -1,21 +1,17 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 import Cropper from "react-cropper";
 import "cropperjs/dist/cropper.css";
 
 export default function Home() {
-  var cropperRef = useRef(null);
+  var cropperRef = useRef();
   var onCrop = () => {
     var imageElement =
-      cropperRef === null || cropperRef === void 0
-        ? void 0
-        : cropperRef.current;
+      cropperRef === null || cropperRef === 0 ? 0 : cropperRef.current;
     var cropper =
-      imageElement === null || imageElement === void 0
-        ? void 0
-        : imageElement.cropper;
+      imageElement === null || imageElement === 0 ? 0 : imageElement.cropper;
     // console.log(cropper.getCroppedCanvas().toDataURL());
   };
   return (
