@@ -1,8 +1,23 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import React, { useRef } from "react";
+import Cropper from "react-cropper";
+import "cropperjs/dist/cropper.css";
 
 export default function Home() {
+  var cropperRef = useRef(null);
+  var onCrop = () => {
+    var imageElement =
+      cropperRef === null || cropperRef === void 0
+        ? void 0
+        : cropperRef.current;
+    var cropper =
+      imageElement === null || imageElement === void 0
+        ? void 0
+        : imageElement.cropper;
+    // console.log(cropper.getCroppedCanvas().toDataURL());
+  };
   return (
     <div>
       <Head>
@@ -11,6 +26,20 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>The image resizer</h1>
+      {/* <div>
+        <img id="image" src="https://picsum.photos/seed/picsum/500/500" />
+      </div> */}
+      <div style={{ width: "800px", margin: "0 auto", marginTop: "30px" }}>
+        <Cropper
+          src="https://picsum.photos/seed/picsum/500/500"
+          style={{ height: 400, width: "100%" }}
+          // Cropper.js options
+          initialAspectRatio={16 / 9}
+          guides={false}
+          crop={onCrop}
+          ref={cropperRef}
+        />
+      </div>
     </div>
   );
 }
