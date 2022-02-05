@@ -64,58 +64,78 @@ export default function Home() {
       <Header />
       <h1>The image resizer</h1>
       <p>Leave the image resizing issues at bay</p>
-      <div
-        style={{
-          width: `1200px`,
-          margin: "0 auto",
-          marginTop: "30px",
-        }}
-      >
+      <div>
         <p>Select the image you want to crop</p>
         <input type="file" onChange={onChange} />
         <button>Use test image</button>
         <hr />
         <h1>You are creating: Hasnode Blog cover</h1>
-        <Cropper
-          src={image}
-          style={{ height: "480px", width: "100%" }}
-          initialAspectRatio={16 / 9}
-          guides={true}
-          // crop={onCrop}
-          ref={cropperRef}
-          disable={false}
-          // viewMode={1}
-          // minCropBoxHeight={10}
-          // minCropBoxWidth={10}
-          // background="black"
-          // zoom={4}
-          // responsive={true}
-          // movable={true}
-          // autoCropArea={1}
-          // checkOrientation={false}
-          onInitialized={(instance) => {
-            setCropper(instance);
-          }}
-        />
-      </div>
-      <div className={styles.controls}>
-        <button
-          className={styles.button}
-          onClick={() => {
-            cropper.setDragMode("move");
-          }}
-        >
-          Move mode
-        </button>
-        <button
-          className={styles.button}
-          onClick={() => {
-            cropper.setDragMode("crop");
-          }}
-        >
-          Crop mode
-        </button>
-        <button onClick={getCropData}>Crop</button>
+        <div className={styles.creatorArea}>
+          <div className={styles.presets}>
+            <h1>Hashnode:</h1>
+            <button
+              onClick={() => {
+                cropper.setAspectRatio(16 / 8);
+              }}
+            >
+              Blog Cover (16:9 ratio)
+            </button>
+            <h3>DEV</h3>
+          </div>
+
+          <div
+            style={{
+              width: `1200px`,
+              margin: "0 auto",
+              marginTop: "30px",
+            }}
+          >
+            <Cropper
+              src={image}
+              style={{ height: "480px", width: "100%" }}
+              initialAspectRatio={16 / 9}
+              guides={true}
+              // crop={onCrop}
+              ref={cropperRef}
+              disable={false}
+              // viewMode={1}
+              // minCropBoxHeight={10}
+              // minCropBoxWidth={10}
+              // background="black"
+              // zoom={4}
+              // responsive={true}
+              // movable={true}
+              // autoCropArea={1}
+              // checkOrientation={false}
+              onInitialized={(instance) => {
+                setCropper(instance);
+              }}
+            />
+            <div className={styles.controls}>
+              <button
+                className={styles.button}
+                onClick={() => {
+                  cropper.setDragMode("move");
+                }}
+              >
+                Move mode
+              </button>
+              <button
+                className={styles.button}
+                onClick={() => {
+                  cropper.setDragMode("crop");
+                }}
+              >
+                Crop mode
+              </button>
+              <button onClick={getCropData}>Crop</button>
+            </div>
+          </div>
+
+          <div className={styles.tools}>
+            <button>Reset</button>
+          </div>
+        </div>
       </div>
 
       {/* <Stack direction="row" spacing={4}>
@@ -141,15 +161,7 @@ export default function Home() {
           Download
         </Button>
       </Stack> */}
-      <h1>Hashnode:</h1>
-      <button
-        onClick={() => {
-          cropper.setAspectRatio(16 / 8);
-        }}
-      >
-        Blog Cover (16:9 ratio)
-      </button>
-      <h3>DEV</h3>
+
       <Footer />
     </div>
   );
