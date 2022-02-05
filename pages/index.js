@@ -66,7 +66,7 @@ export default function Home() {
       <p>Leave the image resizing issues at bay</p>
       <div
         style={{
-          width: `480px`,
+          width: `720px`,
           margin: "0 auto",
           marginTop: "30px",
         }}
@@ -96,25 +96,27 @@ export default function Home() {
           }}
         />
       </div>
-      <button
-        className={styles.button}
-        onClick={() => {
-          cropper.setDragMode("move");
-        }}
-      >
-        Move mode
-      </button>
-      <button
-        className={styles.button}
-        onClick={() => {
-          cropper.setDragMode("crop");
-        }}
-      >
-        Crop mode
-      </button>
-      <button onClick={getCropData}>Crop</button>
+      <div className={styles.controls}>
+        <button
+          className={styles.button}
+          onClick={() => {
+            cropper.setDragMode("move");
+          }}
+        >
+          Move mode
+        </button>
+        <button
+          className={styles.button}
+          onClick={() => {
+            cropper.setDragMode("crop");
+          }}
+        >
+          Crop mode
+        </button>
+        <button onClick={getCropData}>Crop</button>
+      </div>
 
-      <Stack direction="row" spacing={4}>
+      {/* <Stack direction="row" spacing={4}>
         <Button
           leftIcon={<Icon as={IoCrop} />}
           colorScheme="teal"
@@ -136,7 +138,7 @@ export default function Home() {
         >
           Download
         </Button>
-      </Stack>
+      </Stack> */}
       <h3>Hashnode</h3>
       <h3>DEV</h3>
       <Footer />

@@ -9,3 +9,9 @@
   margin: 0 20px;
   border-radius: 5px;
 }
+
+.controls {
+  max-width: 720px;
+  margin: 30px auto 0 auto;
+  border: 1px solid grey;
+}
