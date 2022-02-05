@@ -2,3 +2,10 @@
   position: relative;
   min-height: 100vh;
 }
+
+.button {
+  padding: 10px 30px;
+  background-color: gold;
+  margin: 0 20px;
+  border-radius: 5px;
+}

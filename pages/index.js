@@ -3,6 +3,8 @@ import Head from "next/head";
 import Image from "next/image";
 import Cropper from "react-cropper";
 import "cropperjs/dist/cropper.css";
+import { Icon, Stack, Button } from "@chakra-ui/react";
+import { HiUpload, IoCrop, BsArrowsMove, HiDownload } from "react-icons/md";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -20,22 +22,15 @@ const defaultImage = "https://picsum.photos/seed/picsum/720/480";
 
 export default function Home() {
   const [image, setImage] = useState(defaultImage);
-  const [cropper, setCropper] = useState({
-    width: hashnode.width,
-    height: hashnode.height,
-    dragMode: "crop",
-  });
+  const [cropData, setCropData] = useState();
+  const [cropper, setCropper] = useState();
 
-  const changeCropperDimensions = () => {
-    console.log("Hashnode clicked");
-  };
-
-  const cropperRef = useRef();
+  const cropperRef = useRef(null);
   const onCrop = () => {
-    let imageElement =
-      cropperRef === null || cropperRef === 0 ? 0 : cropperRef.current;
-    let cropper =
-      imageElement === null || imageElement === 0 ? 0 : imageElement.cropper;
+    // let imageElement =
+    //   cropperRef === null || cropperRef === 0 ? 0 : cropperRef.current;
+    // let cropper =
+    //   imageElement === null || imageElement === 0 ? 0 : imageElement.cropper;
     // console.log(cropper.getCroppedCanvas().toDataURL());
   };
 
@@ -53,6 +48,12 @@ export default function Home() {
     };
     reader.readAsDataURL(files[0]);
   };
+
+  const getCropData = () => {
+    if (typeof cropper !== "undefined") {
+      setCropData(cropper.getCroppedCanvas().toDataURL());
+    }
+  };
   return (
     <div className={styles.wrapper}>
       <Head>
@@ -65,7 +66,7 @@ export default function Home() {
       <p>Leave the image resizing issues at bay</p>
       <div
         style={{
-          width: `${cropper.width}px`,
+          width: `480px`,
           margin: "0 auto",
           marginTop: "30px",
         }}
@@ -75,42 +76,68 @@ export default function Home() {
         <button>Use test image</button>
         <Cropper
           src={image}
-          style={{ height: cropper.height, width: "100%" }}
-          // Cropper.js options
+          style={{ height: "480px", width: "100%" }}
           initialAspectRatio={16 / 9}
           guides={true}
-          crop={onCrop}
+          // crop={onCrop}
           ref={cropperRef}
           disable={false}
           // viewMode={1}
           // minCropBoxHeight={10}
           // minCropBoxWidth={10}
           // background="black"
-          zoom={4}
+          // zoom={4}
           // responsive={true}
           // movable={true}
           // autoCropArea={1}
-          checkOrientation={false}
-          dragMode={cropper.dragMode}
+          // checkOrientation={false}
+          onInitialized={(instance) => {
+            setCropper(instance);
+          }}
         />
       </div>
       <button
+        className={styles.button}
         onClick={() => {
-          console.log("clicked");
-          setCropper({ ...cropper, dragMode: "move" });
+          cropper.setDragMode("move");
         }}
       >
         Move mode
       </button>
       <button
+        className={styles.button}
         onClick={() => {
-          setCropper({ ...cropper, dragMode: "crop" });
+          cropper.setDragMode("crop");
         }}
       >
         Crop mode
       </button>
-      <button>Download</button>
-      <h3 onClick={changeCropperDimensions}>Hashnode</h3>
+      <button onClick={getCropData}>Crop</button>
+
+      <Stack direction="row" spacing={4}>
+        <Button
+          leftIcon={<Icon as={IoCrop} />}
+          colorScheme="teal"
+          variant="outline"
+        >
+          Crop
+        </Button>
+        <Button
+          leftIcon={<Icon as={BsArrowsMove} />}
+          colorScheme="teal"
+          variant="outline"
+        >
+          Move
+        </Button>
+        <Button
+          rightIcon={<Icon as={HiDownload} />}
+          colorScheme="teal"
+          variant="solid"
+        >
+          Download
+        </Button>
+      </Stack>
+      <h3>Hashnode</h3>
       <h3>DEV</h3>
       <Footer />
     </div>
