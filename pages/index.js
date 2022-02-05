@@ -26,13 +26,28 @@ export default function Home() {
     console.log("Hashnode clicked");
   };
 
-  var cropperRef = useRef();
-  var onCrop = () => {
-    var imageElement =
+  const cropperRef = useRef();
+  const onCrop = () => {
+    let imageElement =
       cropperRef === null || cropperRef === 0 ? 0 : cropperRef.current;
-    var cropper =
+    let cropper =
       imageElement === null || imageElement === 0 ? 0 : imageElement.cropper;
     // console.log(cropper.getCroppedCanvas().toDataURL());
+  };
+
+  const onChange = (e) => {
+    e.preventDefault();
+    let files;
+    if (e.dataTransfer) {
+      files = e.dataTransfer.files;
+    } else if (e.target) {
+      files = e.target.files;
+    }
+    const reader = new FileReader();
+    reader.onload = () => {
+      setImage(reader.result);
+    };
+    reader.readAsDataURL(files[0]);
   };
   return (
     <div>
@@ -50,6 +65,7 @@ export default function Home() {
           marginTop: "30px",
         }}
       >
+        <input type="file" onChange={onChange} />
         <Cropper
           src={image}
           style={{ height: cropper.height, width: "100%" }}
@@ -58,9 +74,19 @@ export default function Home() {
           guides={true}
           crop={onCrop}
           ref={cropperRef}
-          disable={true}
+          disable={false}
+          // viewMode={1}
+          // minCropBoxHeight={10}
+          // minCropBoxWidth={10}
+          // background="black"
+          responsive={true}
+          movable={true}
+          // autoCropArea={1}
+          checkOrientation={false}
         />
       </div>
+      <button>Drag mode</button>
+      <button>Crop mode</button>
       <h3 onClick={changeCropperDimensions}>Hashnode</h3>
       <h3>DEV</h3>
     </div>
