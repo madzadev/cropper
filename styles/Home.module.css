@@ -7,11 +7,11 @@
 .creatorArea {
   display: grid;
   grid-template-columns: 300px auto 300px;
-  border: 3px solid green;
+  /* border: 3px solid green; */
 }
 
 .presets {
-  border: 3px solid tomato;
+  /* border: 3px solid tomato; */
 }
 
 .button {
@@ -23,11 +23,14 @@
 
 .controls {
   max-width: 1200px;
-  margin: 30px auto 0 auto;
-  border: 1px solid grey;
+  margin: 30px auto;
+  /* border: 1px solid grey; */
 }
 
 .tools {
-  border: 3px solid tomato;
+  /* border: 3px solid tomato; */
   padding: 20px;
+}
+.img-preview {
+  overflow: hidden;
 }

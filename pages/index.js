@@ -183,6 +183,7 @@ export default function Home() {
               style={{ height: "480px", width: "100%" }}
               initialAspectRatio={16 / 9}
               guides={true}
+              preview=".img-preview"
               // crop={onCrop}
               // ref={cropperRef}
               disable={false}
@@ -281,6 +282,10 @@ export default function Home() {
             <p>W progress</p>
             <p>H progress</p>
             <h1>Preview:</h1>
+            <div
+              className="img-preview"
+              style={{ minHeight: "200px", overflow: "hidden" }}
+            ></div>
             <Stack direction="row" spacing={2}>
               <Button
                 onClick={() => {
