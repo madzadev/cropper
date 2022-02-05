@@ -1,4 +1,15 @@
 .wrapper {
   min-height: 50px;
-  border: 1px solid grey;
+  display: grid;
+  grid-template-columns: auto 100px 100px;
+  background-color: #e5eafe;
+  padding: 10px 20px;
+}
+
+.logo {
+  width: 200px;
+}
+
+.navItem {
+  text-align: center;
 }

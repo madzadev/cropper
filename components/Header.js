@@ -1,11 +1,16 @@
+// import Image from "next/image";
 import styles from "./Header.module.css";
 
 const Header = () => {
   return (
     <div className={styles.wrapper}>
-      <h1>Cropper</h1>
-      <h1>Features</h1>
-      <h1>About</h1>
+      <img className={styles.logo} src="/logo.svg" alt="logo" />
+      <div className="navItem">
+        <p>Features</p>
+      </div>
+      <div className="navItem">
+        <p>About</p>
+      </div>
     </div>
   );
 };
