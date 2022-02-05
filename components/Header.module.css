@@ -13,3 +13,8 @@
 .navItem {
   text-align: center;
 }
+
+.navText {
+  font-size: 20px;
+  font-weight: bold;
+}
