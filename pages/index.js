@@ -66,7 +66,7 @@ export default function Home() {
       <p>Leave the image resizing issues at bay</p>
       <div
         style={{
-          width: `720px`,
+          width: `1200px`,
           margin: "0 auto",
           marginTop: "30px",
         }}
@@ -74,6 +74,8 @@ export default function Home() {
         <p>Select the image you want to crop</p>
         <input type="file" onChange={onChange} />
         <button>Use test image</button>
+        <hr />
+        <h1>You are creating: Hasnode Blog cover</h1>
         <Cropper
           src={image}
           style={{ height: "480px", width: "100%" }}
@@ -139,7 +141,14 @@ export default function Home() {
           Download
         </Button>
       </Stack> */}
-      <h3>Hashnode</h3>
+      <h1>Hashnode:</h1>
+      <button
+        onClick={() => {
+          cropper.setAspectRatio(16 / 8);
+        }}
+      >
+        Blog Cover (16:9 ratio)
+      </button>
       <h3>DEV</h3>
       <Footer />
     </div>
