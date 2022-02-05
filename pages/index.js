@@ -282,10 +282,10 @@ export default function Home() {
             <p>W progress</p>
             <p>H progress</p>
             <h1>Preview:</h1>
-            <div
-              className="img-preview"
-              style={{ minHeight: "200px", overflow: "hidden" }}
-            ></div>
+            {/* <div style={{ minHeight: "200px", marginBottom: "30px" }}> */}
+            <div className="img-preview" style={{ overflow: "hidden" }}></div>
+            {/* </div> */}
+
             <Stack direction="row" spacing={2}>
               <Button
                 onClick={() => {

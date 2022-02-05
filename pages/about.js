@@ -5,6 +5,7 @@ const About = () => {
     <div>
       <Header />
       <h1>This is About page</h1>
+      <p>Frontend - value your data privacy</p>
     </div>
   );
 };
