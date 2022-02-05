@@ -9,13 +9,16 @@ import {
   Button,
   Box,
   Select,
+  Checkbox,
   AccordionPanel,
   Accordion,
   AccordionItem,
   AccordionButton,
   AccordionIcon,
 } from "@chakra-ui/react";
-import { HiUpload, IoCrop, BsArrowsMove, HiDownload } from "react-icons/hi";
+import { HiUpload, HiDownload } from "react-icons/hi";
+import { FiCrop } from "react-icons/fi";
+import { BsArrowsMove } from "react-icons/bs";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -89,7 +92,7 @@ export default function Home() {
         <h1>You are creating: Hasnode Blog cover</h1>
         <div className={styles.creatorArea}>
           <div className={styles.presets}>
-            <Accordion allowToggle>
+            <Accordion defaultIndex={[0]} allowToggle>
               <AccordionItem>
                 <h2>
                   <AccordionButton>
@@ -100,10 +103,22 @@ export default function Home() {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                  laboris nisi ut aliquip ex ea commodo consequat. */}
+                  <Stack>
+                    <Checkbox
+                      onChange={() => {
+                        cropper.setAspectRatio(16 / 8);
+                      }}
+                      defaultIsChecked
+                    >
+                      Article Cover
+                    </Checkbox>
+                    <Checkbox>Profile cover</Checkbox>
+                    <Checkbox>Media Card</Checkbox>
+                  </Stack>
                 </AccordionPanel>
               </AccordionItem>
 
@@ -124,7 +139,7 @@ export default function Home() {
                 </AccordionPanel>
               </AccordionItem>
             </Accordion>
-            <h1>Hashnode:</h1>
+            {/* <h1>Hashnode:</h1>
             <p
               onClick={() => {
                 cropper.setAspectRatio(16 / 8);
@@ -153,7 +168,7 @@ export default function Home() {
               }}
             >
               Avatar image (16:9 ratio)
-            </p>
+            </p> */}
           </div>
 
           <div
@@ -185,7 +200,7 @@ export default function Home() {
               }}
             />
             <div className={styles.controls}>
-              <button
+              {/* <button
                 className={styles.button}
                 onClick={() => {
                   cropper.setDragMode("move");
@@ -213,7 +228,49 @@ export default function Home() {
                 }}
               >
                 Fill
-              </button>
+              </button> */}
+              <Stack direction="row" spacing={4}>
+                <Button
+                  onClick={() => {
+                    cropper.setDragMode("crop");
+                  }}
+                  leftIcon={<Icon as={FiCrop} />}
+                  colorScheme="orange"
+                  variant="solid"
+                >
+                  Crop
+                </Button>
+                <Button
+                  onClick={() => {
+                    cropper.setDragMode("move");
+                  }}
+                  leftIcon={<Icon as={BsArrowsMove} />}
+                  colorScheme="teal"
+                  variant="solid"
+                >
+                  Move
+                </Button>
+                <Button
+                  onClick={() => {
+                    cropper.zoom(0.1);
+                  }}
+                  leftIcon={<Icon as={BsArrowsMove} />}
+                  colorScheme="teal"
+                  variant="solid"
+                >
+                  Zoom in
+                </Button>
+                <Button
+                  onClick={() => {
+                    cropper.zoom(-0.1);
+                  }}
+                  leftIcon={<Icon as={BsArrowsMove} />}
+                  colorScheme="teal"
+                  variant="solid"
+                >
+                  Zoom out
+                </Button>
+              </Stack>
             </div>
           </div>
 
@@ -226,6 +283,12 @@ export default function Home() {
             <h1>Preview:</h1>
             <Stack direction="row" spacing={2}>
               <Button
+                onClick={() => {
+                  cropper.getCroppedCanvas({
+                    width: "90px",
+                    height: "90px",
+                  });
+                }}
                 rightIcon={<Icon as={HiDownload} />}
                 colorScheme="teal"
                 variant="solid"
@@ -241,30 +304,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      {/* <Stack direction="row" spacing={4}>
-        <Button
-          leftIcon={<Icon as={IoCrop} />}
-          colorScheme="teal"
-          variant="outline"
-        >
-          Crop
-        </Button>
-        <Button
-          leftIcon={<Icon as={BsArrowsMove} />}
-          colorScheme="teal"
-          variant="outline"
-        >
-          Move
-        </Button>
-        <Button
-          rightIcon={<Icon as={HiDownload} />}
-          colorScheme="teal"
-          variant="solid"
-        >
-          Download
-        </Button>
-      </Stack> */}
 
       <Footer />
     </div>
