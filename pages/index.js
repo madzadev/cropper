@@ -91,11 +91,25 @@ export default function Home() {
           // movable={true}
           // autoCropArea={1}
           checkOrientation={false}
-          dragMode="move"
+          dragMode={cropper.dragMode}
         />
       </div>
-      <button>Drag mode</button>
-      <button>Crop mode</button>
+      <button
+        onClick={() => {
+          console.log("clicked");
+          setCropper({ ...cropper, dragMode: "move" });
+        }}
+      >
+        Move mode
+      </button>
+      <button
+        onClick={() => {
+          setCropper({ ...cropper, dragMode: "crop" });
+        }}
+      >
+        Crop mode
+      </button>
+      <button>Download</button>
       <h3 onClick={changeCropperDimensions}>Hashnode</h3>
       <h3>DEV</h3>
       <Footer />
