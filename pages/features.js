@@ -4,7 +4,7 @@ const Features = () => {
   return (
     <div>
       <Header />
-      <h1>This is Features page</h1>;
+      <h1>This is Features page</h1>
     </div>
   );
 };

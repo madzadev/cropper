@@ -218,6 +218,11 @@ export default function Home() {
           </div>
 
           <div className={styles.tools}>
+            <h1>About Hashnode cover image</h1>
+            <p>In the page the displayed in 720x480</p>
+            <h1>How close is?</h1>
+            <p>W progress</p>
+            <p>H progress</p>
             <h1>Preview:</h1>
             <Stack direction="row" spacing={2}>
               <Button
