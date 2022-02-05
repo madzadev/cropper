@@ -15,7 +15,7 @@ import {
   AccordionButton,
   AccordionIcon,
 } from "@chakra-ui/react";
-import { HiUpload, IoCrop, BsArrowsMove, HiDownload } from "react-icons/md";
+import { HiUpload, IoCrop, BsArrowsMove, HiDownload } from "react-icons/hi";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -226,7 +226,7 @@ export default function Home() {
             <h1>Preview:</h1>
             <Stack direction="row" spacing={2}>
               <Button
-                // rightIcon={<HiDownload />}
+                rightIcon={<Icon as={HiDownload} />}
                 colorScheme="teal"
                 variant="solid"
                 w={150}
