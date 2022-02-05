@@ -24,6 +24,7 @@ Download
 NextJS
 React-cropper, which is a wrapper of js-cropper.
 Built in Web APIs: Filereader
+CSS modules
 Netlify
 GitHub
 NameCheap
