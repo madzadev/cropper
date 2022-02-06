@@ -82,20 +82,20 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <h1>Image cropper for content creators</h1>
-      <p>Leave the image resizing issues at bay</p>
+      {/* <h1>Image cropper for content creators</h1>
+      <p>Leave the image resizing issues at bay</p> */}
       <div>
-        <p>Select the image you want to crop</p>
+        {/* <p>Select the image you want to crop</p>
         <input type="file" onChange={onChange} />
         <button>Use test image</button>
-        <hr />
+        <hr /> */}
         <h1>You are creating: Hasnode Blog cover</h1>
         <div className={styles.creatorArea}>
           <div className={styles.presets}>
             <Accordion defaultIndex={[0]} allowToggle>
               <AccordionItem>
                 <h2>
-                  <AccordionButton>
+                  <AccordionButton _expanded={{ bg: "#E5EAFE" }}>
                     <Box flex="1" textAlign="left">
                       Hashnode
                     </Box>
@@ -175,7 +175,7 @@ export default function Home() {
             style={{
               width: `1200px`,
               margin: "0 auto",
-              marginTop: "30px",
+              // marginTop: "30px",
             }}
           >
             <Cropper
