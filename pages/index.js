@@ -11,7 +11,7 @@ import {
   Button,
   Box,
   Select,
-  Checkbox,
+  // Checkbox,
   AccordionPanel,
   Accordion,
   AccordionItem,
@@ -22,8 +22,11 @@ import { HiUpload, HiDownload } from "react-icons/hi";
 import { FiCrop } from "react-icons/fi";
 import { BsArrowsMove } from "react-icons/bs";
 
+import { hashnode } from "../presets.js";
+
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Checkbox from "../components/Checkbox";
 import styles from "../styles/Home.module.css";
 
 const defaultImage = "https://picsum.photos/seed/picsum/720/480";
@@ -34,15 +37,25 @@ export default function Home() {
   const [cropper, setCropper] = useState();
 
   const [isDragActive, setIsDragActive] = useState(true);
+  const [dragArea, setDragArea] = useState({
+    width: 0,
+    height: 0,
+  });
 
-  // const cropperRef = useRef(null);
-  // const onCrop = () => {
-  //   // let imageElement =
-  //   //   cropperRef === null || cropperRef === 0 ? 0 : cropperRef.current;
-  //   // let cropper =
-  //   //   imageElement === null || imageElement === 0 ? 0 : imageElement.cropper;
-  //   // console.log(cropper.getCroppedCanvas().toDataURL());
-  // };
+  const cropperRef = useRef(null);
+  const onCrop = () => {
+    let imageElement =
+      cropperRef === null || cropperRef === 0 ? 0 : cropperRef.current;
+    let cropper =
+      imageElement === null || imageElement === 0 ? 0 : imageElement.cropper;
+    setDragArea({
+      ...dragArea,
+      width: cropper.cropBoxData.width,
+      height: cropper.cropBoxData.height,
+    });
+    // console.log(cropper);
+    // console.log(cropper.getCroppedCanvas().toDataURL());
+  };
 
   const onChange = (e) => {
     e.preventDefault();
@@ -64,6 +77,7 @@ export default function Home() {
       setCropData(cropper.getCroppedCanvas().toDataURL());
     }
   };
+
   return (
     <div className={styles.wrapper}>
       <Head>
@@ -98,12 +112,12 @@ export default function Home() {
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
                   laboris nisi ut aliquip ex ea commodo consequat. */}
                   <Stack>
-                    <Checkbox
+                    {/* <Checkbox
                       onChange={() => {
                         if (isNaN(cropper.options.aspectRatio)) {
                           console.log(cropper.options.aspectRatio);
                           console.log("just enabled ratio");
-                          cropper.setAspectRatio(16 / 8);
+                          cropper.setAspectRatio(1600 / 840);
                         } else {
                           console.log(cropper.options.aspectRatio);
                           cropper.setAspectRatio(NaN);
@@ -112,9 +126,22 @@ export default function Home() {
                       defaultIsChecked
                     >
                       Article Cover
-                    </Checkbox>
-                    <Checkbox>Blog Header</Checkbox>
-                    <Checkbox>Media Card</Checkbox>
+                    </Checkbox> */}
+
+                    {hashnode.map((el, i) => {
+                      return (
+                        <Checkbox
+                          key={i}
+                          cropper={cropper}
+                          index={i}
+                          title={el.name}
+                          width={el.width}
+                          height={el.height}
+                        />
+                      );
+                    })}
+
+                    {/* <Checkbox>Media Card</Checkbox> */}
                   </Stack>
                 </AccordionPanel>
               </AccordionItem>
@@ -136,8 +163,8 @@ export default function Home() {
                 </AccordionPanel>
               </AccordionItem>
               <p>Custom dimensions:</p>
-              <p>Add height: 720</p>
-              <p>Add width: 480</p>
+              <p>Width: {dragArea.width}</p>
+              <p>Height: {Math.round(dragArea.height)}</p>
             </Accordion>
           </div>
 
@@ -151,11 +178,11 @@ export default function Home() {
               src={image}
               style={{ height: "480px", width: "100%" }}
               // initialAspectRatio={16 / 9}
-              aspectRatio={16 / 9}
+              aspectRatio={1600 / 840}
               guides={true}
               preview=".img-preview"
-              // crop={onCrop}
-              // ref={cropperRef}
+              crop={onCrop}
+              ref={cropperRef}
               disable={false}
               // viewMode={1}
               // minCropBoxHeight={10}
@@ -166,9 +193,9 @@ export default function Home() {
               // movable={true}
               // autoCropArea={1}
               // checkOrientation={false}
-              crop={() => {
-                console.log(cropper);
-              }}
+              // crop={() => {
+              //   console.log(124);
+              // }}
               onInitialized={(instance) => {
                 setCropper(instance);
               }}
