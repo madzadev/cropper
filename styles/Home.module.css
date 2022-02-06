@@ -1,9 +1,3 @@
-.wrapper {
-  position: relative;
-  min-height: 100vh;
-  background-color: #f4f5fc;
-}
-
 .creatorArea {
   display: grid;
   grid-template-columns: 300px auto 300px;
