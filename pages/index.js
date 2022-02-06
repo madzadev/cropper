@@ -39,6 +39,8 @@ export default function Home() {
   const [cropData, setCropData] = useState();
   const [cropper, setCropper] = useState();
 
+  const [isDragActive, setIsDragActive] = useState(true);
+
   // const cropperRef = useRef(null);
   // const onCrop = () => {
   //   // let imageElement =
@@ -242,20 +244,24 @@ export default function Home() {
                 <Button
                   onClick={() => {
                     cropper.setDragMode("crop");
+                    setIsDragActive(true);
                   }}
                   leftIcon={<Icon as={FiCrop} />}
                   colorScheme="orange"
                   variant="solid"
+                  isActive={isDragActive}
                 >
                   Crop
                 </Button>
                 <Button
                   onClick={() => {
                     cropper.setDragMode("move");
+                    setIsDragActive(false);
                   }}
                   leftIcon={<Icon as={BsArrowsMove} />}
-                  colorScheme="teal"
+                  colorScheme="orange"
                   variant="solid"
+                  isActive={!isDragActive}
                 >
                   Move
                 </Button>
