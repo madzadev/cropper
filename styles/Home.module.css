@@ -29,3 +29,10 @@
   /* border: 3px solid tomato; */
   /* padding: 20px; */
 }
+
+.titleBox {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #e5eafe;
+  border-radius: 5px;
+}
