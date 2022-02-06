@@ -96,7 +96,7 @@ export default function Home() {
               Image cropper for content creators
             </h1>
             <p className={styles.heroSubTitle}>
-              Leave the image resizing issues at bay
+              Leave the image cropping issues at bay
             </p>
 
             <div className={styles.heroSelect}>
@@ -308,8 +308,14 @@ export default function Home() {
                 </Button>
               </a>
 
-              <Select placeholder=".PNG" w={24}>
-                <option value="option1">.PNG</option>
+              <Select
+                placeholder=".PNG"
+                w={24}
+                onChange={() => {
+                  console.log("Changed");
+                }}
+              >
+                {/* <option value="option1">.PNG</option> */}
                 <option value="option2">.JPG</option>
               </Select>
             </Stack>

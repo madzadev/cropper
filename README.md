@@ -11,18 +11,18 @@ Preview GIF.
 
 ## What Cropper solves?
 
+When using the cropper presets, the images will always be cropped in the
+
 ## Features
 
-Image upload
-Resize
-Drag the crop region
-Move image (X and Y axis)
+Image upload UI
+Adjust the crop region
+Move image in canvas (X and Y axis)
 Rotate image (+/- 45 degree step)
-Zoom in/out image (+/- 0.1 step)
-
-Crop templates
-Aspect ratio resize
-Download as Png and Jpg
+Zoom image in or out (+/- 0.1 step)
+Crop templates to fit popular platforms
+Aspect ratio presets
+Download as .png and .jpg formats
 
 ## Tech Stack
 
@@ -34,7 +34,6 @@ Count API
 ChakraUI+CSS modules
 Netlify
 GitHub
-NameCheap
 
 ## License
 
