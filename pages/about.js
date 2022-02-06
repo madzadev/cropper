@@ -6,13 +6,15 @@ const About = () => {
       <h1>This is About page</h1>
       <p>
         Have you ever created an awesome article with a great cover image.
-        Upload everything and BAAM, the{" "}
+        Upload everything and the first thing you see is non positioned image.
       </p>
       <p>Sharing = you are not in full control of how the </p>
       <p>
         Another one is crossposting. You create a good looking image for one,
         but it looks bad on the other. Since it is from my own experience, I did
-        an
+        a research on all the tech communities what resolutions and aspect
+        ratios they use and created the crop presets here so you dont have spend
+        time trying to figure out the resolutions.
       </p>
 
       <h1>Privacy of the data</h1>
@@ -22,7 +24,10 @@ const About = () => {
         your browser. Simple as that.
       </p>
 
-      <h1>Licence and updates</h1>
+      <h1>Tech stack</h1>
+      <p>The project is written in NextJS</p>
+
+      <h1>License and updates</h1>
       <p>The project is under MIT licence.</p>
       <p>Feature requests and pull requests are welcomed in the GitHub repo</p>
 

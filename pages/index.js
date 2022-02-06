@@ -99,20 +99,21 @@ export default function Home() {
             </h1>
             <p className={styles.heroSubTitle}>
               {/* Leave resolution and aspect ratio issues at bay */}
-              Resolutions and aspect ratios should be the last things to worry
+              Resolutions and aspect ratios should be the last things you worry
               about.
             </p>
 
             <div className={styles.heroSelect}>
-              <div>Image</div>
+              <div>
+                <p> Say goodbye to out of positioned images</p>
+                <p>
+                  Stop spending time on trying to figure out the resolutions and
+                  aspect ratios
+                </p>
+              </div>
               <InputFileSelect onChange={onChange} />
-
-              {/* <div>
-                <p>Select the image you want to crop</p>
-                <input type="file" onChange={onChange} />
-                <button>Use test image</button>
-              </div> */}
             </div>
+            <h1>Three step process</h1>
           </div>
         </ContentWrapper>
       ) : (
