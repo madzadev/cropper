@@ -26,14 +26,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import styles from "../styles/Home.module.css";
 
-const hashnode = {
-  width: 720,
-  height: 480,
-  // ratio: this.width / this.height,
-};
-const dev = {};
-const medium = {};
-
 const defaultImage = "https://picsum.photos/seed/picsum/720/480";
 
 export default function Home() {
@@ -147,43 +139,12 @@ export default function Home() {
               <p>Add height: 720</p>
               <p>Add width: 480</p>
             </Accordion>
-            {/* <h1>Hashnode:</h1>
-            <p
-              onClick={() => {
-                cropper.setAspectRatio(16 / 8);
-              }}
-            >
-              Blog Cover (16:9 ratio)
-            </p>
-            <p
-              onClick={() => {
-                cropper.setAspectRatio(16 / 8);
-              }}
-            >
-              Avatar Image (16:9 ratio)
-            </p>
-            <h3>DEV</h3>
-            <p
-              onClick={() => {
-                cropper.setAspectRatio(16 / 8);
-              }}
-            >
-              Blog Cover (16:9 ratio)
-            </p>
-            <p
-              onClick={() => {
-                cropper.setAspectRatio(16 / 8);
-              }}
-            >
-              Avatar image (16:9 ratio)
-            </p> */}
           </div>
 
           <div
             style={{
               width: `1200px`,
               margin: "0 auto",
-              // marginTop: "30px",
             }}
           >
             <Cropper
@@ -213,35 +174,6 @@ export default function Home() {
               }}
             />
             <div className={styles.controls}>
-              {/* <button
-                className={styles.button}
-                onClick={() => {
-                  cropper.setDragMode("move");
-                }}
-              >
-                Move mode
-              </button>
-              <button
-                className={styles.button}
-                onClick={() => {
-                  cropper.setDragMode("crop");
-                }}
-              >
-                Crop mode
-              </button>
-              <button onClick={getCropData}>Crop</button>
-              <button
-                onClick={() => {
-                  console.log(
-                    cropper.getCroppedCanvas({
-                      width: 160,
-                      height: 90,
-                    })
-                  );
-                }}
-              >
-                Fill
-              </button> */}
               <Stack direction="row" spacing={4}>
                 <Button
                   onClick={() => {
@@ -300,9 +232,8 @@ export default function Home() {
             <p>H progress</p>
             <p>Aspect ratio: {cropper ? cropper.options.aspectRatio : 0}</p>
             <h1>Preview:</h1>
-            {/* <div style={{ minHeight: "200px", marginBottom: "30px" }}> */}
+
             <div className="img-preview" style={{ overflow: "hidden" }}></div>
-            {/* </div> */}
 
             <Stack direction="row" spacing={2}>
               <Button
