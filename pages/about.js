@@ -6,6 +6,10 @@ const About = () => {
       <Header />
       <h1>This is About page</h1>
       <p>Frontend - value your data privacy</p>
+      <p>
+        The project was created as an entry for the Hashnode x Netlify
+        hackathon.
+      </p>
     </div>
   );
 };
