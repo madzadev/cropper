@@ -50,12 +50,6 @@ export default function Home() {
   //   // console.log(cropper.getCroppedCanvas().toDataURL());
   // };
 
-  // useEffect(() => {
-  //   cropper.getCroppedCanvas({
-  //     fillColor: "#fff",
-  //   });
-  // }, []);
-
   const onChange = (e) => {
     e.preventDefault();
     let files;
@@ -147,6 +141,9 @@ export default function Home() {
                   laboris nisi ut aliquip ex ea commodo consequat.
                 </AccordionPanel>
               </AccordionItem>
+              <p>Custom dimensions:</p>
+              <p>Add height: 720</p>
+              <p>Add width: 480</p>
             </Accordion>
             {/* <h1>Hashnode:</h1>
             <p
@@ -206,6 +203,9 @@ export default function Home() {
               // movable={true}
               // autoCropArea={1}
               // checkOrientation={false}
+              crop={() => {
+                console.log(cropper);
+              }}
               onInitialized={(instance) => {
                 setCropper(instance);
               }}
@@ -257,6 +257,7 @@ export default function Home() {
                   onClick={() => {
                     cropper.setDragMode("move");
                     setIsDragActive(false);
+                    console.log(cropper);
                   }}
                   leftIcon={<Icon as={BsArrowsMove} />}
                   colorScheme="orange"

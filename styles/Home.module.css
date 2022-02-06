@@ -7,6 +7,7 @@
 .creatorArea {
   display: grid;
   grid-template-columns: 300px auto 300px;
+  gap: 20px;
   margin-top: 30px;
   padding: 0 20px;
   /* border: 3px solid green; */
