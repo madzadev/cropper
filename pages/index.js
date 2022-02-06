@@ -24,6 +24,7 @@ import { BsArrowsMove } from "react-icons/bs";
 
 import ContentWrapper from "../components/ContentWrapper";
 import InputFileSelect from "../components/InputFileSelect";
+import ActionButton from "../components/ActionButton";
 
 import { hashnode } from "../presets.js";
 
@@ -84,6 +85,9 @@ export default function Home() {
     }
   };
 
+  const zoomIn = () => cropper.zoom(+0.1);
+  const zoomOut = () => cropper.zoom(-0.1);
+
   return (
     <div>
       <Head>
@@ -111,7 +115,9 @@ export default function Home() {
                   aspect ratios
                 </p>
               </div>
-              <InputFileSelect onChange={onChange} />
+              <div>
+                <InputFileSelect onChange={onChange} />
+              </div>
             </div>
             <h1>Three step process</h1>
           </div>
@@ -124,6 +130,7 @@ export default function Home() {
                 <h2>
                   <AccordionButton
                     _expanded={{ bg: "#E5EAFE", borderRadius: "5" }}
+                    style={{ backgroundColor: "#E5EAFE" }}
                   >
                     <Box flex="1" textAlign="left">
                       Hashnode
@@ -151,7 +158,7 @@ export default function Home() {
 
               <AccordionItem>
                 <h2>
-                  <AccordionButton>
+                  <AccordionButton style={{ backgroundColor: "#E5EAFE" }}>
                     <Box flex="1" textAlign="left">
                       DEV
                     </Box>
@@ -167,7 +174,7 @@ export default function Home() {
               </AccordionItem>
               <AccordionItem>
                 <h2>
-                  <AccordionButton>
+                  <AccordionButton style={{ backgroundColor: "#E5EAFE" }}>
                     <Box flex="1" textAlign="left">
                       Medium
                     </Box>
@@ -182,7 +189,7 @@ export default function Home() {
               </AccordionItem>
               <AccordionItem>
                 <h2>
-                  <AccordionButton>
+                  <AccordionButton style={{ backgroundColor: "#E5EAFE" }}>
                     <Box flex="1" textAlign="left">
                       HackerNoon
                     </Box>
@@ -195,24 +202,10 @@ export default function Home() {
                   <p>Height: {Math.round(dragArea.height)}</p>
                 </AccordionPanel>
               </AccordionItem>
+
               <AccordionItem>
                 <h2>
-                  <AccordionButton>
-                    <Box flex="1" textAlign="left">
-                      DevDojo
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <p>Enter your dimensions:</p>
-                  <p>Width: {dragArea.width}</p>
-                  <p>Height: {Math.round(dragArea.height)}</p>
-                </AccordionPanel>
-              </AccordionItem>
-              <AccordionItem>
-                <h2>
-                  <AccordionButton>
+                  <AccordionButton style={{ backgroundColor: "#E5EAFE" }}>
                     <Box flex="1" textAlign="left">
                       LinkedIn
                     </Box>
@@ -227,7 +220,7 @@ export default function Home() {
               </AccordionItem>
               <AccordionItem>
                 <h2>
-                  <AccordionButton>
+                  <AccordionButton style={{ backgroundColor: "#E5EAFE" }}>
                     <Box flex="1" textAlign="left">
                       YouTube
                     </Box>
@@ -271,6 +264,8 @@ export default function Home() {
               // crop={() => {
               //   console.log(124);
               // }}
+              background={false}
+              viewMode={1}
               onInitialized={(instance) => {
                 setCropper(instance);
               }}
@@ -302,26 +297,43 @@ export default function Home() {
                 >
                   Move
                 </Button>
-                <Button
-                  onClick={() => {
-                    cropper.zoom(0.1);
-                  }}
-                  leftIcon={<Icon as={BsArrowsMove} />}
-                  colorScheme="teal"
-                  variant="solid"
-                >
-                  Zoom in
-                </Button>
-                <Button
-                  onClick={() => {
-                    cropper.zoom(-0.1);
-                  }}
-                  leftIcon={<Icon as={BsArrowsMove} />}
-                  colorScheme="teal"
-                  variant="solid"
-                >
-                  Zoom out
-                </Button>
+
+                <ActionButton
+                  onClick={zoomIn}
+                  icon={BsArrowsMove}
+                  color="teal"
+                  title="Zoom in"
+                />
+                <ActionButton
+                  onClick={zoomOut}
+                  icon={BsArrowsMove}
+                  color="teal"
+                  title="Zoom out"
+                />
+                <ActionButton
+                  onClick={zoomOut}
+                  icon={BsArrowsMove}
+                  color="teal"
+                  title="Move left"
+                />
+                <ActionButton
+                  onClick={zoomOut}
+                  icon={BsArrowsMove}
+                  color="teal"
+                  title="Move right"
+                />
+                <ActionButton
+                  onClick={zoomOut}
+                  icon={BsArrowsMove}
+                  color="teal"
+                  title="Move up"
+                />
+                <ActionButton
+                  onClick={zoomOut}
+                  icon={BsArrowsMove}
+                  color="teal"
+                  title="Move Down"
+                />
               </Stack>
             </div>
           </div>
@@ -337,17 +349,17 @@ export default function Home() {
               with dimension 500 X 50.
             </p>
 
-            <Box bg="grey" w="100%" p={3} color="white">
+            <div className={styles.titleBox}>
               <h1>How close is to recommended?</h1>
-            </Box>
+            </div>
 
             <p>W progress</p>
             <p>H progress</p>
             <p>Aspect ratio: {cropper ? cropper.options.aspectRatio : 0}</p>
 
-            <Box bg="grey" w="100%" p={3} mb={3} color="white">
+            <div className={styles.titleBox}>
               <h1>Preview:</h1>
-            </Box>
+            </div>
 
             <div
               style={{
