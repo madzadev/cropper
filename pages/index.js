@@ -98,7 +98,9 @@ export default function Home() {
               Image cropper for content creators
             </h1>
             <p className={styles.heroSubTitle}>
-              Leave resolution and aspect ratio issues at bay
+              {/* Leave resolution and aspect ratio issues at bay */}
+              Resolutions and aspect ratios should be the last things to worry
+              about.
             </p>
 
             <div className={styles.heroSelect}>
@@ -162,9 +164,81 @@ export default function Home() {
                   laboris nisi ut aliquip ex ea commodo consequat.
                 </AccordionPanel>
               </AccordionItem>
-              <p>Custom dimensions:</p>
-              <p>Width: {dragArea.width}</p>
-              <p>Height: {Math.round(dragArea.height)}</p>
+              <AccordionItem>
+                <h2>
+                  <AccordionButton>
+                    <Box flex="1" textAlign="left">
+                      Medium
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <p>Enter your dimensions:</p>
+                  <p>Width: {dragArea.width}</p>
+                  <p>Height: {Math.round(dragArea.height)}</p>
+                </AccordionPanel>
+              </AccordionItem>
+              <AccordionItem>
+                <h2>
+                  <AccordionButton>
+                    <Box flex="1" textAlign="left">
+                      HackerNoon
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <p>Enter your dimensions:</p>
+                  <p>Width: {dragArea.width}</p>
+                  <p>Height: {Math.round(dragArea.height)}</p>
+                </AccordionPanel>
+              </AccordionItem>
+              <AccordionItem>
+                <h2>
+                  <AccordionButton>
+                    <Box flex="1" textAlign="left">
+                      DevDojo
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <p>Enter your dimensions:</p>
+                  <p>Width: {dragArea.width}</p>
+                  <p>Height: {Math.round(dragArea.height)}</p>
+                </AccordionPanel>
+              </AccordionItem>
+              <AccordionItem>
+                <h2>
+                  <AccordionButton>
+                    <Box flex="1" textAlign="left">
+                      LinkedIn
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <p>Enter your dimensions:</p>
+                  <p>Width: {dragArea.width}</p>
+                  <p>Height: {Math.round(dragArea.height)}</p>
+                </AccordionPanel>
+              </AccordionItem>
+              <AccordionItem>
+                <h2>
+                  <AccordionButton>
+                    <Box flex="1" textAlign="left">
+                      YouTube
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  <p>Enter your dimensions:</p>
+                  <p>Width: {dragArea.width}</p>
+                  <p>Height: {Math.round(dragArea.height)}</p>
+                </AccordionPanel>
+              </AccordionItem>
             </Accordion>
           </div>
 
@@ -253,10 +327,14 @@ export default function Home() {
 
           <div className={styles.tools}>
             <div className={styles.titleBox}>
-              <h1>About Hashnode cover image</h1>
+              <h1>About Hashnode Article Cover</h1>
             </div>
 
-            <p>In the page the displayed in 720x480</p>
+            <p>
+              It will be shown as the blog's logo on smaller (mobile) screens
+              and used as your blog's favicon. For best results, upload PNG file
+              with dimension 500 X 50.
+            </p>
 
             <Box bg="grey" w="100%" p={3} color="white">
               <h1>How close is to recommended?</h1>

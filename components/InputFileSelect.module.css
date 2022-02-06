@@ -9,6 +9,10 @@
   border-radius: 20px;
 }
 
+.wrapper:hover {
+  background-color: #d3dbfd;
+}
+
 .fileUpload {
   opacity: 0;
   position: absolute;
@@ -18,4 +22,8 @@
   right: 0;
   width: 100%;
   height: 100%;
+}
+
+.fileUpload:hover {
+  cursor: pointer;
 }
