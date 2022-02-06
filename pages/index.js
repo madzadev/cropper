@@ -33,7 +33,8 @@ const defaultImage = "https://picsum.photos/seed/picsum/720/480";
 
 export default function Home() {
   const [image, setImage] = useState(defaultImage);
-  const [cropData, setCropData] = useState();
+  // const [cropData, setCropData] = useState();
+  const [baseImage, setBaseImage] = useState("");
   const [cropper, setCropper] = useState();
 
   const [isDragActive, setIsDragActive] = useState(true);
@@ -53,6 +54,9 @@ export default function Home() {
       width: cropper.cropBoxData.width,
       height: cropper.cropBoxData.height,
     });
+
+    setBaseImage(cropper.getCroppedCanvas().toDataURL());
+
     // console.log(cropper);
     // console.log(cropper.getCroppedCanvas().toDataURL());
   };
@@ -107,27 +111,7 @@ export default function Home() {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. */}
                   <Stack>
-                    {/* <Checkbox
-                      onChange={() => {
-                        if (isNaN(cropper.options.aspectRatio)) {
-                          console.log(cropper.options.aspectRatio);
-                          console.log("just enabled ratio");
-                          cropper.setAspectRatio(1600 / 840);
-                        } else {
-                          console.log(cropper.options.aspectRatio);
-                          cropper.setAspectRatio(NaN);
-                        }
-                      }}
-                      defaultIsChecked
-                    >
-                      Article Cover
-                    </Checkbox> */}
-
                     {hashnode.map((el, i) => {
                       return (
                         <Checkbox
@@ -140,8 +124,6 @@ export default function Home() {
                         />
                       );
                     })}
-
-                    {/* <Checkbox>Media Card</Checkbox> */}
                   </Stack>
                 </AccordionPanel>
               </AccordionItem>
@@ -263,20 +245,23 @@ export default function Home() {
             <div className="img-preview" style={{ overflow: "hidden" }}></div>
 
             <Stack direction="row" spacing={2}>
-              <Button
-                onClick={() => {
-                  cropper.getCroppedCanvas({
-                    width: "90px",
-                    height: "90px",
-                  });
-                }}
-                rightIcon={<Icon as={HiDownload} />}
-                colorScheme="teal"
-                variant="solid"
-                w={150}
-              >
-                Download
-              </Button>
+              <a download="test.jpg" href={baseImage}>
+                <Button
+                  onClick={() => {
+                    cropper.getCroppedCanvas({
+                      width: "90px",
+                      height: "90px",
+                    });
+                  }}
+                  rightIcon={<Icon as={HiDownload} />}
+                  colorScheme="teal"
+                  variant="solid"
+                  w={150}
+                >
+                  Download
+                </Button>
+              </a>
+
               <Select placeholder=".PNG" w={24}>
                 <option value="option1">.PNG</option>
                 <option value="option2">.JPG</option>
