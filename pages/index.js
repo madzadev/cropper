@@ -4,6 +4,8 @@ import Image from "next/image";
 import Cropper from "react-cropper";
 import "cropperjs/dist/cropper.css";
 import {
+  Text,
+  Heading,
   Icon,
   Stack,
   Button,
@@ -293,7 +295,7 @@ export default function Home() {
           <div className={styles.tools}>
             <h1>About Hashnode cover image</h1>
             <p>In the page the displayed in 720x480</p>
-            <h1>How close is?</h1>
+            <h1>How close is to recommended?</h1>
             <p>W progress</p>
             <p>H progress</p>
             <p>Aspect ratio: {cropper ? cropper.options.aspectRatio : 0}</p>
