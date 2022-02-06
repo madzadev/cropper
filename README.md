@@ -30,6 +30,7 @@ NextJS
 React-cropper, which is a wrapper of js-cropper.
 React-icons
 Built in Web APIs: Filereader
+Count API
 ChakraUI+CSS modules
 Netlify
 GitHub

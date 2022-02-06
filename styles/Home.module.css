@@ -1,3 +1,19 @@
+.heroTitle {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.heroSubTitle {
+  font-size: 28px;
+}
+
+.heroSelect {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid grey;
+  margin-top: 30px;
+}
+
 .creatorArea {
   display: grid;
   grid-template-columns: 300px auto 300px;

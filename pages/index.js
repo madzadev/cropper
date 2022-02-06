@@ -22,6 +22,7 @@ import { HiUpload, HiDownload } from "react-icons/hi";
 import { FiCrop } from "react-icons/fi";
 import { BsArrowsMove } from "react-icons/bs";
 
+import ContentWrapper from "../components/ContentWrapper";
 import { hashnode } from "../presets.js";
 
 import Checkbox from "../components/Checkbox";
@@ -89,14 +90,25 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {!image ? (
-        <div className={styles.heroArea}>
-          <h1>Image cropper for content creators</h1>
-          <p>Leave the image resizing issues at bay</p>
+        <ContentWrapper>
+          <div className={styles.heroArea}>
+            <h1 className={styles.heroTitle}>
+              Image cropper for content creators
+            </h1>
+            <p className={styles.heroSubTitle}>
+              Leave the image resizing issues at bay
+            </p>
 
-          <p>Select the image you want to crop</p>
-          <input type="file" onChange={onChange} />
-          <button>Use test image</button>
-        </div>
+            <div className={styles.heroSelect}>
+              <div>Image</div>
+              <div>
+                <p>Select the image you want to crop</p>
+                <input type="file" onChange={onChange} />
+                <button>Use test image</button>
+              </div>
+            </div>
+          </div>
+        </ContentWrapper>
       ) : (
         <div className={styles.creatorArea}>
           <div className={styles.presets}>
