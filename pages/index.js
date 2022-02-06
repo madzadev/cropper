@@ -23,6 +23,8 @@ import { FiCrop } from "react-icons/fi";
 import { BsArrowsMove } from "react-icons/bs";
 
 import ContentWrapper from "../components/ContentWrapper";
+import InputFileSelect from "../components/InputFileSelect";
+
 import { hashnode } from "../presets.js";
 
 import Checkbox from "../components/Checkbox";
@@ -96,16 +98,18 @@ export default function Home() {
               Image cropper for content creators
             </h1>
             <p className={styles.heroSubTitle}>
-              Leave the image cropping issues at bay
+              Leave resolution and aspect ratio issues at bay
             </p>
 
             <div className={styles.heroSelect}>
               <div>Image</div>
-              <div>
+              <InputFileSelect onChange={onChange} />
+
+              {/* <div>
                 <p>Select the image you want to crop</p>
                 <input type="file" onChange={onChange} />
                 <button>Use test image</button>
-              </div>
+              </div> */}
             </div>
           </div>
         </ContentWrapper>

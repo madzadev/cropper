@@ -1,0 +1,21 @@
+.wrapper {
+  position: relative;
+  /* border: 1px solid red; */
+  width: 400px;
+  height: 400px;
+  /* line-height: 30px; */
+  text-align: center;
+  background-color: #e5eafe;
+  border-radius: 20px;
+}
+
+.fileUpload {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
