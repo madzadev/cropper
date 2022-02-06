@@ -9,6 +9,11 @@ const About = () => {
         Upload everything and BAAM, the{" "}
       </p>
       <p>Sharing = you are not in full control of how the </p>
+      <p>
+        Another one is crossposting. You create a good looking image for one,
+        but it looks bad on the other. Since it is from my own experience, I did
+        an
+      </p>
 
       <h1>Privacy of the data</h1>
       <p>
@@ -16,6 +21,10 @@ const About = () => {
         in the frontend. No image is ever uploaded, its all you, your image and
         your browser. Simple as that.
       </p>
+
+      <h1>Licence and updates</h1>
+      <p>The project is under MIT licence.</p>
+      <p>Feature requests and pull requests are welcomed in the GitHub repo</p>
 
       <h1>Additional notes</h1>
       <p>
@@ -29,7 +38,7 @@ const About = () => {
         about. Instead you should focus on what matters, creating quality
         content.
       </p>
-      <p>Enjoy using Cropper.</p>
+      <p>Leave the image cropping issues at bay. Enjoy using Cropper.</p>
     </ContentWrapper>
   );
 };
