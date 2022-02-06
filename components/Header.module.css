@@ -12,6 +12,8 @@
 
 .navItem {
   text-align: center;
+  display: grid;
+  place-items: center;
 }
 
 .navText {

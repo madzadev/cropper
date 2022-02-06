@@ -110,7 +110,14 @@ export default function Home() {
                   <Stack>
                     <Checkbox
                       onChange={() => {
-                        cropper.setAspectRatio(16 / 8);
+                        if (isNaN(cropper.options.aspectRatio)) {
+                          console.log(cropper.options.aspectRatio);
+                          console.log("just enabled ratio");
+                          cropper.setAspectRatio(16 / 8);
+                        } else {
+                          console.log(cropper.options.aspectRatio);
+                          cropper.setAspectRatio(NaN);
+                        }
                       }}
                       defaultIsChecked
                     >
@@ -181,7 +188,8 @@ export default function Home() {
             <Cropper
               src={image}
               style={{ height: "480px", width: "100%" }}
-              initialAspectRatio={16 / 9}
+              // initialAspectRatio={16 / 9}
+              aspectRatio={16 / 9}
               guides={true}
               preview=".img-preview"
               // crop={onCrop}
@@ -281,6 +289,7 @@ export default function Home() {
             <h1>How close is?</h1>
             <p>W progress</p>
             <p>H progress</p>
+            <p>Aspect ratio: {cropper ? cropper.options.aspectRatio : 0}</p>
             <h1>Preview:</h1>
             {/* <div style={{ minHeight: "200px", marginBottom: "30px" }}> */}
             <div className="img-preview" style={{ overflow: "hidden" }}></div>
