@@ -7,7 +7,14 @@ const Header = () => {
     <div className={styles.wrapper}>
       <Link href="/">
         <a>
-          <img className={styles.logo} src="/logo.svg" alt="logo" />
+          <img
+            className={styles.logo}
+            src="/logo.svg"
+            alt="logo"
+            onClick={() => {
+              console.log("aaaa");
+            }}
+          />
         </a>
       </Link>
       <div className={styles.navItem}>
