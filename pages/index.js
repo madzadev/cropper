@@ -85,7 +85,7 @@ export default function Home() {
         <input type="file" onChange={onChange} />
         <button>Use test image</button>
         <hr /> */}
-        <h1>You are creating: Hasnode Blog cover</h1>
+        {/* <h1>You are creating: Hasnode Blog cover</h1> */}
         <div className={styles.creatorArea}>
           <div className={styles.presets}>
             <Accordion defaultIndex={[0]} allowToggle>
@@ -119,7 +119,7 @@ export default function Home() {
                     >
                       Article Cover
                     </Checkbox>
-                    <Checkbox>Profile cover</Checkbox>
+                    <Checkbox>Blog Header</Checkbox>
                     <Checkbox>Media Card</Checkbox>
                   </Stack>
                 </AccordionPanel>

@@ -15,9 +15,14 @@ Preview GIF.
 
 Image upload
 Resize
-Drag
-Zoom in/out
-Download
+Drag the crop region
+Move image (X and Y axis)
+Rotate image (+/- 45 degree step)
+Zoom in/out image (+/- 0.1 step)
+
+Crop templates
+Aspect ratio resize
+Download as Png and Jpg
 
 ## Tech Stack
 
