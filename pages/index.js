@@ -28,22 +28,20 @@ import styles from "../styles/Home.module.css";
 import { presets } from "../presets.js";
 
 // const defaultImage = "https://picsum.photos/seed/picsum/720/480";
-let defaultImage;
 
 export default function Home() {
-  const [image, setImage] = useState(defaultImage);
+  const [image, setImage] = useState();
   // const [cropData, setCropData] = useState();
   const [baseImage, setBaseImage] = useState("");
   const [cropper, setCropper] = useState();
-  const [activePreset, setActivePreset] = useState();
+
+  const [activePreset, setActivePreset] = useState({});
 
   const [isDragActive, setIsDragActive] = useState(true);
   const [dragArea, setDragArea] = useState({
     width: 0,
     height: 0,
   });
-
-  const [preset, setPreset] = useState({});
 
   const cropperRef = useRef(null);
   const onCrop = () => {
@@ -93,8 +91,6 @@ export default function Home() {
   const swapY = () => cropper.scaleY(-1);
   const reset = () => cropper.reset();
 
-  let count = 0;
-
   return (
     <div>
       <Head>
@@ -109,7 +105,6 @@ export default function Home() {
               Image cropper for content creators
             </h1>
             <p className={styles.heroSubTitle}>
-              {/* Leave resolution and aspect ratio issues at bay */}
               Resolutions and aspect ratios should be the last things you worry
               about.
             </p>
@@ -133,20 +128,19 @@ export default function Home() {
         <div className={styles.creatorArea}>
           <div className={styles.presets}>
             <Accordion defaultIndex={[0]} allowToggle>
-              {presets.map((site, index2) => {
+              {presets.map((site, i) => {
                 return (
                   <AccordionSection title={Object.keys(site)}>
                     {site[Object.keys(site)].map((param, index) => {
-                      ++count;
                       return (
                         <Checkbox
                           key={index}
-                          index={count}
+                          index={!i && !index}
                           title={param.name}
                           onChange={(e) => {
                             if (e.target.checked) {
-                              setPreset({
-                                ...preset,
+                              setActivePreset({
+                                ...activePreset,
                                 site: Object.keys(site),
                                 name: param.name,
                                 description: param.description,
@@ -157,7 +151,7 @@ export default function Home() {
                                 param.width / param.height
                               );
                             } else {
-                              setPreset({});
+                              setActivePreset({});
                               cropper.setAspectRatio(NaN);
                             }
                           }}
@@ -167,120 +161,11 @@ export default function Home() {
                   </AccordionSection>
                 );
               })}
-
-              {/* <AccordionItem borderRadius={5}>
-                <h2>
-                  <AccordionButton
-                    _expanded={{borderRadius: "5" }}
-                    style={{ backgroundColor: "#E5EAFE" }}
-                  >
-                    <Box flex="1" textAlign="left">
-                      Hashnode
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <Stack>
-                    {hashnode.map((el, i) => {
-                      return (
-                        <Checkbox
-                          key={i}
-                          cropper={cropper}
-                          index={i}
-                          title={el.name}
-                          width={el.width}
-                          height={el.height}
-                        />
-                      );
-                    })}
-                  </Stack>
-                </AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem>
-                <h2>
-                  <AccordionButton style={{ backgroundColor: "#E5EAFE" }}>
-                    <Box flex="1" textAlign="left">
-                      DEV
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
-                </AccordionPanel>
-              </AccordionItem>
-              <AccordionItem>
-                <h2>
-                  <AccordionButton style={{ backgroundColor: "#E5EAFE" }}>
-                    <Box flex="1" textAlign="left">
-                      Medium
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <p>Enter your dimensions:</p>
-                  <p>Width: {dragArea.width}</p>
-                  <p>Height: {Math.round(dragArea.height)}</p>
-                </AccordionPanel>
-              </AccordionItem>
-              <AccordionItem>
-                <h2>
-                  <AccordionButton style={{ backgroundColor: "#E5EAFE" }}>
-                    <Box flex="1" textAlign="left">
-                      HackerNoon
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <p>Enter your dimensions:</p>
-                  <p>Width: {dragArea.width}</p>
-                  <p>Height: {Math.round(dragArea.height)}</p>
-                </AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem>
-                <h2>
-                  <AccordionButton style={{ backgroundColor: "#E5EAFE" }}>
-                    <Box flex="1" textAlign="left">
-                      LinkedIn
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <p>Enter your dimensions:</p>
-                  <p>Width: {dragArea.width}</p>
-                  <p>Height: {Math.round(dragArea.height)}</p>
-                </AccordionPanel>
-              </AccordionItem>
-              <AccordionItem>
-                <h2>
-                  <AccordionButton style={{ backgroundColor: "#E5EAFE" }}>
-                    <Box flex="1" textAlign="left">
-                      YouTube
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  <p>Enter your dimensions:</p>
-                  <p>Width: {dragArea.width}</p>
-                  <p>Height: {Math.round(dragArea.height)}</p>
-                </AccordionPanel>
-              </AccordionItem> */}
             </Accordion>
           </div>
 
           <div
             style={{
-              // width: `1200px`,
               margin: "0 auto",
             }}
           >
@@ -353,25 +238,25 @@ export default function Home() {
                   title="Zoom out"
                 />
                 <ActionButton
-                  onClick={zoomOut}
+                  onClick={moveLeft}
                   icon={BsArrowsMove}
                   color="teal"
                   title="Move left"
                 />
                 <ActionButton
-                  onClick={zoomOut}
+                  onClick={moveRight}
                   icon={BsArrowsMove}
                   color="teal"
                   title="Move right"
                 />
                 <ActionButton
-                  onClick={zoomOut}
+                  onClick={moveUp}
                   icon={BsArrowsMove}
                   color="teal"
                   title="Move up"
                 />
                 <ActionButton
-                  onClick={zoomOut}
+                  onClick={moveDown}
                   icon={BsArrowsMove}
                   color="teal"
                   title="Move Down"
@@ -382,17 +267,17 @@ export default function Home() {
 
           <div className={styles.tools}>
             <div className={styles.titleBox}>
-              {preset.site ? (
+              {activePreset.site ? (
                 <h1>
-                  {preset.site} {preset.name}
+                  {activePreset.site} {activePreset.name}
                 </h1>
               ) : (
-                <h1>Custom size</h1>
+                <h1>Your custom size</h1>
               )}
             </div>
 
-            {preset.site ? (
-              <p>{preset.description}</p>
+            {activePreset.site ? (
+              <p>{activePreset.description}</p>
             ) : (
               <h1>Draw any crop area you want</h1>
             )}
