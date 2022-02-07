@@ -320,6 +320,7 @@ export default function Home() {
               </div>
               <div>
                 <h1>Score</h1>
+                <p>{Math.round((dragArea.width * 100) / activePreset.width)}</p>
               </div>
             </div>
             {/* <p>W progress</p>
