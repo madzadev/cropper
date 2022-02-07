@@ -57,4 +57,5 @@
   display: grid;
   grid-template-columns: 2fr 1fr 2fr 2fr;
   border: 1px solid grey;
+  margin-bottom: 20px;
 }

@@ -51,8 +51,8 @@ export default function Home() {
       imageElement === null || imageElement === 0 ? 0 : imageElement.cropper;
     setDragArea({
       ...dragArea,
-      width: cropper.cropBoxData.width,
-      height: cropper.cropBoxData.height,
+      width: cropper.getCroppedCanvas().width,
+      height: cropper.getCroppedCanvas().height,
     });
 
     setBaseImage(cropper.getCroppedCanvas().toDataURL());
@@ -210,6 +210,7 @@ export default function Home() {
               // crop={() => {
               //   console.log(124);
               // }}
+              autoCropArea={1} //0.8 is default
               background={false}
               viewMode={2}
               onInitialized={(instance) => {
@@ -307,15 +308,15 @@ export default function Home() {
 
             <div className={styles.croppedInfo}>
               <div>
-                <h1>23</h1>
+                <h1>{dragArea.width}</h1>
                 <p>Width</p>
               </div>
               <div>
                 <h1>X</h1>
               </div>
               <div>
-                <h1>23</h1>
-                <p>Width</p>
+                <h1>{dragArea.height}</h1>
+                <p>Height</p>
               </div>
               <div>
                 <h1>Score</h1>
