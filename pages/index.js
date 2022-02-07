@@ -10,11 +10,7 @@ import {
   Button,
   Box,
   Select,
-  AccordionPanel,
   Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionIcon,
 } from "@chakra-ui/react";
 import { HiUpload, HiDownload } from "react-icons/hi";
 import { FiCrop } from "react-icons/fi";
@@ -23,12 +19,13 @@ import { BsArrowsMove } from "react-icons/bs";
 import ContentWrapper from "../components/ContentWrapper";
 import InputFileSelect from "../components/InputFileSelect";
 import ActionButton from "../components/ActionButton";
+import AccordionItem from "../components/AccordionItem";
 import Checkbox from "../components/Checkbox";
 
 import "cropperjs/dist/cropper.css";
 import styles from "../styles/Home.module.css";
 
-import { hashnode } from "../presets.js";
+import { presets } from "../presets.js";
 
 // const defaultImage = "https://picsum.photos/seed/picsum/720/480";
 let defaultImage;
@@ -38,6 +35,7 @@ export default function Home() {
   // const [cropData, setCropData] = useState();
   const [baseImage, setBaseImage] = useState("");
   const [cropper, setCropper] = useState();
+const [activePreset, setActivePreset] = useState();
 
   const [isDragActive, setIsDragActive] = useState(true);
   const [dragArea, setDragArea] = useState({
@@ -58,9 +56,6 @@ export default function Home() {
     });
 
     setBaseImage(cropper.getCroppedCanvas().toDataURL());
-
-    // console.log(cropper);
-    // console.log(cropper.getCroppedCanvas().toDataURL());
   };
 
   const onChange = (e) => {
@@ -95,6 +90,8 @@ export default function Home() {
   const swapX = () => cropper.scaleX(-1);
   const swapY = () => cropper.scaleY(-1);
   const reset = () => cropper.reset();
+
+let count = 0;
 
   return (
     <div>
@@ -134,10 +131,35 @@ export default function Home() {
         <div className={styles.creatorArea}>
           <div className={styles.presets}>
             <Accordion defaultIndex={[0]} allowToggle>
-              <AccordionItem borderRadius={5}>
+            {presets.map((site, index) => {
+        return (
+          <AccordionItem title={Object.keys(site)}>
+            {site[Object.keys(site)].map((param, index) => {
+              ++count;
+              return (
+                <Checkbox
+                  key={index}
+                  index={count}
+                  title={param.name}
+                  onChange={() => {
+                    if (isNaN(cropper.options.aspectRatio)) {
+                      cropper.setAspectRatio(param.width / param.height);
+                    } else {
+                      cropper.setAspectRatio(NaN);
+                    }
+                  }}
+                />
+              );
+            })}
+          </AccordionItem>
+        );
+      })}
+
+
+              {/* <AccordionItem borderRadius={5}>
                 <h2>
                   <AccordionButton
-                    _expanded={{ bg: "#E5EAFE", borderRadius: "5" }}
+                    _expanded={{borderRadius: "5" }}
                     style={{ backgroundColor: "#E5EAFE" }}
                   >
                     <Box flex="1" textAlign="left">
@@ -240,7 +262,7 @@ export default function Home() {
                   <p>Width: {dragArea.width}</p>
                   <p>Height: {Math.round(dragArea.height)}</p>
                 </AccordionPanel>
-              </AccordionItem>
+              </AccordionItem> */}
             </Accordion>
           </div>
 
