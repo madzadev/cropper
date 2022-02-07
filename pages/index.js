@@ -19,7 +19,7 @@ import { BsArrowsMove } from "react-icons/bs";
 import ContentWrapper from "../components/ContentWrapper";
 import InputFileSelect from "../components/InputFileSelect";
 import ActionButton from "../components/ActionButton";
-import AccordionItem from "../components/AccordionItem";
+import AccordionSection from "../components/AccordionSection";
 import Checkbox from "../components/Checkbox";
 
 import "cropperjs/dist/cropper.css";
@@ -35,7 +35,7 @@ export default function Home() {
   // const [cropData, setCropData] = useState();
   const [baseImage, setBaseImage] = useState("");
   const [cropper, setCropper] = useState();
-const [activePreset, setActivePreset] = useState();
+  const [activePreset, setActivePreset] = useState();
 
   const [isDragActive, setIsDragActive] = useState(true);
   const [dragArea, setDragArea] = useState({
@@ -81,17 +81,17 @@ const [activePreset, setActivePreset] = useState();
 
   const zoomIn = () => cropper.zoom(0.1);
   const zoomOut = () => cropper.zoom(-0.1);
-  const moveLeft = () => cropper.move(-10,0);
-  const moveRight = () => cropper.move(10,0);
+  const moveLeft = () => cropper.move(-10, 0);
+  const moveRight = () => cropper.move(10, 0);
   const moveUp = () => cropper.move(0, -10);
-  const moveDown = () => cropper.move(0,10);
+  const moveDown = () => cropper.move(0, 10);
   const rotateLeft = () => cropper.rotate(-45);
   const rotateRight = () => cropper.rotate(45);
   const swapX = () => cropper.scaleX(-1);
   const swapY = () => cropper.scaleY(-1);
   const reset = () => cropper.reset();
 
-let count = 0;
+  let count = 0;
 
   return (
     <div>
@@ -131,30 +131,31 @@ let count = 0;
         <div className={styles.creatorArea}>
           <div className={styles.presets}>
             <Accordion defaultIndex={[0]} allowToggle>
-            {presets.map((site, index) => {
-        return (
-          <AccordionItem title={Object.keys(site)}>
-            {site[Object.keys(site)].map((param, index) => {
-              ++count;
-              return (
-                <Checkbox
-                  key={index}
-                  index={count}
-                  title={param.name}
-                  onChange={() => {
-                    if (isNaN(cropper.options.aspectRatio)) {
-                      cropper.setAspectRatio(param.width / param.height);
-                    } else {
-                      cropper.setAspectRatio(NaN);
-                    }
-                  }}
-                />
-              );
-            })}
-          </AccordionItem>
-        );
-      })}
-
+              {presets.map((site, index) => {
+                return (
+                  <AccordionSection title={Object.keys(site)}>
+                    {site[Object.keys(site)].map((param, index) => {
+                      ++count;
+                      return (
+                        <Checkbox
+                          key={index}
+                          index={count}
+                          title={param.name}
+                          onChange={() => {
+                            if (isNaN(cropper.options.aspectRatio)) {
+                              cropper.setAspectRatio(
+                                param.width / param.height
+                              );
+                            } else {
+                              cropper.setAspectRatio(NaN);
+                            }
+                          }}
+                        />
+                      );
+                    })}
+                  </AccordionSection>
+                );
+              })}
 
               {/* <AccordionItem borderRadius={5}>
                 <h2>
