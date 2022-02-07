@@ -382,12 +382,20 @@ export default function Home() {
 
           <div className={styles.tools}>
             <div className={styles.titleBox}>
-              <h1>
-                About {preset.site} {preset.name}
-              </h1>
+              {preset.site ? (
+                <h1>
+                  {preset.site} {preset.name}
+                </h1>
+              ) : (
+                <h1>Custom size</h1>
+              )}
             </div>
 
-            <p>{preset.description}</p>
+            {preset.site ? (
+              <p>{preset.description}</p>
+            ) : (
+              <h1>Draw any crop area you want</h1>
+            )}
 
             <div className={styles.titleBox}>
               <h1>How close is to recommended?</h1>
