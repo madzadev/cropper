@@ -43,6 +43,8 @@ export default function Home() {
     height: 0,
   });
 
+  const [preset, setPreset] = useState({});
+
   const cropperRef = useRef(null);
   const onCrop = () => {
     let imageElement =
@@ -131,7 +133,7 @@ export default function Home() {
         <div className={styles.creatorArea}>
           <div className={styles.presets}>
             <Accordion defaultIndex={[0]} allowToggle>
-              {presets.map((site, index) => {
+              {presets.map((site, index2) => {
                 return (
                   <AccordionSection title={Object.keys(site)}>
                     {site[Object.keys(site)].map((param, index) => {
@@ -141,12 +143,21 @@ export default function Home() {
                           key={index}
                           index={count}
                           title={param.name}
-                          onChange={() => {
-                            if (isNaN(cropper.options.aspectRatio)) {
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setPreset({
+                                ...preset,
+                                site: Object.keys(site),
+                                name: param.name,
+                                description: param.description,
+                                height: param.height,
+                                width: param.width,
+                              });
                               cropper.setAspectRatio(
                                 param.width / param.height
                               );
                             } else {
+                              setPreset({});
                               cropper.setAspectRatio(NaN);
                             }
                           }}
@@ -371,14 +382,12 @@ export default function Home() {
 
           <div className={styles.tools}>
             <div className={styles.titleBox}>
-              <h1>About Hashnode Article Cover</h1>
+              <h1>
+                About {preset.site} {preset.name}
+              </h1>
             </div>
 
-            <p>
-              It will be shown as the blog's logo on smaller (mobile) screens
-              and used as your blog's favicon. For best results, upload PNG file
-              with dimension 500 X 50.
-            </p>
+            <p>{preset.description}</p>
 
             <div className={styles.titleBox}>
               <h1>How close is to recommended?</h1>
