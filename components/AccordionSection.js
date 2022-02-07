@@ -15,7 +15,7 @@ const AccordionSection = ({ title, children }) => {
           _expanded={{ borderRadius: "5" }}
           style={{ backgroundColor: "#E5EAFE" }}
         >
-          <Box flex="1" textAlign="left">
+          <Box flex="1" textAlign="left" fontSize="18" fontWeight="bold">
             {title}
           </Box>
           <AccordionIcon />

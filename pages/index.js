@@ -111,7 +111,11 @@ export default function Home() {
 
             <div className={styles.heroSelect}>
               <div>
-                <p> Say goodbye to out of positioned images</p>
+                <p>
+                  {" "}
+                  Say goodbye to out of positioned, stretched, pixelated, etc
+                  images
+                </p>
                 <p>
                   Stop spending time on trying to figure out the resolutions and
                   aspect ratios
@@ -298,15 +302,31 @@ export default function Home() {
             )}
 
             <div className={styles.titleBox}>
-              <h1>Cropped info</h1>
+              <h1>Cropped data:</h1>
             </div>
 
-            <p>W progress</p>
-            <p>H progress</p>
-            <p>Aspect ratio: {cropper ? cropper.options.aspectRatio : 0}</p>
+            <div className={styles.croppedInfo}>
+              <div>
+                <h1>23</h1>
+                <p>Width</p>
+              </div>
+              <div>
+                <h1>X</h1>
+              </div>
+              <div>
+                <h1>23</h1>
+                <p>Width</p>
+              </div>
+              <div>
+                <h1>Score</h1>
+              </div>
+            </div>
+            {/* <p>W progress</p>
+            <p>H progress</p> */}
+            {/* <p>Aspect ratio: {cropper ? cropper.options.aspectRatio : 0}</p> */}
 
             <div className={styles.titleBox}>
-              <h1>Preview:</h1>
+              <h1>Image preview:</h1>
             </div>
 
             <div
