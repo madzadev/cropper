@@ -308,19 +308,21 @@ export default function Home() {
 
             <div className={styles.croppedInfo}>
               <div>
-                <h1>{dragArea.width}</h1>
+                <h1 className={styles.croppedRes}>{dragArea.width}</h1>
                 <p>Width</p>
               </div>
               <div>
                 <h1>X</h1>
               </div>
               <div>
-                <h1>{dragArea.height}</h1>
+                <h1 className={styles.croppedRes}>{dragArea.height}</h1>
                 <p>Height</p>
               </div>
               <div>
-                <h1>Score</h1>
-                <p>{Math.round((dragArea.width * 100) / activePreset.width)}</p>
+                <p>Res.score</p>
+                <h1 className={styles.croppedRes}>
+                  {Math.round((dragArea.width * 100) / activePreset.width)} %
+                </h1>
               </div>
             </div>
             {/* <p>W progress</p>

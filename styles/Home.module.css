@@ -56,6 +56,12 @@
 .croppedInfo {
   display: grid;
   grid-template-columns: 2fr 1fr 2fr 2fr;
-  border: 1px solid grey;
+  /* border: 1px solid grey; */
   margin-bottom: 20px;
+  text-align: center;
+}
+
+.croppedRes {
+  font-size: 24px;
+  font-weight: bold;
 }
