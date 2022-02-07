@@ -22,6 +22,8 @@ Rotate image (+/- 45 degree step)
 Zoom image in or out (+/- 0.1 step)
 Crop templates to fit popular platforms
 Aspect ratio presets
+Crop overview data
+Image preview
 Download as .png and .jpg formats
 
 ## Tech Stack

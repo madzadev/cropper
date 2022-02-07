@@ -130,7 +130,7 @@ export default function Home() {
             <Accordion defaultIndex={[0]} allowToggle>
               {presets.map((site, i) => {
                 return (
-                  <AccordionSection title={Object.keys(site)}>
+                  <AccordionSection key={i} title={Object.keys(site)}>
                     {site[Object.keys(site)].map((param, index) => {
                       return (
                         <Checkbox
@@ -139,6 +139,21 @@ export default function Home() {
                           title={param.name}
                           onChange={(e) => {
                             if (e.target.checked) {
+                              const getAllCheckboxes =
+                                document.querySelectorAll(
+                                  "input[type=checkbox]"
+                                );
+                              console.log(getAllCheckboxes);
+                              getAllCheckboxes.forEach((el) => {
+                                // console.log(el);
+                                // if (el.checked) {
+                                //   el.checked = false;
+                                // }
+                                el.removeAttribute("checked");
+
+                                el.checked = false;
+                                el.classList.remove("checked");
+                              });
                               setActivePreset({
                                 ...activePreset,
                                 site: Object.keys(site),
@@ -283,7 +298,7 @@ export default function Home() {
             )}
 
             <div className={styles.titleBox}>
-              <h1>How close is to recommended?</h1>
+              <h1>Cropped info</h1>
             </div>
 
             <p>W progress</p>

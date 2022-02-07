@@ -11,6 +11,8 @@ const Features = () => {
       <p>Zoom image in or out (+/- 0.1 step)</p>
       <p>Crop templates to fit popular platforms</p>
       <p>Aspect ratio presets</p>
+      <p>Crop overview data</p>
+      <p>Image preview</p>
       <p>Download as .png and .jpg formats</p>
     </ContentWrapper>
   );

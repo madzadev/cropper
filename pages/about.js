@@ -37,6 +37,9 @@ const About = () => {
         Netlify Hackathon.
       </p>
 
+      <h1>Whats next?</h1>
+      <p>Continue to add presets</p>
+
       <h1>Final notes</h1>
       <p>
         The technical formatting should be the last thing you should worry
