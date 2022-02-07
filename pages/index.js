@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Cropper from "react-cropper";
-import "cropperjs/dist/cropper.css";
 import {
   Text,
   Heading,
@@ -11,7 +10,6 @@ import {
   Button,
   Box,
   Select,
-  // Checkbox,
   AccordionPanel,
   Accordion,
   AccordionItem,
@@ -25,11 +23,12 @@ import { BsArrowsMove } from "react-icons/bs";
 import ContentWrapper from "../components/ContentWrapper";
 import InputFileSelect from "../components/InputFileSelect";
 import ActionButton from "../components/ActionButton";
+import Checkbox from "../components/Checkbox";
+
+import "cropperjs/dist/cropper.css";
+import styles from "../styles/Home.module.css";
 
 import { hashnode } from "../presets.js";
-
-import Checkbox from "../components/Checkbox";
-import styles from "../styles/Home.module.css";
 
 // const defaultImage = "https://picsum.photos/seed/picsum/720/480";
 let defaultImage;
@@ -85,8 +84,17 @@ export default function Home() {
     }
   };
 
-  const zoomIn = () => cropper.zoom(+0.1);
+  const zoomIn = () => cropper.zoom(0.1);
   const zoomOut = () => cropper.zoom(-0.1);
+  const moveLeft = () => cropper.move(-10,0);
+  const moveRight = () => cropper.move(10,0);
+  const moveUp = () => cropper.move(0, -10);
+  const moveDown = () => cropper.move(0,10);
+  const rotateLeft = () => cropper.rotate(-45);
+  const rotateRight = () => cropper.rotate(45);
+  const swapX = () => cropper.scaleX(-1);
+  const swapY = () => cropper.scaleY(-1);
+  const reset = () => cropper.reset();
 
   return (
     <div>
@@ -363,13 +371,10 @@ export default function Home() {
 
             <div
               style={{
-                // border: "1px solid green",
                 height: "auto",
                 width: "100%",
                 position: "relative",
                 marginBottom: "20px",
-                // display: "grid",
-                // placeItems: "center",
               }}
             >
               <div
@@ -377,10 +382,6 @@ export default function Home() {
                 style={{
                   height: "200px",
                   overflow: "hidden",
-
-                  // position: "absolute",
-                  // top: "0",
-                  // left: "0",
                 }}
               ></div>
             </div>
@@ -410,7 +411,6 @@ export default function Home() {
                   console.log("Changed");
                 }}
               >
-                {/* <option value="option1">.PNG</option> */}
                 <option value="option2">.JPG</option>
               </Select>
             </Stack>
