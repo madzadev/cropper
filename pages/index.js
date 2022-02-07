@@ -238,7 +238,7 @@ export default function Home() {
 
           <div
             style={{
-              width: `1200px`,
+              // width: `1200px`,
               margin: "0 auto",
             }}
           >
@@ -265,7 +265,7 @@ export default function Home() {
               //   console.log(124);
               // }}
               background={false}
-              viewMode={1}
+              viewMode={2}
               onInitialized={(instance) => {
                 setCropper(instance);
               }}
