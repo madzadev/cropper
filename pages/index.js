@@ -25,7 +25,7 @@ import Checkbox from "../components/Checkbox";
 import "cropperjs/dist/cropper.css";
 import styles from "../styles/Home.module.css";
 
-import { presets } from "../presets.js";
+import { presets } from "../data/presets.js";
 
 // const defaultImage = "https://picsum.photos/seed/picsum/720/480";
 
