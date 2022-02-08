@@ -1,9 +1,8 @@
-import { useRouter } from "next/router";
+import Router from "next/router";
 import Link from "next/link";
 import styles from "./Header.module.css";
 
 const Header = () => {
-  const router = useRouter();
   return (
     <div className={styles.wrapper}>
       <Link href="/">
@@ -14,7 +13,7 @@ const Header = () => {
             alt="logo"
             onClick={() => {
               window.location.pathname === "/" &&
-                router.reload(window.location.pathname);
+                Router.reload(window.location.pathname);
             }}
           />
         </a>
