@@ -87,8 +87,20 @@ export default function Home() {
   const moveDown = () => cropper.move(0, 10);
   const rotateLeft = () => cropper.rotate(-45);
   const rotateRight = () => cropper.rotate(45);
-  const swapX = () => cropper.scaleX(-1);
-  const swapY = () => cropper.scaleY(-1);
+  const swapX = () => {
+    if (cropper.getData().scaleX === 1) {
+      cropper.scaleX(-1);
+    } else {
+      cropper.scaleX(1);
+    }
+  };
+  const swapY = () => {
+    if (cropper.getData().scaleY === 1) {
+      cropper.scaleY(-1);
+    } else {
+      cropper.scaleY(1);
+    }
+  };
   const reset = () => cropper.reset();
 
   return (
