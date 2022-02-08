@@ -1,8 +1,10 @@
 // import Image from "next/image";
 import Link from "next/link";
 import styles from "./Header.module.css";
+import { useRouter } from "next/router";
 
 const Header = () => {
+  const router = useRouter();
   return (
     <div className={styles.wrapper}>
       <Link href="/">
@@ -12,7 +14,8 @@ const Header = () => {
             src="/logo.svg"
             alt="logo"
             onClick={() => {
-              console.log("aaaa");
+              window.location.pathname === "/" &&
+                router.reload(window.location.pathname);
             }}
           />
         </a>
