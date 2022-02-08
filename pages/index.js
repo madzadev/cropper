@@ -288,11 +288,11 @@ export default function Home() {
           <div className={styles.tools}>
             <div className={styles.titleBox}>
               {activePreset.site ? (
-                <h1>
+                <h1 className={styles.sectionTitle}>
                   {activePreset.site} {activePreset.name}
                 </h1>
               ) : (
-                <h1>Your custom size</h1>
+                <h1 className={styles.sectionTitle}>Your custom size</h1>
               )}
             </div>
 
@@ -303,7 +303,7 @@ export default function Home() {
             )}
 
             <div className={styles.titleBox}>
-              <h1>Cropped data:</h1>
+              <h1 className={styles.sectionTitle}>Cropped data:</h1>
             </div>
 
             <div className={styles.croppedInfo}>
@@ -330,7 +330,7 @@ export default function Home() {
             {/* <p>Aspect ratio: {cropper ? cropper.options.aspectRatio : 0}</p> */}
 
             <div className={styles.titleBox}>
-              <h1>Image preview:</h1>
+              <h1 className={styles.sectionTitle}>Image preview:</h1>
             </div>
 
             <div

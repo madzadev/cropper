@@ -53,6 +53,11 @@
   border-radius: 5px;
 }
 
+.sectionTitle {
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .croppedInfo {
   display: grid;
   grid-template-columns: 2fr 1fr 2fr 2fr;

@@ -1,9 +1,10 @@
+import styles from "../styles/About.module.css";
 import ContentWrapper from "../components/ContentWrapper";
 
 const About = () => {
   return (
     <ContentWrapper>
-      <h1>This is About page</h1>
+      <h1 className={styles.title}>Problem</h1>
       <p>
         Have you ever created an awesome article with a great cover image.
         Upload everything and the first thing you see is non positioned image.
@@ -17,30 +18,30 @@ const About = () => {
         time trying to figure out the resolutions.
       </p>
 
-      <h1>Privacy of the data</h1>
+      <h1 className={styles.title}>Privacy of the data</h1>
       <p>
         In this project the data privacy is a priority. All the cropping is done
         in the frontend. No image is ever uploaded, its all you, your image and
         your browser. Simple as that.
       </p>
 
-      <h1>Tech stack</h1>
+      <h1 className={styles.title}>Tech stack</h1>
       <p>The project is written in NextJS</p>
 
-      <h1>License and updates</h1>
+      <h1 className={styles.title}>License and updates</h1>
       <p>The project is under MIT licence.</p>
       <p>Feature requests and pull requests are welcomed in the GitHub repo</p>
 
-      <h1>Additional notes</h1>
+      <h1 className={styles.title}>Additional notes</h1>
       <p>
         The project was created specifically as an entry for the Hashnode x
         Netlify Hackathon.
       </p>
 
-      <h1>Whats next?</h1>
+      <h1 className={styles.title}>Whats next?</h1>
       <p>Continue to add presets</p>
 
-      <h1>Final notes</h1>
+      <h1 className={styles.title}>Final notes</h1>
       <p>
         The technical formatting should be the last thing you should worry
         about. Instead you should focus on what matters, creating quality
