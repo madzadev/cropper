@@ -1,8 +1,8 @@
-import styles from "./InputFileSelect.module.css";
+import styles from "./ImageSelector.module.css";
 import { Button, Icon } from "@chakra-ui/react";
 import { MdUpload } from "react-icons/md";
 
-const InputFileSelect = ({ onChange }) => {
+const ImageSelector = ({ onChange }) => {
   return (
     <form>
       <div className={styles.wrapper}>
@@ -25,4 +25,4 @@ const InputFileSelect = ({ onChange }) => {
   );
 };
 
-export default InputFileSelect;
+export default ImageSelector;

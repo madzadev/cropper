@@ -17,7 +17,7 @@ import { FiCrop } from "react-icons/fi";
 import { BsArrowsMove } from "react-icons/bs";
 
 import ContentWrapper from "../components/ContentWrapper";
-import InputFileSelect from "../components/InputFileSelect";
+import ImageSelector from "../components/ImageSelector";
 import ActionButton from "../components/ActionButton";
 import AccordionSection from "../components/AccordionSection";
 import Checkbox from "../components/Checkbox";
@@ -125,7 +125,7 @@ export default function Home() {
                 </p>
               </div>
               <div>
-                <InputFileSelect onChange={onChange} />
+                <ImageSelector onChange={onChange} />
               </div>
             </div>
             <h1>Three step process</h1>
