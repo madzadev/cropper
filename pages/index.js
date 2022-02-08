@@ -281,6 +281,36 @@ export default function Home() {
                   color="teal"
                   title="Move Down"
                 />
+                <ActionButton
+                  onClick={rotateLeft}
+                  icon={BsArrowsMove}
+                  color="teal"
+                  title="Rotate left"
+                />
+                <ActionButton
+                  onClick={rotateRight}
+                  icon={BsArrowsMove}
+                  color="teal"
+                  title="Rotate right"
+                />
+                <ActionButton
+                  onClick={swapX}
+                  icon={BsArrowsMove}
+                  color="teal"
+                  title="Flip X axis"
+                />
+                <ActionButton
+                  onClick={swapY}
+                  icon={BsArrowsMove}
+                  color="teal"
+                  title="Flip Y axis"
+                />
+                <ActionButton
+                  onClick={reset}
+                  icon={BsArrowsMove}
+                  color="red"
+                  title="Reset crop"
+                />
               </Stack>
             </div>
           </div>
