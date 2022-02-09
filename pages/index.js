@@ -322,12 +322,13 @@ export default function Home() {
                 <h1 className={styles.sectionTitle}>Your custom size</h1>
               )}
             </div>
-
-            {activePreset.site ? (
-              <p>{activePreset.description}</p>
-            ) : (
-              <h1>Draw any crop area you want</h1>
-            )}
+            <div className={styles.descriptionBox}>
+              {activePreset.site ? (
+                <p>{activePreset.description}</p>
+              ) : (
+                <p>Draw any crop area you want</p>
+              )}
+            </div>
 
             <div className={styles.titleBox}>
               <h1 className={styles.sectionTitle}>Cropped data:</h1>
