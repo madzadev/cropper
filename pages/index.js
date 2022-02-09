@@ -133,7 +133,7 @@ export default function Home() {
                   aspect ratios
                 </p>
               </div>
-              <div>
+              <div className={styles.imageSelectorArea}>
                 <ImageSelector onChange={onChange} />
               </div>
             </div>
