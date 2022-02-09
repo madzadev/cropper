@@ -3,20 +3,20 @@ export const presets = [
     Hashnode: [
       {
         name: "Article Cover",
-        description: "Article Cover will be the Header image of the every Article",
+        description: "Article Cover will be the Header image of the Article",
         width: 1600,
         height: 840,
       },
       {
         name: "Blog Header",
-        description: "Blog Header will be shown at the top of your personal Blog page",
-        width: 1307,
-        height: 392.09,
+        description: "Blog Header will be shown at the Top of your Blog page",
+        width: 1600,
+        height: 480,
       },
       {
         name: "Profile Picture",
         description:
-          "Your profile avatar used through the entire site",
+          "Your profile Avatar used through the entire Site",
         width: 400,
         height: 400,
       },
@@ -30,7 +30,7 @@ export const presets = [
       {
         name: "Publication Thumbnail",
         description:
-          "It will be shown as the blog's logo on mobile screens and used as your Blog's favicon",
+          "It will be shown as the Blog's logo on mobile screens and used as your Blog's favicon",
         width: 500,
         height: 500,
       },
@@ -48,14 +48,14 @@ export const presets = [
       {
         name: "Article Cover",
         description:
-          "Article Cover will be the Header image of the every Article",
+          "Article Cover will be the Header image of the Article",
         width: 1000,
         height: 420,
       },
       {
         name: "Profile Picture",
         description:
-          "Your profile avatar used through the entire site",
+          "Your profile Avatar used through the entire Site",
         width: 320,
         height: 320,
       },
@@ -66,14 +66,14 @@ export const presets = [
       {
         name: "Article Cover",
         description:
-          "Article Cover will be the Header image of the every Article",
+          "Article Cover will be the Header image of the Article",
         width: 500,
         height: 125,
       },
       {
         name: "Profile Picture",
         description:
-          "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
+          "Your profile Avatar used through the entire Site",
         width: 500,
         height: 125,
       },
@@ -84,14 +84,14 @@ export const presets = [
       {
         name: "Article Cover",
         description:
-          "Article Cover will be the Header image of the every Article",
+          "Article Cover will be the Header image of the Article",
         width: 500,
         height: 125,
       },
       {
         name: "Profile Picture",
         description:
-          "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
+          "Your profile Avatar used through the entire Site",
         width: 500,
         height: 125,
       },
