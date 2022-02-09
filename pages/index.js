@@ -144,19 +144,26 @@ export default function Home() {
                           key={index}
                           index={!i && !index}
                           title={param.name}
+                          isChecked={
+                            activePreset.site
+                              ? activePreset.site.toString() ==
+                                  Object.keys(site).toString() &&
+                                activePreset.name == param.name
+                              : false
+                          }
                           onChange={(e) => {
                             if (e.target.checked) {
-                              const getAllCheckboxes =
-                                document.querySelectorAll(
-                                  "input[type=checkbox]"
-                                );
-                              console.log(getAllCheckboxes);
-                              getAllCheckboxes.forEach((el) => {
-                                console.log(el);
-                                // if (el.checked) {
-                                //   el.childNodes = [];
-                                // }
-                              });
+                              // const getAllCheckboxes =
+                              //   document.querySelectorAll(
+                              //     "input[type=checkbox]"
+                              //   );
+
+                              // getAllCheckboxes.forEach((el) => {
+                              //   if (el.isChecked) {
+                              //     el.isChecked = false;
+                              //   }
+                              // });
+
                               setActivePreset({
                                 ...activePreset,
                                 site: Object.keys(site),

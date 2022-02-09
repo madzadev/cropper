@@ -1,8 +1,15 @@
 import { Checkbox } from "@chakra-ui/react";
 
-const CheckBox = ({ index, title, onChange }) => {
+const CheckBox = ({ index, title, isChecked, onChange }) => {
+  // return (
+  //   <input type="checkbox" onChange={onChange} defaultChecked={index == 1} />
+  // );
   return (
-    <Checkbox onChange={onChange} defaultIsChecked={index == 1} checked={false}>
+    <Checkbox
+      isChecked={isChecked}
+      onChange={onChange}
+      defaultIsChecked={index == 1}
+    >
       {title}
     </Checkbox>
   );
