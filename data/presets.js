@@ -16,7 +16,7 @@ export const presets = [
       {
         name: "Profile Avatar",
         description:
-          "Your profile Avatar used through the entire Site",
+          "Your profile Avatar used through the Site",
         width: 400,
         height: 400,
       },
@@ -55,7 +55,7 @@ export const presets = [
       {
         name: "Profile Avatar",
         description:
-          "Your profile Avatar used through the entire Site",
+          "Your profile Avatar used through the Site",
         width: 320,
         height: 320,
       },
@@ -73,7 +73,7 @@ export const presets = [
       {
         name: "Profile Avatar",
         description:
-          "Your profile Avatar used through the entire Site",
+          "Your profile Avatar used through the Site",
         width: 500,
         height: 125,
       },
@@ -91,7 +91,7 @@ export const presets = [
       {
         name: "Profile Avatar",
         description:
-          "Your profile Avatar used through the entire Site",
+          "Your profile Avatar used through the Site",
         width: 500,
         height: 125,
       },
@@ -116,7 +116,7 @@ export const presets = [
       {
         name: "Profile Avatar",
         description:
-          "Your profile Avatar used through the entire Site",
+          "Your profile Avatar used through the Site",
         width: 400,
         height: 400,
       },
@@ -141,7 +141,7 @@ export const presets = [
       {
         name: "Profile Avatar",
         description:
-          "Your profile Avatar used through the entire Site",
+          "Your profile Avatar used through the Site",
         width: 268,
         height: 268,
       },
@@ -166,7 +166,7 @@ export const presets = [
       {
         name: "Profile Avatar",
         description:
-          "Your profile Avatar used through the entire Site",
+          "Your profile Avatar used through the Site",
         width: 800,
         height: 800,
       },
@@ -198,7 +198,7 @@ export const presets = [
       {
         name: "Profile Avatar",
         description:
-          "Your profile Avatar used through the entire Site",
+          "Your profile Avatar used through the Site",
         width: 280,
         height: 280,
       },
@@ -223,7 +223,7 @@ export const presets = [
       {
         name: "Profile Avatar",
         description:
-          "Your profile Avatar used through the entire Site",
+          "Your profile Avatar used through the Site",
         width: 200,
         height: 200,
       },
@@ -248,7 +248,7 @@ export const presets = [
       {
         name: "Profile Avatar",
         description:
-          "Your profile Avatar used through the entire Site",
+          "Your profile Avatar used through the Site",
         width: 320,
         height: 320,
       },
@@ -277,7 +277,7 @@ export const presets = [
       {
         name: "Profile Avatar",
         description:
-          "Your profile Avatar used through the entire Site",
+          "Your profile Avatar used through the Site",
         width: 128,
         height: 128,
       },
