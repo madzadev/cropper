@@ -152,14 +152,10 @@ export default function Home() {
                                 );
                               console.log(getAllCheckboxes);
                               getAllCheckboxes.forEach((el) => {
-                                // console.log(el);
+                                console.log(el);
                                 // if (el.checked) {
-                                //   el.checked = false;
+                                //   el.childNodes = [];
                                 // }
-                                el.removeAttribute("checked");
-
-                                el.checked = false;
-                                el.classList.remove("checked");
                               });
                               setActivePreset({
                                 ...activePreset,
