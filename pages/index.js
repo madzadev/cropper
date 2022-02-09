@@ -217,100 +217,98 @@ export default function Home() {
               }}
             />
             <div className={styles.controls}>
-              <Stack direction="row" spacing={4}>
-                <Button
-                  onClick={() => {
-                    cropper.setDragMode("crop");
-                    setIsDragActive(true);
-                  }}
-                  leftIcon={<Icon as={FiCrop} />}
-                  colorScheme="orange"
-                  variant="solid"
-                  isActive={isDragActive}
-                >
-                  Crop
-                </Button>
-                <Button
-                  onClick={() => {
-                    cropper.setDragMode("move");
-                    setIsDragActive(false);
-                    console.log(cropper);
-                  }}
-                  leftIcon={<Icon as={BsArrowsMove} />}
-                  colorScheme="orange"
-                  variant="solid"
-                  isActive={!isDragActive}
-                >
-                  Move
-                </Button>
+              <Button
+                onClick={() => {
+                  cropper.setDragMode("crop");
+                  setIsDragActive(true);
+                }}
+                leftIcon={<Icon as={FiCrop} />}
+                colorScheme="orange"
+                variant="solid"
+                isActive={isDragActive}
+              >
+                Crop
+              </Button>
+              <Button
+                onClick={() => {
+                  cropper.setDragMode("move");
+                  setIsDragActive(false);
+                  console.log(cropper);
+                }}
+                leftIcon={<Icon as={BsArrowsMove} />}
+                colorScheme="orange"
+                variant="solid"
+                isActive={!isDragActive}
+              >
+                Move
+              </Button>
 
-                <ActionButton
-                  onClick={zoomIn}
-                  icon={BsArrowsMove}
-                  color="teal"
-                  title="Zoom in"
-                />
-                <ActionButton
-                  onClick={zoomOut}
-                  icon={BsArrowsMove}
-                  color="teal"
-                  title="Zoom out"
-                />
-                <ActionButton
-                  onClick={moveLeft}
-                  icon={BsArrowsMove}
-                  color="teal"
-                  title="Move left"
-                />
-                <ActionButton
-                  onClick={moveRight}
-                  icon={BsArrowsMove}
-                  color="teal"
-                  title="Move right"
-                />
-                <ActionButton
-                  onClick={moveUp}
-                  icon={BsArrowsMove}
-                  color="teal"
-                  title="Move up"
-                />
-                <ActionButton
-                  onClick={moveDown}
-                  icon={BsArrowsMove}
-                  color="teal"
-                  title="Move Down"
-                />
-                <ActionButton
-                  onClick={rotateLeft}
-                  icon={BsArrowsMove}
-                  color="teal"
-                  title="Rotate left"
-                />
-                <ActionButton
-                  onClick={rotateRight}
-                  icon={BsArrowsMove}
-                  color="teal"
-                  title="Rotate right"
-                />
-                <ActionButton
-                  onClick={swapX}
-                  icon={BsArrowsMove}
-                  color="teal"
-                  title="Flip X axis"
-                />
-                <ActionButton
-                  onClick={swapY}
-                  icon={BsArrowsMove}
-                  color="teal"
-                  title="Flip Y axis"
-                />
-                <ActionButton
-                  onClick={reset}
-                  icon={BsArrowsMove}
-                  color="red"
-                  title="Reset crop"
-                />
-              </Stack>
+              <ActionButton
+                onClick={zoomIn}
+                icon={BsArrowsMove}
+                color="teal"
+                title="Zoom in"
+              />
+              <ActionButton
+                onClick={zoomOut}
+                icon={BsArrowsMove}
+                color="teal"
+                title="Zoom out"
+              />
+              <ActionButton
+                onClick={moveLeft}
+                icon={BsArrowsMove}
+                color="teal"
+                title="Move left"
+              />
+              <ActionButton
+                onClick={moveRight}
+                icon={BsArrowsMove}
+                color="teal"
+                title="Move right"
+              />
+              <ActionButton
+                onClick={moveUp}
+                icon={BsArrowsMove}
+                color="teal"
+                title="Move up"
+              />
+              <ActionButton
+                onClick={moveDown}
+                icon={BsArrowsMove}
+                color="teal"
+                title="Move Down"
+              />
+              <ActionButton
+                onClick={rotateLeft}
+                icon={BsArrowsMove}
+                color="teal"
+                title="Rotate left"
+              />
+              <ActionButton
+                onClick={rotateRight}
+                icon={BsArrowsMove}
+                color="teal"
+                title="Rotate right"
+              />
+              <ActionButton
+                onClick={swapX}
+                icon={BsArrowsMove}
+                color="teal"
+                title="Flip X axis"
+              />
+              <ActionButton
+                onClick={swapY}
+                icon={BsArrowsMove}
+                color="teal"
+                title="Flip Y axis"
+              />
+              <ActionButton
+                onClick={reset}
+                icon={BsArrowsMove}
+                color="red"
+                title="Reset crop"
+              />
             </div>
           </div>
 
