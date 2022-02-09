@@ -3,34 +3,34 @@ export const presets = [
     Hashnode: [
       {
         name: "Article Cover",
-        description: "Recommended to use",
+        description: "Article Cover is the header image of the every Article you post",
         width: 1600,
         height: 840,
       },
       {
         name: "Blog Header",
-        description: "Recommended to use",
+        description: "Blog Header will be shown at the top of your personal Blog page",
         width: 1307,
         height: 392.09,
       },
       {
         name: "Publication Logo",
         description:
-          "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
+          "Publication logo will replace the blog title on Homepage and Post pages",
         width: 500,
         height: 125,
       },
       {
-        name: "Publication Thumbnail / Favicon",
+        name: "Publication Thumbnail",
         description:
-          "Upload a square logo. It will be shown as the blog's logo on smaller (mobile) screens and used as your blog's favicon. For best results, upload PNG file with dimension 500 X 50",
+          "A square logo. It will be shown as the blog's logo on mobile screens and used as your Blog's favicon",
         width: 500,
         height: 500,
       },
       {
-        name: "Social media sharing",
+        name: "Social Media Sharing",
         description:
-          "For best results, upload PNG file with dimension 800 X 420. This image will appear when your blog is shared on Twitter, Facebook and other social media websites.",
+          "This image will appear when your blog is shared on Twitter, Facebook and other social media websites",
         width: 800,
         height: 420,
       },
@@ -39,14 +39,14 @@ export const presets = [
   {
     DEV: [
       {
-        name: "DEV Publication Logo",
+        name: "Article Cover",
         description:
           "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
         width: 500,
         height: 125,
       },
       {
-        name: "Publication Logo",
+        name: "Profile Picture",
         description:
           "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
         width: 500,
@@ -54,40 +54,94 @@ export const presets = [
       },
     ],
   },
+  {
+    Medium: [
+      {
+        name: "Article Cover",
+        description:
+          "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
+        width: 500,
+        height: 125,
+      },
+      {
+        name: "Profile Picture",
+        description:
+          "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
+        width: 500,
+        height: 125,
+      },
+    ],
+  },
+  {
+    Hackernoon: [
+      {
+        name: "Article Cover",
+        description:
+          "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
+        width: 500,
+        height: 125,
+      },
+      {
+        name: "Profile Picture",
+        description:
+          "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
+        width: 500,
+        height: 125,
+      },
+    ],
+  },
+  {
+    Twitter: [
+      {
+        name: "Article Cover",
+        description:
+          "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
+        width: 500,
+        height: 125,
+      },
+      {
+        name: "Profile Picture",
+        description:
+          "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
+        width: 500,
+        height: 125,
+      },
+    ],
+  },
+  {
+    LinkedIn: [
+      {
+        name: "Article Cover",
+        description:
+          "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
+        width: 500,
+        height: 125,
+      },
+      {
+        name: "Profile Picture",
+        description:
+          "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
+        width: 500,
+        height: 125,
+      },
+    ],
+  },
+  {
+    YouTube: [
+      {
+        name: "Article Cover",
+        description:
+          "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
+        width: 500,
+        height: 125,
+      },
+      {
+        name: "Profile Picture",
+        description:
+          "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
+        width: 500,
+        height: 125,
+      },
+    ],
+  }
 ];
-
-// export const hashnode = [
-//   {
-//     name: "Article Cover",
-//     description: "Recommended to use",
-//     width: 1600,
-//     height: 840,
-//   },
-//   {
-//     name: "Blog Header",
-//     description: "Recommended to use",
-//     width: 1307,
-//     height: 392.09,
-//   },
-//   {
-//     name: "Publication Logo",
-//     description:
-//       "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
-//     width: 500,
-//     height: 125,
-//   },
-//   {
-//     name: "Publication Thumbnail / Favicon",
-//     description:
-//       "Upload a square logo. It will be shown as the blog's logo on smaller (mobile) screens and used as your blog's favicon. For best results, upload PNG file with dimension 500 X 50",
-//     width: 500,
-//     height: 500,
-//   },
-//   {
-//     name: "Social media sharing",
-//     description:
-//       "For best results, upload PNG file with dimension 800 X 420. This image will appear when your blog is shared on Twitter, Facebook and other social media websites.",
-//     width: 800,
-//     height: 420,
-//   },
-// ];
