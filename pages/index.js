@@ -153,17 +153,6 @@ export default function Home() {
                           }
                           onChange={(e) => {
                             if (e.target.checked) {
-                              // const getAllCheckboxes =
-                              //   document.querySelectorAll(
-                              //     "input[type=checkbox]"
-                              //   );
-
-                              // getAllCheckboxes.forEach((el) => {
-                              //   if (el.isChecked) {
-                              //     el.isChecked = false;
-                              //   }
-                              // });
-
                               setActivePreset({
                                 ...activePreset,
                                 site: Object.keys(site),
