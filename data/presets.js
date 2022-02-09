@@ -3,18 +3,18 @@ export const presets = [
     Hashnode: [
       {
         name: "Article Cover",
-        description: "Article Cover will be the Header image of the Article",
+        description: "The Cover image of the Article",
         width: 1600,
         height: 840,
       },
       {
-        name: "Blog Header",
-        description: "Blog Header will be shown at the Top of your Blog page",
+        name: "Blog Cover",
+        description: "The Cover image of your Blog page",
         width: 1600,
         height: 480,
       },
       {
-        name: "Profile Picture",
+        name: "Profile Avatar",
         description:
           "Your profile Avatar used through the entire Site",
         width: 400,
@@ -30,14 +30,14 @@ export const presets = [
       {
         name: "Publication Thumbnail",
         description:
-          "It will be shown as the Blog's logo on mobile screens and used as your Blog's favicon",
+          "Shown as the Blog's logo on mobile screens and used as your Blog's favicon",
         width: 500,
         height: 500,
       },
       {
         name: "Social Media Sharing",
         description:
-          "This image will appear when your blog is shared on Twitter, Facebook and other social media websites",
+          "This image will appear when your Blog is shared on Twitter, Facebook and other social media websites",
         width: 800,
         height: 420,
       },
@@ -48,12 +48,12 @@ export const presets = [
       {
         name: "Article Cover",
         description:
-          "Article Cover will be the Header image of the Article",
+          "The Cover image of the Article",
         width: 1000,
         height: 420,
       },
       {
-        name: "Profile Picture",
+        name: "Profile Avatar",
         description:
           "Your profile Avatar used through the entire Site",
         width: 320,
@@ -66,12 +66,12 @@ export const presets = [
       {
         name: "Article Cover",
         description:
-          "Article Cover will be the Header image of the Article",
+          "The Cover image of the Article",
         width: 500,
         height: 125,
       },
       {
-        name: "Profile Picture",
+        name: "Profile Avatar",
         description:
           "Your profile Avatar used through the entire Site",
         width: 500,
@@ -84,12 +84,12 @@ export const presets = [
       {
         name: "Article Cover",
         description:
-          "Article Cover will be the Header image of the Article",
+          "The Cover image of the Article",
         width: 500,
         height: 125,
       },
       {
-        name: "Profile Picture",
+        name: "Profile Avatar",
         description:
           "Your profile Avatar used through the entire Site",
         width: 500,
@@ -107,14 +107,14 @@ export const presets = [
         height: 675,
       },
       {
-        name: "Header Photo",
+        name: "Profile Cover",
         description:
           "An image that will be shown as you Profile Cover",
         width: 1500,
         height: 500,
       },
       {
-        name: "Profile Picture",
+        name: "Profile Avatar",
         description:
           "Your profile Avatar used through the entire Site",
         width: 400,
@@ -132,14 +132,14 @@ export const presets = [
         height: 627,
       },
       {
-        name: "Header Photo",
+        name: "Profile Cover",
         description:
           "An image that will be shown as you Profile Cover",
         width: 1128,
         height: 191,
       },
       {
-        name: "Profile Picture",
+        name: "Profile Avatar",
         description:
           "Your profile Avatar used through the entire Site",
         width: 268,
@@ -157,14 +157,14 @@ export const presets = [
         height: 720,
       },
       {
-        name: "Header Photo",
+        name: "Channel Cover",
         description:
           "An image that will be shown as you Profile Cover",
         width: 2560,
         height: 1440,
       },
       {
-        name: "Profile Picture",
+        name: "Profile Avatar",
         description:
           "Your profile Avatar used through the entire Site",
         width: 800,
@@ -196,7 +196,7 @@ export const presets = [
         height: 2100,
       },
       {
-        name: "Profile Picture",
+        name: "Profile Avatar",
         description:
           "Your profile Avatar used through the entire Site",
         width: 280,
@@ -214,14 +214,14 @@ export const presets = [
         height: 630,
       },
       {
-        name: "Header Photo",
+        name: "Profile Cover",
         description:
           "An image that will be shown as you Profile Cover",
         width: 820,
         height: 360,
       },
       {
-        name: "Profile Picture",
+        name: "Profile Avatar",
         description:
           "Your profile Avatar used through the entire Site",
         width: 200,
@@ -246,7 +246,7 @@ export const presets = [
         height: 1080,
       },
       {
-        name: "Profile Picture",
+        name: "Profile Avatar",
         description:
           "Your profile Avatar used through the entire Site",
         width: 320,
@@ -257,43 +257,29 @@ export const presets = [
   {
     Snapchat: [
       {
-        name: "Timeline Photo",
+        name: "Image Post",
         description:
-          "An image that you would normally post in your Timeline",
-        width: 1200,
-        height: 675,
-      },
-      {
-        name: "Header Photo",
-        description:
-          "An image that will be shown as you Profile Cover",
-        width: 1500,
-        height: 500,
-      },
-      {
-        name: "Profile Picture",
-        description:
-          "Your profile Avatar used through the entire Site",
-        width: 400,
-        height: 400,
+          "A typical image you would post",
+        width: 1080,
+        height: 1920,
       },
     ],
   },
   {
     Tumblr: [
       {
-        name: "Timeline Photo",
+        name: "Image Post",
         description:
-          "An image that you would normally post in your Timeline",
-        width: 1200,
-        height: 675,
+          "An image that you would normally post",
+        width: 1280,
+        height: 1920,
       },
       {
-        name: "Profile Picture",
+        name: "Profile Avatar",
         description:
           "Your profile Avatar used through the entire Site",
-        width: 400,
-        height: 400,
+        width: 128,
+        height: 128,
       },
     ],
   }
