@@ -17,8 +17,6 @@ const ImageSelector = ({ onChange }) => {
           width="280px"
           height="60px"
           colorScheme="teal"
-          mt="50"
-          mb="2"
         >
           Select Image
         </Button>

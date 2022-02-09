@@ -7,6 +7,8 @@
   text-align: center;
   background-color: #e5eafe;
   border-radius: 20px;
+  display: grid;
+  place-items: center;
 }
 
 .wrapper:hover {
