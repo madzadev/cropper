@@ -100,54 +100,200 @@ export const presets = [
   {
     Twitter: [
       {
-        name: "Article Cover",
+        name: "Timeline Photo",
         description:
-          "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
-        width: 500,
-        height: 125,
+          "An image that you would normally post in your Timeline",
+        width: 1200,
+        height: 675,
+      },
+      {
+        name: "Header Photo",
+        description:
+          "An image that will be shown as you Profile Cover",
+        width: 1500,
+        height: 500,
       },
       {
         name: "Profile Picture",
         description:
-          "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
-        width: 500,
-        height: 125,
+          "Your profile Avatar used through the entire Site",
+        width: 400,
+        height: 400,
       },
     ],
   },
   {
     LinkedIn: [
       {
-        name: "Article Cover",
+        name: "Timeline Photo",
         description:
-          "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
-        width: 500,
-        height: 125,
+          "An image that you would normally post in your Timeline",
+        width: 1200,
+        height: 627,
+      },
+      {
+        name: "Header Photo",
+        description:
+          "An image that will be shown as you Profile Cover",
+        width: 1128,
+        height: 191,
       },
       {
         name: "Profile Picture",
         description:
-          "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
-        width: 500,
-        height: 125,
+          "Your profile Avatar used through the entire Site",
+        width: 268,
+        height: 268,
       },
     ],
   },
   {
     YouTube: [
       {
-        name: "Article Cover",
+        name: "Video Thumbnail",
         description:
-          "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
-        width: 500,
-        height: 125,
+          "A preview image that will be used as a cover for the video",
+        width: 1280,
+        height: 720,
+      },
+      {
+        name: "Header Photo",
+        description:
+          "An image that will be shown as you Profile Cover",
+        width: 2560,
+        height: 1440,
       },
       {
         name: "Profile Picture",
         description:
-          "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
-        width: 500,
-        height: 125,
+          "Your profile Avatar used through the entire Site",
+        width: 800,
+        height: 800,
+      },
+    ],
+  },
+  {
+    Pinterest: [
+      {
+        name: "Square Pin",
+        description:
+          "A square Pin size",
+        width: 1000,
+        height: 1000,
+      },
+      {
+        name: "Vertical Pin",
+        description:
+          "A standard vertical-oriented Pin",
+        width: 1000,
+        height: 1500,
+      },
+      {
+        name: "Giraffe Pin",
+        description:
+          "An extended vertical-oriented Pin",
+        width: 1000,
+        height: 2100,
+      },
+      {
+        name: "Profile Picture",
+        description:
+          "Your profile Avatar used through the entire Site",
+        width: 280,
+        height: 280,
+      },
+    ],
+  },
+  {
+    Facebook: [
+      {
+        name: "Timeline Photo",
+        description:
+          "An image that you would normally post in your Timeline",
+        width: 1200,
+        height: 630,
+      },
+      {
+        name: "Header Photo",
+        description:
+          "An image that will be shown as you Profile Cover",
+        width: 820,
+        height: 360,
+      },
+      {
+        name: "Profile Picture",
+        description:
+          "Your profile Avatar used through the entire Site",
+        width: 200,
+        height: 200,
+      },
+    ],
+  },
+  {
+    Instagram: [
+      {
+        name: "Landscape Photo",
+        description:
+          "An image that you would normally post in your Timeline",
+        width: 1080,
+        height: 680,
+      },
+      {
+        name: "Portrait Photo",
+        description:
+          "An image that will be shown as you Profile Cover",
+        width: 1080,
+        height: 1080,
+      },
+      {
+        name: "Profile Picture",
+        description:
+          "Your profile Avatar used through the entire Site",
+        width: 320,
+        height: 320,
+      },
+    ],
+  },
+  {
+    Snapchat: [
+      {
+        name: "Timeline Photo",
+        description:
+          "An image that you would normally post in your Timeline",
+        width: 1200,
+        height: 675,
+      },
+      {
+        name: "Header Photo",
+        description:
+          "An image that will be shown as you Profile Cover",
+        width: 1500,
+        height: 500,
+      },
+      {
+        name: "Profile Picture",
+        description:
+          "Your profile Avatar used through the entire Site",
+        width: 400,
+        height: 400,
+      },
+    ],
+  },
+  {
+    Tumblr: [
+      {
+        name: "Timeline Photo",
+        description:
+          "An image that you would normally post in your Timeline",
+        width: 1200,
+        height: 675,
+      },
+      {
+        name: "Profile Picture",
+        description:
+          "Your profile Avatar used through the entire Site",
+        width: 400,
+        height: 400,
       },
     ],
   }
