@@ -23,7 +23,7 @@ export const presets = [
       {
         name: "Publication Logo",
         description:
-          "Publication logo will replace the Blog title on Homepage and Post pages",
+          "Replaces the Blog title on Homepage and Post pages",
         width: 500,
         height: 125,
       },
@@ -37,7 +37,7 @@ export const presets = [
       {
         name: "Social Media Sharing",
         description:
-          "This image will appear when your Blog is shared on Twitter, Facebook and other social media websites",
+          "Used when your Blog is shared on Twitter, Facebook and other social media websites",
         width: 800,
         height: 420,
       },
