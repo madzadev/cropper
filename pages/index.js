@@ -30,12 +30,21 @@ import { presets } from "../data/presets.js";
 // const defaultImage = "https://picsum.photos/seed/picsum/720/480";
 
 export default function Home() {
+  const initialSite = Object.keys(presets[0])[0];
+  const initialPreset = presets[0][initialSite][0];
+
   const [image, setImage] = useState();
   // const [cropData, setCropData] = useState();
   const [baseImage, setBaseImage] = useState("");
   const [cropper, setCropper] = useState();
 
-  const [activePreset, setActivePreset] = useState({});
+  const [activePreset, setActivePreset] = useState({
+    site: initialSite,
+    name: initialPreset.name,
+    description: initialPreset.description,
+    height: initialPreset.height,
+    width: initialPreset.width,
+  });
 
   const [isDragActive, setIsDragActive] = useState(true);
   const [dragArea, setDragArea] = useState({
