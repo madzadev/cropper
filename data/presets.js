@@ -3,7 +3,7 @@ export const presets = [
     Hashnode: [
       {
         name: "Article Cover",
-        description: "Article Cover is the header image of the every Article you post",
+        description: "Article Cover will be the Header image of the every Article",
         width: 1600,
         height: 840,
       },
@@ -41,7 +41,7 @@ export const presets = [
       {
         name: "Article Cover",
         description:
-          "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
+          "Article Cover will be the Header image of the every Article",
         width: 500,
         height: 125,
       },
@@ -59,7 +59,7 @@ export const presets = [
       {
         name: "Article Cover",
         description:
-          "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
+          "Article Cover will be the Header image of the every Article",
         width: 500,
         height: 125,
       },
@@ -77,7 +77,7 @@ export const presets = [
       {
         name: "Article Cover",
         description:
-          "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
+          "Article Cover will be the Header image of the every Article",
         width: 500,
         height: 125,
       },
