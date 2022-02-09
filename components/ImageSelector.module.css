@@ -32,8 +32,8 @@
 }
 
 .selectLogo {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   -webkit-animation: mover 2s infinite alternate;
   animation: mover 2s infinite alternate;
 }

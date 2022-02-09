@@ -323,7 +323,7 @@ export default function Home() {
                   {activePreset.site} {activePreset.name}
                 </h1>
               ) : (
-                <h1 className={styles.sectionTitle}>Your custom size</h1>
+                <h1 className={styles.sectionTitle}>Custom resolution</h1>
               )}
             </div>
             <div className={styles.descriptionBox}>
