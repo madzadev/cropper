@@ -14,16 +14,23 @@ export const presets = [
         height: 392.09,
       },
       {
+        name: "Profile Picture",
+        description:
+          "Your profile avatar used through the entire site",
+        width: 400,
+        height: 400,
+      },
+      {
         name: "Publication Logo",
         description:
-          "Publication logo will replace the blog title on Homepage and Post pages",
+          "Publication logo will replace the Blog title on Homepage and Post pages",
         width: 500,
         height: 125,
       },
       {
         name: "Publication Thumbnail",
         description:
-          "A square logo. It will be shown as the blog's logo on mobile screens and used as your Blog's favicon",
+          "It will be shown as the blog's logo on mobile screens and used as your Blog's favicon",
         width: 500,
         height: 500,
       },
@@ -42,15 +49,15 @@ export const presets = [
         name: "Article Cover",
         description:
           "Article Cover will be the Header image of the every Article",
-        width: 500,
-        height: 125,
+        width: 1000,
+        height: 420,
       },
       {
         name: "Profile Picture",
         description:
-          "Publication logo will replace the blog title on Homepage and Post pages. Recommended dimension: 500px X 125px",
-        width: 500,
-        height: 125,
+          "Your profile avatar used through the entire site",
+        width: 320,
+        height: 320,
       },
     ],
   },
