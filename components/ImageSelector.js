@@ -6,6 +6,11 @@ const ImageSelector = ({ onChange }) => {
   return (
     <form>
       <div className={styles.wrapper}>
+        <img
+          className={styles.selectLogo}
+          src="/graphics/layers.png"
+          alt="select"
+        />
         <Button
           rightIcon={<Icon as={MdUpload} w={8} h={8} />}
           size="lg"

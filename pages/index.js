@@ -31,7 +31,7 @@ import { presets } from "../data/presets.js";
 
 export default function Home() {
   const initialSite = Object.keys(presets[0])[0];
-  const initialPreset = presets[0][initialSite][0];
+  const { name, description, height, width } = presets[0][initialSite][0];
 
   const [image, setImage] = useState();
   // const [cropData, setCropData] = useState();
@@ -40,10 +40,10 @@ export default function Home() {
 
   const [activePreset, setActivePreset] = useState({
     site: initialSite,
-    name: initialPreset.name,
-    description: initialPreset.description,
-    height: initialPreset.height,
-    width: initialPreset.width,
+    name,
+    description,
+    height,
+    width,
   });
 
   const [isDragActive, setIsDragActive] = useState(true);
@@ -137,7 +137,6 @@ export default function Home() {
                 <ImageSelector onChange={onChange} />
               </div>
             </div>
-            <h1>Three step process</h1>
           </div>
         </ContentWrapper>
       ) : (

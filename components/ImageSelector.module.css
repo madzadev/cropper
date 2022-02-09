@@ -27,3 +27,8 @@
 .fileUpload:hover {
   cursor: pointer;
 }
+
+.selectLogo {
+  width: 200px;
+  height: 200px;
+}
