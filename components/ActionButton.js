@@ -4,7 +4,7 @@ const ActionButton = ({ onClick, icon, color, title }) => {
   return (
     <Button
       onClick={onClick}
-      leftIcon={<Icon as={icon} />}
+      leftIcon={<Icon as={icon} w={5} h={5} />}
       colorScheme={color}
       variant="solid"
     >

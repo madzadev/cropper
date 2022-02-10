@@ -217,7 +217,7 @@ export default function Home() {
                   cropper.setDragMode("crop");
                   setIsDragActive(true);
                 }}
-                leftIcon={<Icon as={FiCrop} />}
+                leftIcon={<Icon as={FiCrop} w={5} h={5} />}
                 colorScheme="orange"
                 variant="solid"
                 isActive={isDragActive}
@@ -230,7 +230,7 @@ export default function Home() {
                   setIsDragActive(false);
                   console.log(cropper);
                 }}
-                leftIcon={<Icon as={BsArrowsMove} />}
+                leftIcon={<Icon as={BsArrowsMove} w={5} h={5} />}
                 colorScheme="orange"
                 variant="solid"
                 isActive={!isDragActive}
@@ -379,7 +379,7 @@ export default function Home() {
                       height: "90px",
                     });
                   }}
-                  rightIcon={<Icon as={HiDownload} />}
+                  rightIcon={<Icon as={HiDownload} w={5} h={5} />}
                   colorScheme="teal"
                   variant="solid"
                   w={150}
