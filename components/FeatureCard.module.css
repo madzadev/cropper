@@ -1,10 +1,11 @@
 .wrapper {
-    background-color: #e5eafe;
-    padding: 20px;
-    border-radius: 20px;
+  background-color: #e5eafe;
+  padding: 20px;
+  border-radius: 20px;
 }
 
 .title {
-    font-size: 20px;
-    margin-bottom: 20px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
