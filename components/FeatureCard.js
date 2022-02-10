@@ -3,8 +3,8 @@ import styles from "./FeatureCard.module.css";
 const FeatureCard = ({title, description})=>{
     return (
 <div className={styles.wrapper}>
-    <h1>{title}</h1>
-    <p>{description}</p>
+    <h1 className={styles.title}>{title}</h1>
+    <p className={styles.description}>{description}</p>
 </div>
     )
 }

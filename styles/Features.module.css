@@ -1,0 +1,10 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+}
