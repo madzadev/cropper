@@ -27,8 +27,6 @@ import styles from "../styles/Home.module.css";
 
 import { presets } from "../data/presets.js";
 
-// const defaultImage = "https://picsum.photos/seed/picsum/720/480";
-
 export default function Home() {
   const initialSite = Object.keys(presets[0])[0];
   const { name, description, height, width } = presets[0][initialSite][0];
@@ -194,25 +192,12 @@ export default function Home() {
             <Cropper
               src={image}
               style={{ height: "480px", width: "100%" }}
-              // initialAspectRatio={16 / 9}
               aspectRatio={1600 / 840}
               guides={true}
               preview=".preview"
               crop={onCrop}
               ref={cropperRef}
               disable={false}
-              // viewMode={1}
-              // minCropBoxHeight={10}
-              // minCropBoxWidth={10}
-              // background="black"
-              // zoom={4}
-              // responsive={true}
-              // movable={true}
-              // autoCropArea={1}
-              // checkOrientation={false}
-              // crop={() => {
-              //   console.log(124);
-              // }}
               autoCropArea={1} //0.8 is default
               background={false}
               viewMode={2}
@@ -357,9 +342,6 @@ export default function Home() {
                 </h1>
               </div>
             </div>
-            {/* <p>W progress</p>
-            <p>H progress</p> */}
-            {/* <p>Aspect ratio: {cropper ? cropper.options.aspectRatio : 0}</p> */}
 
             <div className={styles.titleBox}>
               <h1 className={styles.sectionTitle}>Image preview:</h1>
