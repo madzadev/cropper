@@ -1,6 +1,8 @@
 import styles from "../styles/About.module.css";
 import ContentWrapper from "../components/ContentWrapper";
 
+import {about} from "../data/about.js";
+
 const About = () => {
   return (
     <ContentWrapper>
