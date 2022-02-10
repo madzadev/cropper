@@ -28,6 +28,8 @@ import styles from "../styles/Home.module.css";
 import { presets } from "../data/presets.js";
 
 export default function Home() {
+// img src https://www.peakpx.com/
+
   const initialSite = Object.keys(presets[0])[0];
   const { name, description, height, width } = presets[0][initialSite][0];
 
