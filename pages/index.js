@@ -28,7 +28,7 @@ import styles from "../styles/Home.module.css";
 import { presets } from "../data/presets.js";
 
 export default function Home() {
-// img src https://www.peakpx.com/
+  // img src https://www.peakpx.com/
 
   const initialSite = Object.keys(presets[0])[0];
   const { name, description, height, width } = presets[0][initialSite][0];
@@ -45,6 +45,7 @@ export default function Home() {
     height,
     width,
   });
+  const [fileType, setFileType] = useState("jpg");
 
   const [isDragActive, setIsDragActive] = useState(true);
   const [dragArea, setDragArea] = useState({
@@ -107,7 +108,10 @@ export default function Home() {
     <div>
       <Head>
         <title>CropScore: An Online Image Cropper for Content Creators</title>
-        <meta name="description" content="An Online Image Cropper for Content Creators" />
+        <meta
+          name="description"
+          content="An Online Image Cropper for Content Creators"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {!image ? (
@@ -367,7 +371,7 @@ export default function Home() {
             </div>
 
             <Stack direction="row" spacing={2}>
-              <a download="test.jpg" href={baseImage}>
+              <a download={`test.${fileType}`} href={baseImage}>
                 <Button
                   onClick={() => {
                     cropper.getCroppedCanvas({
@@ -385,13 +389,13 @@ export default function Home() {
               </a>
 
               <Select
-                placeholder=".PNG"
                 w={24}
-                onChange={() => {
-                  console.log("Changed");
+                onChange={(e) => {
+                  setFileType(e.target.value);
                 }}
               >
-                <option value="option2">.JPG</option>
+                <option value="jpg">.JPG</option>
+                <option value="png">.PNG</option>
               </Select>
             </Stack>
           </div>
