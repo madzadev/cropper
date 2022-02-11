@@ -4,6 +4,10 @@
   place-items: center;
 }
 
+.wrapper {
+  cursor: pointer;
+}
+
 .fileUpload {
   opacity: 0;
   position: absolute;
