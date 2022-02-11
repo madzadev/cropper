@@ -6,7 +6,7 @@ const CropScore = ({ value, color, score }) => {
       value={value}
       color={`${score <= 50 ? "red" : score <= 75 ? "yellow" : "green"}.400`}
       thickness={10}
-      size="20"
+      size="70px"
     >
       <CircularProgressLabel fontSize="20" fontWeight="bold">
         {score}

@@ -355,9 +355,12 @@ export default function Home() {
                     )}
                   />
                 ) : (
-                  <h1 className={styles.croppedRes}>
-                    {calcCustomRes(Math.round(dragArea.width))}
-                  </h1>
+                  <div>
+                    <p>Res.score</p>
+                    <h1 className={styles.croppedRes}>
+                      {calcCustomRes(Math.round(dragArea.width))}
+                    </h1>
+                  </div>
                 )}
               </div>
             </div>
