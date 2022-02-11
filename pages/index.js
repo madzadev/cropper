@@ -309,7 +309,7 @@ export default function Home() {
                   {activePreset.site} {activePreset.name}
                 </h1>
               ) : (
-                <h1 className={styles.sectionTitle}>Custom resolution</h1>
+                <h1 className={styles.sectionTitle}>Custom Resolution:</h1>
               )}
             </div>
             <div className={styles.descriptionBox}>
@@ -321,20 +321,24 @@ export default function Home() {
             </div>
 
             <div className={styles.titleBox}>
-              <h1 className={styles.sectionTitle}>Cropped data:</h1>
+              <h1 className={styles.sectionTitle}>Cropped Data:</h1>
             </div>
 
             <div className={styles.croppedInfo}>
-              <div>
-                <h1 className={styles.croppedRes}>{dragArea.width}</h1>
-                <p>Width</p>
+              <div style={{ display: "grid", placeItems: "center" }}>
+                <div>
+                  <h1 className={styles.croppedRes}>{dragArea.width}</h1>
+                  <p>Width</p>
+                </div>
               </div>
-              <div>
+              <div style={{ display: "grid", placeItems: "center" }}>
                 <h1>X</h1>
               </div>
-              <div>
-                <h1 className={styles.croppedRes}>{dragArea.height}</h1>
-                <p>Height</p>
+              <div style={{ display: "grid", placeItems: "center" }}>
+                <div>
+                  <h1 className={styles.croppedRes}>{dragArea.height}</h1>
+                  <p>Height</p>
+                </div>
               </div>
               <div>
                 {/* <p>Res.score</p> */}
@@ -359,7 +363,7 @@ export default function Home() {
             </div>
 
             <div className={styles.titleBox}>
-              <h1 className={styles.sectionTitle}>Image preview:</h1>
+              <h1 className={styles.sectionTitle}>Image Preview:</h1>
             </div>
 
             <div
