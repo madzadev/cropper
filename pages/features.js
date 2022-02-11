@@ -7,7 +7,7 @@ import { features } from "../data/features.js";
 const Features = () => {
   return (
     <ContentWrapper>
-      <h1 className={styles.title}>The features of the CropScore</h1>
+      <h1 className={styles.title}>The features of CropScore</h1>
       <div className={styles.wrapper}>
         {features.map((feature, index) => {
           return (
