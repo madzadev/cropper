@@ -212,12 +212,83 @@ export default function Home() {
                   setIsDragActive(true);
                 }}
                 leftIcon={<Icon as={FiCrop} w={5} h={5} />}
-                colorScheme="orange"
+                colorScheme="blue"
                 variant="solid"
-                isActive={isDragActive}
+                // isActive={isDragActive}
               >
                 Draw
               </Button>
+
+              <div style={{ display: "grid", gap: "10px" }}>
+                <ActionButton
+                  onClick={zoomIn}
+                  icon={RiZoomInLine}
+                  color="blue"
+                  title="Zoom in"
+                />
+                <ActionButton
+                  onClick={zoomOut}
+                  icon={RiZoomOutLine}
+                  color="blue"
+                  title="Zoom out"
+                />
+              </div>
+              <div style={{ display: "grid", gap: "10px" }}>
+                <ActionButton
+                  onClick={moveLeft}
+                  icon={FaArrowLeft}
+                  color="blue"
+                  title="Move left"
+                />
+                <ActionButton
+                  onClick={moveRight}
+                  icon={FaArrowRight}
+                  color="blue"
+                  title="Move right"
+                />
+              </div>
+              <div style={{ display: "grid", gap: "10px" }}>
+                <ActionButton
+                  onClick={moveUp}
+                  icon={FaArrowUp}
+                  color="blue"
+                  title="Move up"
+                />
+                <ActionButton
+                  onClick={moveDown}
+                  icon={FaArrowDown}
+                  color="blue"
+                  title="Move Down"
+                />
+              </div>
+              <div style={{ display: "grid", gap: "10px" }}>
+                <ActionButton
+                  onClick={rotateLeft}
+                  icon={FiRotateCcw}
+                  color="blue"
+                  title="Rotate left"
+                />
+                <ActionButton
+                  onClick={rotateRight}
+                  icon={FiRotateCw}
+                  color="blue"
+                  title="Rotate right"
+                />
+              </div>
+              <div style={{ display: "grid", gap: "10px" }}>
+                <ActionButton
+                  onClick={swapX}
+                  icon={FaArrowsAltH}
+                  color="blue"
+                  title="Flip X axis"
+                />
+                <ActionButton
+                  onClick={swapY}
+                  icon={FaArrowsAltV}
+                  color="blue"
+                  title="Flip Y axis"
+                />
+              </div>
               <Button
                 onClick={() => {
                   cropper.setDragMode("move");
@@ -225,73 +296,12 @@ export default function Home() {
                   console.log(cropper);
                 }}
                 leftIcon={<Icon as={BsArrowsMove} w={5} h={5} />}
-                colorScheme="orange"
+                colorScheme="blue"
                 variant="solid"
-                isActive={!isDragActive}
+                // isActive={!isDragActive}
               >
                 Move
               </Button>
-
-              <ActionButton
-                onClick={zoomIn}
-                icon={RiZoomInLine}
-                color="teal"
-                title="Zoom in"
-              />
-              <ActionButton
-                onClick={zoomOut}
-                icon={RiZoomOutLine}
-                color="teal"
-                title="Zoom out"
-              />
-              <ActionButton
-                onClick={moveLeft}
-                icon={FaArrowLeft}
-                color="teal"
-                title="Move left"
-              />
-              <ActionButton
-                onClick={moveRight}
-                icon={FaArrowRight}
-                color="teal"
-                title="Move right"
-              />
-              <ActionButton
-                onClick={moveUp}
-                icon={FaArrowUp}
-                color="teal"
-                title="Move up"
-              />
-              <ActionButton
-                onClick={moveDown}
-                icon={FaArrowDown}
-                color="teal"
-                title="Move Down"
-              />
-              <ActionButton
-                onClick={rotateLeft}
-                icon={FiRotateCcw}
-                color="teal"
-                title="Rotate left"
-              />
-              <ActionButton
-                onClick={rotateRight}
-                icon={FiRotateCw}
-                color="teal"
-                title="Rotate right"
-              />
-              <ActionButton
-                onClick={swapX}
-                icon={FaArrowsAltH}
-                color="teal"
-                title="Flip X axis"
-              />
-              <ActionButton
-                onClick={swapY}
-                icon={FaArrowsAltV}
-                color="teal"
-                title="Flip Y axis"
-              />
               <ActionButton
                 onClick={reset}
                 icon={RiDeleteBinLine}

@@ -7,6 +7,7 @@ const ActionButton = ({ onClick, icon, color, title }) => {
       leftIcon={<Icon as={icon} w={5} h={5} />}
       colorScheme={color}
       variant="solid"
+      justifyContent="flex-start"
     >
       {title}
     </Button>
