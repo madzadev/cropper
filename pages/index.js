@@ -20,13 +20,10 @@ import styles from "../styles/Home.module.css";
 import { presets } from "../data/presets.js";
 
 export default function Home() {
-  // img src https://www.peakpx.com/
-
   const initialSite = Object.keys(presets[0])[0];
   const { name, description, height, width } = presets[0][initialSite][0];
 
   const [image, setImage] = useState();
-  // const [cropData, setCropData] = useState();
   const [baseImage, setBaseImage] = useState("");
   const [cropper, setCropper] = useState();
 
@@ -76,12 +73,6 @@ export default function Home() {
       setImage(reader.result);
     };
     reader.readAsDataURL(files[0]);
-  };
-
-  const getCropData = () => {
-    if (typeof cropper !== "undefined") {
-      setCropData(cropper.getCroppedCanvas().toDataURL());
-    }
   };
 
   const zoomIn = () => cropper.zoom(0.1);
