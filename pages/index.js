@@ -53,6 +53,9 @@ export default function Home() {
     height: 0,
   });
 
+  const calcCustomRes = (res) =>
+    res < 720 ? "SD" : res < 1920 ? "HD" : res < 3840 ? "FHD" : "UHD";
+
   const cropperRef = useRef(null);
   const onCrop = () => {
     let imageElement =
@@ -222,7 +225,7 @@ export default function Home() {
                 variant="solid"
                 isActive={isDragActive}
               >
-                Crop
+                Draw
               </Button>
               <Button
                 onClick={() => {
@@ -343,9 +346,15 @@ export default function Home() {
               </div>
               <div>
                 <p>Res.score</p>
-                <h1 className={styles.croppedRes}>
-                  {Math.round((dragArea.width * 100) / activePreset.width)} %
-                </h1>
+                {activePreset.width ? (
+                  <h1 className={styles.croppedRes}>
+                    {Math.round((dragArea.width * 100) / activePreset.width)} %
+                  </h1>
+                ) : (
+                  <h1 className={styles.croppedRes}>
+                    {calcCustomRes(Math.round(dragArea.width))}
+                  </h1>
+                )}
               </div>
             </div>
 
