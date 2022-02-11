@@ -17,6 +17,7 @@ import {
 
 import ContentWrapper from "../components/ContentWrapper";
 import ImageSelector from "../components/ImageSelector";
+import ImageReset from "../components/ImageReset";
 import ActionButton from "../components/ActionButton";
 import AccordionSection from "../components/AccordionSection";
 import Checkbox from "../components/Checkbox";
@@ -302,6 +303,9 @@ export default function Home() {
               >
                 Move
               </Button>
+            </div>
+            <div className={styles.resets}>
+              <ImageReset onChange={onChange} />
               <ActionButton
                 onClick={reset}
                 icon={RiDeleteBinLine}

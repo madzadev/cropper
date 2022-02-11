@@ -90,3 +90,12 @@
   font-size: 24px;
   font-weight: bold;
 }
+
+.resets {
+  border-top: 1px solid grey;
+  /* height: auto; */
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
