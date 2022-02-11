@@ -7,9 +7,7 @@ const ImageSelector = ({ onChange }) => {
     <div className={styles.wrapper}>
       <Button
         rightIcon={<Icon as={MdUpload} w={4} h={4} />}
-        // size="md"
-        width="100%"
-        // height="40px"
+        width="150px"
         colorScheme="teal"
       >
         Select Image

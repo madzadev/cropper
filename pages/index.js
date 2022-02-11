@@ -45,7 +45,6 @@ export default function Home() {
   });
   const [fileType, setFileType] = useState("jpg");
 
-  const [isDragActive, setIsDragActive] = useState(true);
   const [dragArea, setDragArea] = useState({
     width: 0,
     height: 0,
@@ -199,7 +198,7 @@ export default function Home() {
               crop={onCrop}
               ref={cropperRef}
               disable={false}
-              autoCropArea={1} //0.8 is default
+              // autoCropArea={1} //0.8 is default
               background={false}
               viewMode={2}
               onInitialized={(instance) => {
@@ -210,12 +209,10 @@ export default function Home() {
               <Button
                 onClick={() => {
                   cropper.setDragMode("crop");
-                  setIsDragActive(true);
                 }}
                 leftIcon={<Icon as={FiCrop} w={5} h={5} />}
                 colorScheme="blue"
                 variant="solid"
-                // isActive={isDragActive}
               >
                 Draw
               </Button>
@@ -293,17 +290,15 @@ export default function Home() {
               <Button
                 onClick={() => {
                   cropper.setDragMode("move");
-                  setIsDragActive(false);
-                  console.log(cropper);
                 }}
                 leftIcon={<Icon as={BsArrowsMove} w={5} h={5} />}
                 colorScheme="blue"
                 variant="solid"
-                // isActive={!isDragActive}
               >
                 Move
               </Button>
             </div>
+
             <div className={styles.resets}>
               <ImageReset onChange={onChange} />
               <ActionButton

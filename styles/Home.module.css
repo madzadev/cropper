@@ -91,10 +91,13 @@
   font-weight: bold;
 }
 
-.resets {
-  border-top: 1px solid grey;
-  /* height: auto; */
+/* .resets {
   text-align: center;
+} */
+
+.resets {
+  margin: 0 auto;
+  max-width: 320px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
