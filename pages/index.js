@@ -1,11 +1,19 @@
 import React, { useState, useEffect, useRef } from "react";
 import Head from "next/head";
-import Image from "next/image";
 import Cropper from "react-cropper";
 import { Icon, Stack, Button, Select, Accordion } from "@chakra-ui/react";
-import { HiUpload, HiDownload } from "react-icons/hi";
-import { FiCrop } from "react-icons/fi";
+import { HiDownload } from "react-icons/hi";
+import { FiCrop, FiRotateCcw, FiRotateCw } from "react-icons/fi";
 import { BsArrowsMove } from "react-icons/bs";
+import { RiZoomInLine, RiZoomOutLine, RiDeleteBinLine } from "react-icons/ri";
+import {
+  FaArrowLeft,
+  FaArrowRight,
+  FaArrowUp,
+  FaArrowDown,
+  FaArrowsAltH,
+  FaArrowsAltV,
+} from "react-icons/fa";
 
 import ContentWrapper from "../components/ContentWrapper";
 import ImageSelector from "../components/ImageSelector";
@@ -226,67 +234,67 @@ export default function Home() {
 
               <ActionButton
                 onClick={zoomIn}
-                icon={BsArrowsMove}
+                icon={RiZoomInLine}
                 color="teal"
                 title="Zoom in"
               />
               <ActionButton
                 onClick={zoomOut}
-                icon={BsArrowsMove}
+                icon={RiZoomOutLine}
                 color="teal"
                 title="Zoom out"
               />
               <ActionButton
                 onClick={moveLeft}
-                icon={BsArrowsMove}
+                icon={FaArrowLeft}
                 color="teal"
                 title="Move left"
               />
               <ActionButton
                 onClick={moveRight}
-                icon={BsArrowsMove}
+                icon={FaArrowRight}
                 color="teal"
                 title="Move right"
               />
               <ActionButton
                 onClick={moveUp}
-                icon={BsArrowsMove}
+                icon={FaArrowUp}
                 color="teal"
                 title="Move up"
               />
               <ActionButton
                 onClick={moveDown}
-                icon={BsArrowsMove}
+                icon={FaArrowDown}
                 color="teal"
                 title="Move Down"
               />
               <ActionButton
                 onClick={rotateLeft}
-                icon={BsArrowsMove}
+                icon={FiRotateCcw}
                 color="teal"
                 title="Rotate left"
               />
               <ActionButton
                 onClick={rotateRight}
-                icon={BsArrowsMove}
+                icon={FiRotateCw}
                 color="teal"
                 title="Rotate right"
               />
               <ActionButton
                 onClick={swapX}
-                icon={BsArrowsMove}
+                icon={FaArrowsAltH}
                 color="teal"
                 title="Flip X axis"
               />
               <ActionButton
                 onClick={swapY}
-                icon={BsArrowsMove}
+                icon={FaArrowsAltV}
                 color="teal"
                 title="Flip Y axis"
               />
               <ActionButton
                 onClick={reset}
-                icon={BsArrowsMove}
+                icon={RiDeleteBinLine}
                 color="red"
                 title="Reset crop"
               />
