@@ -306,7 +306,7 @@ export default function Home() {
             <div className={styles.titleBox}>
               {activePreset.site ? (
                 <h1 className={styles.sectionTitle}>
-                  {activePreset.site} {activePreset.name}
+                  {activePreset.site} {activePreset.name}:
                 </h1>
               ) : (
                 <h1 className={styles.sectionTitle}>Custom Resolution:</h1>
