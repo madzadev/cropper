@@ -2,16 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Cropper from "react-cropper";
-import {
-  Text,
-  Heading,
-  Icon,
-  Stack,
-  Button,
-  Box,
-  Select,
-  Accordion,
-} from "@chakra-ui/react";
+import { Icon, Stack, Button, Select, Accordion } from "@chakra-ui/react";
 import { HiUpload, HiDownload } from "react-icons/hi";
 import { FiCrop } from "react-icons/fi";
 import { BsArrowsMove } from "react-icons/bs";
@@ -21,6 +12,7 @@ import ImageSelector from "../components/ImageSelector";
 import ActionButton from "../components/ActionButton";
 import AccordionSection from "../components/AccordionSection";
 import Checkbox from "../components/Checkbox";
+import CropScore from "../components/CropScore";
 
 import "cropperjs/dist/cropper.css";
 import styles from "../styles/Home.module.css";
@@ -345,11 +337,19 @@ export default function Home() {
                 <p>Height</p>
               </div>
               <div>
-                <p>Res.score</p>
+                {/* <p>Res.score</p> */}
                 {activePreset.width ? (
-                  <h1 className={styles.croppedRes}>
-                    {Math.round((dragArea.width * 100) / activePreset.width)} %
-                  </h1>
+                  // <h1 className={styles.croppedRes}>
+                  //   {Math.round((dragArea.width * 100) / activePreset.width)} %
+                  // </h1>
+                  <CropScore
+                    score={Math.round(
+                      (dragArea.width * 100) / activePreset.width
+                    )}
+                    value={Math.round(
+                      (dragArea.width * 100) / activePreset.width
+                    )}
+                  />
                 ) : (
                   <h1 className={styles.croppedRes}>
                     {calcCustomRes(Math.round(dragArea.width))}
