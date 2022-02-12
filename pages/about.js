@@ -1,13 +1,20 @@
 import styles from "../styles/About.module.css";
 import ContentWrapper from "../components/ContentWrapper";
+import AboutItem from "../components/AboutItem";
 
 import { about } from "../data/about.js";
 
 const About = () => {
   return (
     <ContentWrapper>
+      <h1 className={styles.title}>About CropScore</h1>
       <div className={styles.wrapper}>
-        <h1 className={styles.title}>Problem</h1>
+        <AboutItem />
+        <AboutItem />
+        <AboutItem />
+        <AboutItem />
+        <AboutItem />
+        {/* <h1 className={styles.title}>Problem</h1>
         <p>
           Have you ever created an awesome article with a great cover image.
           Upload everything and the first thing you see is non positioned image.
@@ -52,7 +59,7 @@ const About = () => {
           about. Instead you should focus on what matters, creating quality
           content.
         </p>
-        <p>Leave the image cropping issues at bay. Enjoy using Cropper.</p>
+        <p>Leave the image cropping issues at bay. Enjoy using Cropper.</p> */}
       </div>
     </ContentWrapper>
   );

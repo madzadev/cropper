@@ -1,9 +1,14 @@
 .wrapper {
   max-width: 1400px;
   margin: 0 auto;
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); */
+  gap: 30px;
 }
 
 .title {
+  font-size: 26px;
   font-weight: bold;
-  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: center;
 }

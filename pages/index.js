@@ -214,7 +214,7 @@ export default function Home() {
                 colorScheme="blue"
                 variant="solid"
               >
-                Draw
+                Draw crop
               </Button>
 
               <div style={{ display: "grid", gap: "10px" }}>
@@ -295,7 +295,7 @@ export default function Home() {
                 colorScheme="blue"
                 variant="solid"
               >
-                Move
+                Move image
               </Button>
             </div>
 
