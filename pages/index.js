@@ -7,7 +7,9 @@ import {
   Button,
   Select,
   Accordion,
+  InputGroup,
   Input,
+  InputRightAddon,
 } from "@chakra-ui/react";
 import { HiDownload } from "react-icons/hi";
 import { FiCrop, FiRotateCcw, FiRotateCw } from "react-icons/fi";
@@ -27,6 +29,7 @@ import ImageSelector from "../components/ImageSelector";
 import ImageReset from "../components/ImageReset";
 import ActionButton from "../components/ActionButton";
 import AccordionSection from "../components/AccordionSection";
+import AlertMessage from "../components/AlertMessage";
 import Checkbox from "../components/Checkbox";
 import CropScore from "../components/CropScore";
 
@@ -60,6 +63,7 @@ export default function Home() {
 
   const [customWidth, setCustomWidth] = useState(0);
   const [customHeight, setCustomHeight] = useState(0);
+  const [customError, setCustomError] = useState("");
 
   const calcCustomRes = (res) =>
     res < 720 ? "SD" : res < 1920 ? "HD" : res < 3840 ? "FHD" : "UHD";
@@ -198,57 +202,76 @@ export default function Home() {
               <AccordionSection title="Custom crop size">
                 <h1>Set resolution:</h1>
                 <div className={styles.customInput}>
-                  <Input
-                    placeholder={customWidth}
-                    onChange={(e) => {
-                      console.log("canvas", cropper.getCroppedCanvas().width);
-                      console.log("boxdata", cropper.getCropBoxData().width);
-                      console.log("data", cropper.getData().width);
-                      console.log(
-                        "image width: ",
-                        cropper.getImageData().naturalWidth
-                      );
-                      console.log(
-                        "image height: ",
-                        cropper.getImageData().naturalHeight
-                      );
-                      const value = Number(e.target.value);
-                      const imageWidth = cropper.getImageData().naturalWidth;
-                      if (value <= imageWidth) {
+                  <InputGroup>
+                    <Input
+                      placeholder={customWidth}
+                      onChange={(e) => {
+                        console.log("canvas", cropper.getCroppedCanvas().width);
+                        console.log("boxdata", cropper.getCropBoxData().width);
+                        console.log("data", cropper.getData().width);
+                        console.log(
+                          "image width: ",
+                          cropper.getImageData().naturalWidth
+                        );
+                        console.log(
+                          "image height: ",
+                          cropper.getImageData().naturalHeight
+                        );
+                        const value = Number(e.target.value);
+                        const imageWidth = cropper.getImageData().naturalWidth;
+                        if (value <= imageWidth) {
+                          if (activePreset.name) {
+                            setActivePreset({});
+                            cropper.setAspectRatio(NaN);
+                          }
+                          cropper.setData({ width: value });
+                          setCustomError("");
+                        } else {
+                          setCustomError(
+                            `The max width is ${
+                              cropper.getImageData().naturalWidth
+                            }`
+                          );
+                        }
+                      }}
+                      type="number"
+                    />
+                    <InputRightAddon children="px" />
+                  </InputGroup>
+                  <div style={{ display: "grid", placeItems: "center" }}>
+                    <p>x</p>
+                  </div>
+                  <InputGroup>
+                    <Input
+                      placeholder={customHeight}
+                      onChange={(e) => {
+                        const value = Number(e.target.value);
                         if (activePreset.name) {
                           setActivePreset({});
                           cropper.setAspectRatio(NaN);
                         }
-                        cropper.setData({ width: value });
-                      } else {
-                        console.log(`the maximum width is ${imageWidth}`);
-                      }
-                    }}
-                    type="number"
-                  />
-                  <div style={{ display: "grid", placeItems: "center" }}>
-                    <p>x</p>
-                  </div>
-                  <Input
-                    placeholder={customHeight}
-                    onChange={(e) => {
-                      const value = Number(e.target.value);
-                      if (activePreset.name) {
-                        setActivePreset({});
-                        cropper.setAspectRatio(NaN);
-                      }
-                      cropper.setData({ height: value });
-                    }}
-                    type="number"
-                  />
+                        cropper.setData({ height: value });
+                      }}
+                      type="number"
+                    />
+                    <InputRightAddon children="px" />
+                  </InputGroup>
                 </div>
+                {customError && <AlertMessage message={customError} />}
+
                 <h1>Pick an aspect ratio:</h1>
                 <div className={styles.customInput}>
-                  <Input placeholder="16" type="number" />
+                  <InputGroup>
+                    <Input placeholder="16" type="number" />
+                    <InputRightAddon children="units" />
+                  </InputGroup>
                   <div style={{ display: "grid", placeItems: "center" }}>
                     <p>x</p>
                   </div>
-                  <Input placeholder="9" type="number" />
+                  <InputGroup>
+                    <Input placeholder="9" type="number" />
+                    <InputRightAddon children="units" />
+                  </InputGroup>
                 </div>
               </AccordionSection>
             </Accordion>
