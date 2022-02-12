@@ -1,7 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import Cropper from "react-cropper";
-import { Icon, Stack, Button, Select, Accordion } from "@chakra-ui/react";
+import {
+  Icon,
+  Stack,
+  Button,
+  Select,
+  Accordion,
+  Input,
+} from "@chakra-ui/react";
 import { HiDownload } from "react-icons/hi";
 import { FiCrop, FiRotateCcw, FiRotateCw } from "react-icons/fi";
 import { BsArrowsMove } from "react-icons/bs";
@@ -181,8 +188,19 @@ export default function Home() {
                   </AccordionSection>
                 );
               })}
-              <AccordionSection title="Custom resolution">
-                <h1>This is custom</h1>
+              <AccordionSection title="Custom crop size">
+                <h1>Set resolution:</h1>
+                <div className={styles.customInput}>
+                  <Input placeholder="width" />
+                  <p>x</p>
+                  <Input placeholder="height" />
+                </div>
+                <h1>Pick an aspect ratio:</h1>
+                <div className={styles.customInput}>
+                  <Input placeholder="16" />
+                  <p>x</p>
+                  <Input placeholder="9" />
+                </div>
               </AccordionSection>
             </Accordion>
           </div>
