@@ -204,17 +204,31 @@ export default function Home() {
                       console.log("canvas", cropper.getCroppedCanvas().width);
                       console.log("boxdata", cropper.getCropBoxData().width);
                       console.log("data", cropper.getData().width);
+                      console.log(
+                        "image width: ",
+                        cropper.getImageData().naturalWidth
+                      );
+                      console.log(
+                        "image height: ",
+                        cropper.getImageData().naturalHeight
+                      );
                       const value = Number(e.target.value);
-                      if (activePreset.name) {
-                        setActivePreset({});
-                        cropper.setAspectRatio(NaN);
+                      const imageWidth = cropper.getImageData().naturalWidth;
+                      if (value <= imageWidth) {
+                        if (activePreset.name) {
+                          setActivePreset({});
+                          cropper.setAspectRatio(NaN);
+                        }
+                        cropper.setData({ width: value });
+                      } else {
+                        console.log(`the maximum width is ${imageWidth}`);
                       }
-
-                      cropper.setData({ width: value });
                     }}
                     type="number"
                   />
-                  <p>x</p>
+                  <div style={{ display: "grid", placeItems: "center" }}>
+                    <p>x</p>
+                  </div>
                   <Input
                     placeholder={customHeight}
                     onChange={(e) => {
@@ -231,7 +245,9 @@ export default function Home() {
                 <h1>Pick an aspect ratio:</h1>
                 <div className={styles.customInput}>
                   <Input placeholder="16" type="number" />
-                  <p>x</p>
+                  <div style={{ display: "grid", placeItems: "center" }}>
+                    <p>x</p>
+                  </div>
                   <Input placeholder="9" type="number" />
                 </div>
               </AccordionSection>
