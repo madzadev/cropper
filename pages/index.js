@@ -40,7 +40,7 @@ export default function Home() {
   const { name, description, height, width } = presets[0][initialSite][0];
 
   const [image, setImage] = useState();
-  const [baseImage, setBaseImage] = useState("");
+  const [baseImage, setBaseImage] = useState();
   const [cropper, setCropper] = useState();
 
   const [activePreset, setActivePreset] = useState({
@@ -50,12 +50,16 @@ export default function Home() {
     height,
     width,
   });
+
   const [fileType, setFileType] = useState("jpg");
 
   const [dragArea, setDragArea] = useState({
     width: 0,
     height: 0,
   });
+
+  const [customWidth, setCustomWidth] = useState(0);
+  const [customHeight, setCustomHeight] = useState(0);
 
   const calcCustomRes = (res) =>
     res < 720 ? "SD" : res < 1920 ? "HD" : res < 3840 ? "FHD" : "UHD";
@@ -71,6 +75,9 @@ export default function Home() {
       width: cropper.getCroppedCanvas().width,
       height: cropper.getCroppedCanvas().height,
     });
+
+    setCustomWidth(cropper.getCroppedCanvas().width);
+    setCustomHeight(cropper.getCroppedCanvas().height);
 
     setBaseImage(cropper.getCroppedCanvas().toDataURL());
   };
@@ -192,21 +199,31 @@ export default function Home() {
                 <h1>Set resolution:</h1>
                 <div className={styles.customInput}>
                   <Input
-                    placeholder="width"
+                    placeholder={customWidth}
                     onChange={(e) => {
+                      console.log("canvas", cropper.getCroppedCanvas().width);
+                      console.log("data", cropper.getCropBoxData().width);
                       const value = Number(e.target.value);
-                      console.log(cropper);
-                      // setDragArea({
-                      //   ...dragArea,
-                      //   width: value,
-                      // });
+                      if (activePreset.name) {
+                        setActivePreset({});
+                        cropper.setAspectRatio(NaN);
+                      }
+
                       cropper.setCropBoxData({ width: value });
-                      // cropper.data.width = value;
-                      cropper.cropBoxData.width = value;
                     }}
                   />
                   <p>x</p>
-                  <Input placeholder="height" />
+                  <Input
+                    placeholder={customHeight}
+                    onChange={(e) => {
+                      const value = Number(e.target.value);
+                      if (activePreset.name) {
+                        setActivePreset({});
+                        cropper.setAspectRatio(NaN);
+                      }
+                      cropper.setCropBoxData({ height: value });
+                    }}
+                  />
                 </div>
                 <h1>Pick an aspect ratio:</h1>
                 <div className={styles.customInput}>
