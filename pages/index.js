@@ -83,7 +83,7 @@ export default function Home() {
     setCustomWidth(cropper.getCroppedCanvas().width);
     setCustomHeight(cropper.getCroppedCanvas().height);
 
-    // setBaseImage(cropper.getCroppedCanvas().toDataURL());
+    setBaseImage(cropper.getCroppedCanvas().toDataURL());
   };
 
   const onChange = (e) => {
@@ -205,23 +205,30 @@ export default function Home() {
                   <InputGroup>
                     <Input
                       placeholder={customWidth}
-                      value={customWidth}
+                      value={customWidth || ""}
                       onChange={(e) => {
                         console.log("canvas", cropper.getCroppedCanvas().width);
                         console.log("boxdata", cropper.getCropBoxData().width);
                         console.log("data", cropper.getData().width);
                         console.log(
                           "image width: ",
-                          cropper.getCanvasData().naturalWidth
+                          cropper.getCanvasData().width
                         );
                         console.log(
                           "image height: ",
+                          cropper.getCanvasData().height
+                        );
+                        console.log(
+                          "natural image width: ",
+                          cropper.getCanvasData().naturalWidth
+                        );
+                        console.log(
+                          "natural image height: ",
                           cropper.getCanvasData().naturalHeight
                         );
                         const value = Number(e.target.value);
-                        const previousValue = Number(
-                          value.toString().slice(0, -1)
-                        );
+                        const previousValue =
+                          Number(value.toString().slice(0, -1)) || 0;
                         const imageWidth = cropper.getImageData().naturalWidth;
                         if (value <= imageWidth) {
                           if (activePreset.name) {
@@ -253,7 +260,7 @@ export default function Home() {
                   <InputGroup>
                     <Input
                       placeholder={customHeight}
-                      value={customHeight}
+                      value={customHeight || ""}
                       onChange={(e) => {
                         const value = Number(e.target.value);
                         const previousValue = Number(
@@ -544,6 +551,7 @@ export default function Home() {
               >
                 <option value="jpg">.JPG</option>
                 <option value="png">.PNG</option>
+                <option value="gif">.GIF</option>
               </Select>
             </Stack>
           </div>
