@@ -4,7 +4,7 @@
   border-radius: 20px;
 }
 
-.leftWrapper {
+/* .leftWrapper {
   display: grid;
   grid-template-columns: 4fr 1fr;
   gap: 30px;
@@ -32,7 +32,7 @@
 
 .image {
   width: 50px;
-}
+} */
 
 .title {
   font-size: 20px;
