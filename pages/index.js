@@ -63,7 +63,7 @@ export default function Home() {
 
   const [customWidth, setCustomWidth] = useState(0);
   const [customHeight, setCustomHeight] = useState(0);
-  const [customError, setCustomError] = useState("");
+  const [customResolutionError, setCustomResolutionError] = useState("");
 
   const calcCustomRes = (res) =>
     res < 720 ? "SD" : res < 1920 ? "HD" : res < 3840 ? "FHD" : "UHD";
@@ -83,7 +83,7 @@ export default function Home() {
     setCustomWidth(cropper.getCroppedCanvas().width);
     setCustomHeight(cropper.getCroppedCanvas().height);
 
-    setBaseImage(cropper.getCroppedCanvas().toDataURL());
+    // setBaseImage(cropper.getCroppedCanvas().toDataURL());
   };
 
   const onChange = (e) => {
@@ -205,6 +205,7 @@ export default function Home() {
                   <InputGroup>
                     <Input
                       placeholder={customWidth}
+                      value={customWidth}
                       onChange={(e) => {
                         console.log("canvas", cropper.getCroppedCanvas().width);
                         console.log("boxdata", cropper.getCropBoxData().width);
@@ -228,16 +229,17 @@ export default function Home() {
                             cropper.setAspectRatio(NaN);
                           }
                           cropper.setData({ width: value });
-                          setCustomError("");
+                          setCustomResolutionError("");
                         } else {
-                          setCustomError(`The max width is ${imageWidth}`);
-                          e.target.value = previousValue;
+                          setCustomResolutionError(
+                            `The max width is ${imageWidth}px`
+                          );
                           e.target.value = previousValue;
                           cropper.setData({
                             width: previousValue,
                           });
                           setTimeout(() => {
-                            setCustomError("");
+                            setCustomResolutionError("");
                           }, 2000);
                         }
                       }}
@@ -251,6 +253,7 @@ export default function Home() {
                   <InputGroup>
                     <Input
                       placeholder={customHeight}
+                      value={customHeight}
                       onChange={(e) => {
                         const value = Number(e.target.value);
                         const previousValue = Number(
@@ -264,16 +267,17 @@ export default function Home() {
                             cropper.setAspectRatio(NaN);
                           }
                           cropper.setData({ height: value });
-                          setCustomError("");
+                          setCustomResolutionError("");
                         } else {
-                          setCustomError(`The max height is ${imageHeight}`);
-                          e.target.value = previousValue;
+                          setCustomResolutionError(
+                            `The max height is ${imageHeight}px`
+                          );
                           e.target.value = previousValue;
                           cropper.setData({
                             height: previousValue,
                           });
                           setTimeout(() => {
-                            setCustomError("");
+                            setCustomResolutionError("");
                           }, 2000);
                         }
                       }}
@@ -282,7 +286,9 @@ export default function Home() {
                     <InputRightAddon children="px" />
                   </InputGroup>
                 </div>
-                {customError && <AlertMessage message={customError} />}
+                {customResolutionError && (
+                  <AlertMessage message={customResolutionError} />
+                )}
 
                 <h1>Pick an aspect ratio:</h1>
                 <div className={styles.customInput}>
