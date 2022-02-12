@@ -13,7 +13,6 @@ const About = () => {
         <AboutItem />
         <AboutItem />
         <AboutItem />
-        <AboutItem />
         {/* <h1 className={styles.title}>Problem</h1>
         <p>
           Have you ever created an awesome article with a great cover image.
