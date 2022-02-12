@@ -191,7 +191,20 @@ export default function Home() {
               <AccordionSection title="Custom crop size">
                 <h1>Set resolution:</h1>
                 <div className={styles.customInput}>
-                  <Input placeholder="width" />
+                  <Input
+                    placeholder="width"
+                    onChange={(e) => {
+                      const value = Number(e.target.value);
+                      console.log(cropper);
+                      // setDragArea({
+                      //   ...dragArea,
+                      //   width: value,
+                      // });
+                      cropper.setCropBoxData({ width: value });
+                      // cropper.data.width = value;
+                      cropper.cropBoxData.width = value;
+                    }}
+                  />
                   <p>x</p>
                   <Input placeholder="height" />
                 </div>
