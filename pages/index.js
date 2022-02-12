@@ -181,6 +181,9 @@ export default function Home() {
                   </AccordionSection>
                 );
               })}
+              <AccordionSection title="Custom resolution">
+                <h1>This is custom</h1>
+              </AccordionSection>
             </Accordion>
           </div>
 
