@@ -70,10 +70,7 @@ export default function Home() {
 
   const cropperRef = useRef(null);
   const onCrop = () => {
-    let imageElement =
-      cropperRef === null || cropperRef === 0 ? 0 : cropperRef.current;
-    let cropper =
-      imageElement === null || imageElement === 0 ? 0 : imageElement.cropper;
+    let cropper = cropperRef.current.cropper;
     setDragArea({
       ...dragArea,
       width: cropper.getCroppedCanvas().width,
