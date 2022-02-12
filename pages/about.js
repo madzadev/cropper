@@ -13,8 +13,10 @@ const About = () => {
           return (
             <AboutItem
               key={index}
+              order={index}
               question={item.question}
               answers={item.answers}
+              image={item.image}
             />
           );
         })}
