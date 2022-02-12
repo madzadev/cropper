@@ -199,7 +199,7 @@ export default function Home() {
                   </AccordionSection>
                 );
               })}
-              <AccordionSection title="Custom crop size">
+              <AccordionSection title="Custom size">
                 <h1>Set resolution:</h1>
                 <div className={styles.customInput}>
                   <InputGroup>
@@ -211,13 +211,16 @@ export default function Home() {
                         console.log("data", cropper.getData().width);
                         console.log(
                           "image width: ",
-                          cropper.getImageData().naturalWidth
+                          cropper.getCanvasData().naturalWidth
                         );
                         console.log(
                           "image height: ",
-                          cropper.getImageData().naturalHeight
+                          cropper.getCanvasData().naturalHeight
                         );
                         const value = Number(e.target.value);
+                        const previousValue = Number(
+                          value.toString().slice(0, -1)
+                        );
                         const imageWidth = cropper.getImageData().naturalWidth;
                         if (value <= imageWidth) {
                           if (activePreset.name) {
@@ -227,11 +230,15 @@ export default function Home() {
                           cropper.setData({ width: value });
                           setCustomError("");
                         } else {
-                          setCustomError(
-                            `The max width is ${
-                              cropper.getImageData().naturalWidth
-                            }`
-                          );
+                          setCustomError(`The max width is ${imageWidth}`);
+                          e.target.value = previousValue;
+                          e.target.value = previousValue;
+                          cropper.setData({
+                            width: previousValue,
+                          });
+                          setTimeout(() => {
+                            setCustomError("");
+                          }, 2000);
                         }
                       }}
                       type="number"
@@ -246,11 +253,29 @@ export default function Home() {
                       placeholder={customHeight}
                       onChange={(e) => {
                         const value = Number(e.target.value);
-                        if (activePreset.name) {
-                          setActivePreset({});
-                          cropper.setAspectRatio(NaN);
+                        const previousValue = Number(
+                          value.toString().slice(0, -1)
+                        );
+                        const imageHeight =
+                          cropper.getImageData().naturalHeight;
+                        if (value <= imageHeight) {
+                          if (activePreset.name) {
+                            setActivePreset({});
+                            cropper.setAspectRatio(NaN);
+                          }
+                          cropper.setData({ height: value });
+                          setCustomError("");
+                        } else {
+                          setCustomError(`The max height is ${imageHeight}`);
+                          e.target.value = previousValue;
+                          e.target.value = previousValue;
+                          cropper.setData({
+                            height: previousValue,
+                          });
+                          setTimeout(() => {
+                            setCustomError("");
+                          }, 2000);
                         }
-                        cropper.setData({ height: value });
                       }}
                       type="number"
                     />
