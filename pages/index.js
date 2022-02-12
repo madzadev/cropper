@@ -212,6 +212,7 @@ export default function Home() {
 
                       cropper.setData({ width: value });
                     }}
+                    type="number"
                   />
                   <p>x</p>
                   <Input
@@ -224,13 +225,14 @@ export default function Home() {
                       }
                       cropper.setData({ height: value });
                     }}
+                    type="number"
                   />
                 </div>
                 <h1>Pick an aspect ratio:</h1>
                 <div className={styles.customInput}>
-                  <Input placeholder="16" />
+                  <Input placeholder="16" type="number" />
                   <p>x</p>
-                  <Input placeholder="9" />
+                  <Input placeholder="9" type="number" />
                 </div>
               </AccordionSection>
             </Accordion>
