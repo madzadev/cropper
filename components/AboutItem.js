@@ -1,10 +1,12 @@
 import styles from "./AboutItem.module.css";
 
-const AboutItem = () => {
+const AboutItem = ({ question, answers }) => {
   return (
     <div className={styles.wrapper}>
-      <h1 className={styles.title}>This is my question</h1>
-      <p>This is my answer</p>
+      <h1 className={styles.title}>{question}</h1>
+      {answers.map((answer, index) => {
+        return <p key={index}>{answer}</p>;
+      })}
     </div>
   );
 };

@@ -9,10 +9,19 @@ const About = () => {
     <ContentWrapper>
       <h1 className={styles.title}>About CropScore</h1>
       <div className={styles.wrapper}>
+        {about.map((item, index) => {
+          return (
+            <AboutItem
+              key={index}
+              question={item.question}
+              answers={item.answers}
+            />
+          );
+        })}
+
+        {/* <AboutItem />
         <AboutItem />
-        <AboutItem />
-        <AboutItem />
-        <AboutItem />
+        <AboutItem /> */}
         {/* <h1 className={styles.title}>Problem</h1>
         <p>
           Have you ever created an awesome article with a great cover image.
