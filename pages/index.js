@@ -202,14 +202,15 @@ export default function Home() {
                     placeholder={customWidth}
                     onChange={(e) => {
                       console.log("canvas", cropper.getCroppedCanvas().width);
-                      console.log("data", cropper.getCropBoxData().width);
+                      console.log("boxdata", cropper.getCropBoxData().width);
+                      console.log("data", cropper.getData().width);
                       const value = Number(e.target.value);
                       if (activePreset.name) {
                         setActivePreset({});
                         cropper.setAspectRatio(NaN);
                       }
 
-                      cropper.setCropBoxData({ width: value });
+                      cropper.setData({ width: value });
                     }}
                   />
                   <p>x</p>
@@ -221,7 +222,7 @@ export default function Home() {
                         setActivePreset({});
                         cropper.setAspectRatio(NaN);
                       }
-                      cropper.setCropBoxData({ height: value });
+                      cropper.setData({ height: value });
                     }}
                   />
                 </div>
