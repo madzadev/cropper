@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import Head from "next/head";
 import Cropper from "react-cropper";
 import {
@@ -54,15 +54,12 @@ export default function Home() {
     width,
   });
 
-  const [fileType, setFileType] = useState("jpg");
-
   const [dragArea, setDragArea] = useState({
     width,
     height,
   });
 
-  const [customWidth, setCustomWidth] = useState(0);
-  const [customHeight, setCustomHeight] = useState(0);
+  const [fileType, setFileType] = useState("jpg");
 
   const [customResolutionError, setCustomResolutionError] = useState("");
 
@@ -77,9 +74,6 @@ export default function Home() {
       width: cropper.getCroppedCanvas().width,
       height: cropper.getCroppedCanvas().height,
     });
-
-    setCustomWidth(cropper.getCroppedCanvas().width);
-    setCustomHeight(cropper.getCroppedCanvas().height);
 
     setBaseImage(cropper.getCroppedCanvas().toDataURL());
   };
@@ -202,12 +196,9 @@ export default function Home() {
                 <div className={styles.customInput}>
                   <InputGroup>
                     <Input
-                      placeholder={customWidth}
-                      value={customWidth || ""}
+                      placeholder={dragArea.width}
+                      value={dragArea.width || ""}
                       onChange={(e) => {
-                        // console.log("canvas", cropper.getCroppedCanvas().width);
-                        // console.log("boxdata", cropper.getCropBoxData().width);
-                        // console.log("data", cropper.getData().width);
                         console.log(
                           "image width: ",
                           cropper.getImageData().width
@@ -220,14 +211,6 @@ export default function Home() {
                           "image width: ",
                           cropper.getImageData().naturalWidth
                         );
-                        // console.log(
-                        //   "image height: ",
-                        //   cropper.getCanvasData().height
-                        // );
-                        // console.log(
-                        //   "natural image height: ",
-                        //   cropper.getCanvasData().naturalHeight
-                        // );
                         console.log(
                           "container: ",
                           cropper.getContainerData().width
@@ -280,8 +263,8 @@ export default function Home() {
                   </div>
                   <InputGroup>
                     <Input
-                      placeholder={customHeight}
-                      value={customHeight || ""}
+                      placeholder={dragArea.height}
+                      value={dragArea.height || ""}
                       onChange={(e) => {
                         const value = Number(e.target.value);
                         const previousValue = Number(
@@ -325,17 +308,18 @@ export default function Home() {
                       placeholder="0"
                       type="number"
                       value={
-                        !customWidth || !customHeight
+                        !dragArea.width || !dragArea.height
                           ? ""
-                          : customWidth >= customHeight
-                          ? parseFloat((customWidth / customHeight).toFixed(2))
+                          : dragArea.width >= dragArea.height
+                          ? parseFloat(
+                              (dragArea.width / dragArea.height).toFixed(2)
+                            )
                           : 1
                       }
                       onChange={(e) => {
                         const value = Number(e.target.value);
-                        const ratio = value / customHeight;
-                        cropper.setAspectRatio(value / customHeight);
-                        // cropper.setCropBoxData().width *= ratio;
+                        const ratio = value / dragArea.height;
+                        cropper.setAspectRatio(value / dragArea.height);
                       }}
                     />
                     <InputRightAddon children="w" />
@@ -348,11 +332,13 @@ export default function Home() {
                       placeholder="0"
                       type="number"
                       value={
-                        !customWidth || !customHeight
+                        !dragArea.width || !dragArea.height
                           ? ""
-                          : customWidth >= customHeight
+                          : dragArea.width >= dragArea.height
                           ? 1
-                          : parseFloat((customHeight / customWidth).toFixed(2))
+                          : parseFloat(
+                              (dragArea.height / dragArea.width).toFixed(2)
+                            )
                       }
                       onChange={(e) => {}}
                     />
