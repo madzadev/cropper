@@ -30,7 +30,7 @@ import ImageReset from "../components/ImageReset";
 import ActionButton from "../components/ActionButton";
 import AccordionSection from "../components/AccordionSection";
 import AlertMessage from "../components/AlertMessage";
-import Checkbox from "../components/Checkbox";
+import CheckBox from "../components/CheckBox";
 import CropScore from "../components/CropScore";
 
 import "cropperjs/dist/cropper.css";
@@ -161,7 +161,7 @@ export default function Home() {
                   <AccordionSection key={i} title={Object.keys(site)}>
                     {site[Object.keys(site)].map((param, index) => {
                       return (
-                        <Checkbox
+                        <CheckBox
                           key={index}
                           index={!i && !index}
                           title={param.name}
