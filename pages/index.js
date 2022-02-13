@@ -580,7 +580,6 @@ export default function Home() {
               >
                 <option value="jpg">.JPG</option>
                 <option value="png">.PNG</option>
-                <option value="gif">.GIF</option>
               </Select>
             </Stack>
           </div>
