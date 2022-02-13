@@ -207,27 +207,43 @@ export default function Home() {
                         // console.log("canvas", cropper.getCroppedCanvas().width);
                         // console.log("boxdata", cropper.getCropBoxData().width);
                         // console.log("data", cropper.getData().width);
-                        // console.log(
-                        //   "image width: ",
-                        //   cropper.getCanvasData().width
-                        // );
+                        console.log(
+                          "image width: ",
+                          cropper.getImageData().width
+                        );
+                        console.log(
+                          "natural image width: ",
+                          cropper.getImageData().naturalWidth
+                        );
+                        console.log(
+                          "image width: ",
+                          cropper.getImageData().naturalWidth
+                        );
                         // console.log(
                         //   "image height: ",
                         //   cropper.getCanvasData().height
                         // );
                         // console.log(
-                        //   "natural image width: ",
-                        //   cropper.getCanvasData().naturalWidth
-                        // );
-                        // console.log(
                         //   "natural image height: ",
                         //   cropper.getCanvasData().naturalHeight
                         // );
+                        console.log(
+                          "container: ",
+                          cropper.getContainerData().width
+                        );
+
+                        console.log("out: ", cropper.getData().x);
                         const value = Number(e.target.value);
                         const previousValue =
                           Number(value.toString().slice(0, -1)) || 0;
-                        const imageWidth = cropper.getImageData().naturalWidth;
-                        if (value <= imageWidth) {
+                        const containerWidth = cropper.getContainerData().width;
+                        const imageWidth = cropper.getImageData().width;
+                        const naturalImageWidth =
+                          cropper.getImageData().naturalWidth;
+                        const cropBoxWidth = cropper.getCropBoxData().width;
+                        // const ratio =
+                        //   containerWidth * (containerWidth / cropBoxWidth);
+                        if (value <= naturalImageWidth) {
                           if (activePreset.name) {
                             setActivePreset({});
                             cropper.setAspectRatio(NaN);
@@ -235,8 +251,15 @@ export default function Home() {
                           cropper.setData({ width: value });
                           setCustomResolutionError("");
                         } else {
+                          cropper.setCropBoxData().width = naturalImageWidth;
+                          let aaaa = cropper.getCropBoxData().width;
+                          cropper.setCropBoxData().width = cropBoxWidth;
                           setCustomResolutionError(
-                            `The max width is ${imageWidth}px`
+                            `The max width is ${
+                              imageWidth > containerWidth
+                                ? aaaa
+                                : naturalImageWidth
+                            }px`
                           );
                           e.target.value = previousValue;
                           cropper.setData({
@@ -327,9 +350,7 @@ export default function Home() {
               ref={cropperRef}
               disable={false}
               // autoCropArea={1} //0.8 is default
-              minCropBoxWidth={1}
-              minCropBoxHeight={1}
-              background={false}
+              // background={false}
               viewMode={2}
               onInitialized={(instance) => {
                 setCropper(instance);
