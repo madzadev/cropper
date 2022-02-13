@@ -199,23 +199,6 @@ export default function Home() {
                       placeholder={dragArea.width}
                       value={dragArea.width || ""}
                       onChange={(e) => {
-                        console.log(
-                          "image width: ",
-                          cropper.getImageData().width
-                        );
-                        console.log(
-                          "natural image width: ",
-                          cropper.getImageData().naturalWidth
-                        );
-                        console.log(
-                          "image width: ",
-                          cropper.getImageData().naturalWidth
-                        );
-                        console.log(
-                          "container: ",
-                          cropper.getContainerData().width
-                        );
-
                         const value = Number(e.target.value);
                         const previousValue =
                           Number(value.toString().slice(0, -1)) || 0;
@@ -229,6 +212,7 @@ export default function Home() {
                             containerWidth / (canvasWidth / naturalImageWidth)
                           );
                           if (value <= maxCropperWidth) {
+                            console.log("image OUTSIDE the width of container");
                             if (activePreset.name) {
                               setActivePreset({});
                               cropper.setAspectRatio(NaN);
@@ -248,7 +232,7 @@ export default function Home() {
                             }, 2000);
                           }
                         } else {
-                          console.log("under the exceeded width");
+                          console.log("image INSIDE the width of container");
                           if (value <= naturalImageWidth) {
                             if (activePreset.name) {
                               setActivePreset({});
@@ -269,34 +253,6 @@ export default function Home() {
                             }, 2000);
                           }
                         }
-                        // if (value <= naturalImageWidth) {
-                        //   if (activePreset.name) {
-                        //     setActivePreset({});
-                        //     cropper.setAspectRatio(NaN);
-                        //   }
-                        //   cropper.setData({ width: value });
-                        //   setCustomResolutionError("");
-                        // } else {
-                        //   cropper.setCropBoxData().width = naturalImageWidth;
-                        //   let aaaa =
-                        //     containerWidth /
-                        //     (cropper.getCanvasData().width / naturalImageWidth);
-                        //   cropper.setCropBoxData().width = cropBoxWidth;
-                        //   setCustomResolutionError(
-                        //     `The max width is ${
-                        //       imageWidth > containerWidth
-                        //         ? aaaa
-                        //         : naturalImageWidth
-                        //     }px`
-                        //   );
-                        //   e.target.value = previousValue;
-                        //   cropper.setData({
-                        //     width: previousValue,
-                        //   });
-                        //   setTimeout(() => {
-                        //     setCustomResolutionError("");
-                        //   }, 2000);
-                        // }
                       }}
                       type="number"
                     />
