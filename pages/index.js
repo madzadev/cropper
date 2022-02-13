@@ -267,29 +267,62 @@ export default function Home() {
                       value={dragArea.height || ""}
                       onChange={(e) => {
                         const value = Number(e.target.value);
-                        const previousValue = Number(
-                          value.toString().slice(0, -1)
-                        );
-                        const imageHeight =
+                        const previousValue =
+                          Number(value.toString().slice(0, -1)) || 0;
+                        const containerHeight =
+                          cropper.getContainerData().height;
+                        const naturalImageHeight =
                           cropper.getImageData().naturalHeight;
-                        if (value <= imageHeight) {
-                          if (activePreset.name) {
-                            setActivePreset({});
-                            cropper.setAspectRatio(NaN);
-                          }
-                          cropper.setData({ height: value });
-                          setCustomResolutionError("");
-                        } else {
-                          setCustomResolutionError(
-                            `The max height is ${imageHeight}px`
+                        const canvasHeight = cropper.getCanvasData().height;
+
+                        if (canvasHeight > containerHeight) {
+                          const maxCropperHeight = Math.round(
+                            containerHeight /
+                              (canvasHeight / naturalImageHeight)
                           );
-                          e.target.value = previousValue;
-                          cropper.setData({
-                            height: previousValue,
-                          });
-                          setTimeout(() => {
+                          if (value <= maxCropperHeight) {
+                            console.log(
+                              "image OUTSIDE the height of container"
+                            );
+                            if (activePreset.name) {
+                              setActivePreset({});
+                              cropper.setAspectRatio(NaN);
+                            }
+                            cropper.setData({ height: value });
                             setCustomResolutionError("");
-                          }, 2000);
+                          } else {
+                            setCustomResolutionError(
+                              `The max height is ${maxCropperHeight}px`
+                            );
+                            e.target.value = previousValue;
+                            cropper.setData({
+                              height: previousValue,
+                            });
+                            setTimeout(() => {
+                              setCustomResolutionError("");
+                            }, 2000);
+                          }
+                        } else {
+                          console.log("image INSIDE the height of container");
+                          if (value <= naturalImageHeight) {
+                            if (activePreset.name) {
+                              setActivePreset({});
+                              cropper.setAspectRatio(NaN);
+                            }
+                            cropper.setData({ height: value });
+                            setCustomResolutionError("");
+                          } else {
+                            setCustomResolutionError(
+                              `The max height is ${naturalImageHeight}px`
+                            );
+                            e.target.value = previousValue;
+                            cropper.setData({
+                              height: previousValue,
+                            });
+                            setTimeout(() => {
+                              setCustomResolutionError("");
+                            }, 2000);
+                          }
                         }
                       }}
                       type="number"
