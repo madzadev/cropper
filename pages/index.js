@@ -227,6 +227,12 @@ export default function Home() {
                         const cropBoxWidth = cropper.getCropBoxData().width;
                         // const ratio =
                         //   containerWidth * (containerWidth / cropBoxWidth);
+                        const outerWidth = cropper.getData().x;
+                        console.log(
+                          "434343",
+                          cropper.getData().width,
+                          cropper.getCanvasData().width
+                        );
                         if (value <= naturalImageWidth) {
                           if (activePreset.name) {
                             setActivePreset({});
@@ -236,7 +242,9 @@ export default function Home() {
                           setCustomResolutionError("");
                         } else {
                           cropper.setCropBoxData().width = naturalImageWidth;
-                          let aaaa = cropper.getCropBoxData().width;
+                          let aaaa =
+                            containerWidth /
+                            (cropper.getCanvasData().width / naturalImageWidth);
                           cropper.setCropBoxData().width = cropBoxWidth;
                           setCustomResolutionError(
                             `The max width is ${
