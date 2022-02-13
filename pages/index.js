@@ -321,31 +321,35 @@ export default function Home() {
                 <div className={styles.customInput}>
                   <InputGroup>
                     <Input
-                      placeholder="16"
+                      placeholder="0"
                       type="number"
                       value={
-                        customWidth >= customHeight
-                          ? parseFloat((customWidth / customHeight).toFixed(1))
+                        !customWidth || !customHeight
+                          ? ""
+                          : customWidth >= customHeight
+                          ? parseFloat((customWidth / customHeight).toFixed(2))
                           : 1
                       }
                     />
-                    <InputRightAddon children="un" />
+                    <InputRightAddon children="w" />
                   </InputGroup>
                   <div style={{ display: "grid", placeItems: "center" }}>
                     <p>x</p>
                   </div>
                   <InputGroup>
                     <Input
-                      placeholder="9"
+                      placeholder="0"
                       type="number"
                       value={
-                        customWidth >= customHeight
+                        !customWidth || !customHeight
+                          ? ""
+                          : customWidth >= customHeight
                           ? 1
-                          : parseFloat((customHeight / customWidth).toFixed(1))
+                          : parseFloat((customHeight / customWidth).toFixed(2))
                       }
                       onChange={(e) => {}}
                     />
-                    <InputRightAddon children="un" />
+                    <InputRightAddon children="h" />
                   </InputGroup>
                 </div>
               </AccordionSection>
