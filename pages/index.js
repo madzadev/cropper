@@ -320,15 +320,32 @@ export default function Home() {
                 <h1>Pick an aspect ratio:</h1>
                 <div className={styles.customInput}>
                   <InputGroup>
-                    <Input placeholder="16" type="number" />
-                    <InputRightAddon children="units" />
+                    <Input
+                      placeholder="16"
+                      type="number"
+                      value={
+                        customWidth >= customHeight
+                          ? parseFloat((customWidth / customHeight).toFixed(1))
+                          : 1
+                      }
+                    />
+                    <InputRightAddon children="un" />
                   </InputGroup>
                   <div style={{ display: "grid", placeItems: "center" }}>
                     <p>x</p>
                   </div>
                   <InputGroup>
-                    <Input placeholder="9" type="number" />
-                    <InputRightAddon children="units" />
+                    <Input
+                      placeholder="9"
+                      type="number"
+                      value={
+                        customWidth >= customHeight
+                          ? 1
+                          : parseFloat((customHeight / customWidth).toFixed(1))
+                      }
+                      onChange={(e) => {}}
+                    />
+                    <InputRightAddon children="un" />
                   </InputGroup>
                 </div>
               </AccordionSection>
