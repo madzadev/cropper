@@ -520,6 +520,7 @@ export default function Home() {
               {customWidth!=0?():(
                 
               )} */}
+
             <div>
               <div
                 className="preview"
@@ -528,10 +529,19 @@ export default function Home() {
                   overflow: "hidden",
                   position: "relative",
                   marginBottom: "20px",
-                  display: `${dragArea.width == 0 ? "none" : "block"}`,
+                  display: `${
+                    dragArea.width == 0 || dragArea.height == 0
+                      ? "none"
+                      : "block"
+                  }`,
                 }}
               ></div>
             </div>
+            {(dragArea.width == 0 || dragArea.height == 0) && (
+              <div className={styles.descriptionBox}>
+                <p>Preview not available. Please set width or/and height.</p>
+              </div>
+            )}
 
             <Stack direction="row" spacing={2}>
               <a download={`test.${fileType}`} href={baseImage}>
