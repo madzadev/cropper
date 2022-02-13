@@ -216,51 +216,87 @@ export default function Home() {
                           cropper.getContainerData().width
                         );
 
-                        console.log("out: ", cropper.getData().x);
                         const value = Number(e.target.value);
                         const previousValue =
                           Number(value.toString().slice(0, -1)) || 0;
                         const containerWidth = cropper.getContainerData().width;
-                        const imageWidth = cropper.getImageData().width;
                         const naturalImageWidth =
                           cropper.getImageData().naturalWidth;
-                        const cropBoxWidth = cropper.getCropBoxData().width;
-                        // const ratio =
-                        //   containerWidth * (containerWidth / cropBoxWidth);
-                        const outerWidth = cropper.getData().x;
-                        console.log(
-                          "434343",
-                          cropper.getData().width,
-                          cropper.getCanvasData().width
-                        );
-                        if (value <= naturalImageWidth) {
-                          if (activePreset.name) {
-                            setActivePreset({});
-                            cropper.setAspectRatio(NaN);
-                          }
-                          cropper.setData({ width: value });
-                          setCustomResolutionError("");
-                        } else {
-                          cropper.setCropBoxData().width = naturalImageWidth;
-                          let aaaa =
-                            containerWidth /
-                            (cropper.getCanvasData().width / naturalImageWidth);
-                          cropper.setCropBoxData().width = cropBoxWidth;
-                          setCustomResolutionError(
-                            `The max width is ${
-                              imageWidth > containerWidth
-                                ? aaaa
-                                : naturalImageWidth
-                            }px`
+                        const canvasWidth = cropper.getCanvasData().width;
+
+                        if (canvasWidth > containerWidth) {
+                          const maxCropperWidth = Math.round(
+                            containerWidth / (canvasWidth / naturalImageWidth)
                           );
-                          e.target.value = previousValue;
-                          cropper.setData({
-                            width: previousValue,
-                          });
-                          setTimeout(() => {
+                          if (value <= maxCropperWidth) {
+                            if (activePreset.name) {
+                              setActivePreset({});
+                              cropper.setAspectRatio(NaN);
+                            }
+                            cropper.setData({ width: value });
                             setCustomResolutionError("");
-                          }, 2000);
+                          } else {
+                            setCustomResolutionError(
+                              `The max width is ${maxCropperWidth}px`
+                            );
+                            e.target.value = previousValue;
+                            cropper.setData({
+                              width: previousValue,
+                            });
+                            setTimeout(() => {
+                              setCustomResolutionError("");
+                            }, 2000);
+                          }
+                        } else {
+                          console.log("under the exceeded width");
+                          if (value <= naturalImageWidth) {
+                            if (activePreset.name) {
+                              setActivePreset({});
+                              cropper.setAspectRatio(NaN);
+                            }
+                            cropper.setData({ width: value });
+                            setCustomResolutionError("");
+                          } else {
+                            setCustomResolutionError(
+                              `The max width is ${naturalImageWidth}px`
+                            );
+                            e.target.value = previousValue;
+                            cropper.setData({
+                              width: previousValue,
+                            });
+                            setTimeout(() => {
+                              setCustomResolutionError("");
+                            }, 2000);
+                          }
                         }
+                        // if (value <= naturalImageWidth) {
+                        //   if (activePreset.name) {
+                        //     setActivePreset({});
+                        //     cropper.setAspectRatio(NaN);
+                        //   }
+                        //   cropper.setData({ width: value });
+                        //   setCustomResolutionError("");
+                        // } else {
+                        //   cropper.setCropBoxData().width = naturalImageWidth;
+                        //   let aaaa =
+                        //     containerWidth /
+                        //     (cropper.getCanvasData().width / naturalImageWidth);
+                        //   cropper.setCropBoxData().width = cropBoxWidth;
+                        //   setCustomResolutionError(
+                        //     `The max width is ${
+                        //       imageWidth > containerWidth
+                        //         ? aaaa
+                        //         : naturalImageWidth
+                        //     }px`
+                        //   );
+                        //   e.target.value = previousValue;
+                        //   cropper.setData({
+                        //     width: previousValue,
+                        //   });
+                        //   setTimeout(() => {
+                        //     setCustomResolutionError("");
+                        //   }, 2000);
+                        // }
                       }}
                       type="number"
                     />
