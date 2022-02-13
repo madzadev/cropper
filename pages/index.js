@@ -272,7 +272,7 @@ export default function Home() {
                       }}
                       type="number"
                     />
-                    {/* <InputRightAddon children="px" /> */}
+                    <InputRightAddon children="px" />
                   </InputGroup>
                   <div style={{ display: "grid", placeItems: "center" }}>
                     <p>x</p>
@@ -310,7 +310,7 @@ export default function Home() {
                       }}
                       type="number"
                     />
-                    {/* <InputRightAddon children="px" /> */}
+                    <InputRightAddon children="px" />
                   </InputGroup>
                 </div>
                 {customResolutionError && (
@@ -321,14 +321,14 @@ export default function Home() {
                 <div className={styles.customInput}>
                   <InputGroup>
                     <Input placeholder="16" type="number" />
-                    {/* <InputRightAddon children="units" /> */}
+                    <InputRightAddon children="units" />
                   </InputGroup>
                   <div style={{ display: "grid", placeItems: "center" }}>
                     <p>x</p>
                   </div>
                   <InputGroup>
                     <Input placeholder="9" type="number" />
-                    {/* <InputRightAddon children="units" /> */}
+                    <InputRightAddon children="units" />
                   </InputGroup>
                 </div>
               </AccordionSection>
