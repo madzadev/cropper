@@ -63,6 +63,7 @@ export default function Home() {
 
   const [customWidth, setCustomWidth] = useState(0);
   const [customHeight, setCustomHeight] = useState(0);
+
   const [customResolutionError, setCustomResolutionError] = useState("");
 
   const calcCustomRes = (res) =>
@@ -330,6 +331,12 @@ export default function Home() {
                           ? parseFloat((customWidth / customHeight).toFixed(2))
                           : 1
                       }
+                      onChange={(e) => {
+                        const value = Number(e.target.value);
+                        const ratio = value / customHeight;
+                        cropper.setAspectRatio(value / customHeight);
+                        // cropper.setCropBoxData().width *= ratio;
+                      }}
                     />
                     <InputRightAddon children="w" />
                   </InputGroup>
