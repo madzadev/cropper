@@ -57,8 +57,8 @@ export default function Home() {
   const [fileType, setFileType] = useState("jpg");
 
   const [dragArea, setDragArea] = useState({
-    width: 0,
-    height: 0,
+    width,
+    height,
   });
 
   const [customWidth, setCustomWidth] = useState(0);
@@ -80,7 +80,7 @@ export default function Home() {
     setCustomWidth(cropper.getCroppedCanvas().width);
     setCustomHeight(cropper.getCroppedCanvas().height);
 
-    // setBaseImage(cropper.getCroppedCanvas().toDataURL());
+    setBaseImage(cropper.getCroppedCanvas().toDataURL());
   };
 
   const onChange = (e) => {
@@ -327,6 +327,8 @@ export default function Home() {
               ref={cropperRef}
               disable={false}
               // autoCropArea={1} //0.8 is default
+              minCropBoxWidth={1}
+              minCropBoxHeight={1}
               background={false}
               viewMode={2}
               onInitialized={(instance) => {
@@ -494,7 +496,9 @@ export default function Home() {
                   <div>
                     <p>Res.score</p>
                     <h1 className={styles.croppedRes}>
-                      {calcCustomRes(Math.round(dragArea.width))}
+                      {!dragArea.width || !dragArea.height
+                        ? "-"
+                        : calcCustomRes(Math.round(dragArea.width))}
                     </h1>
                   </div>
                 )}
@@ -505,7 +509,7 @@ export default function Home() {
               <h1 className={styles.sectionTitle}>Image Preview:</h1>
             </div>
 
-            <div
+            {/* <div
               style={{
                 height: "auto",
                 width: "100%",
@@ -513,11 +517,18 @@ export default function Home() {
                 marginBottom: "20px",
               }}
             >
+              {customWidth!=0?():(
+                
+              )} */}
+            <div>
               <div
                 className="preview"
                 style={{
                   height: "200px",
                   overflow: "hidden",
+                  position: "relative",
+                  marginBottom: "20px",
+                  display: `${dragArea.width == 0 ? "none" : "block"}`,
                 }}
               ></div>
             </div>
@@ -535,6 +546,7 @@ export default function Home() {
                   colorScheme="teal"
                   variant="solid"
                   w={150}
+                  isDisabled={!dragArea.width || !dragArea.height}
                 >
                   Download
                 </Button>
@@ -545,6 +557,7 @@ export default function Home() {
                 onChange={(e) => {
                   setFileType(e.target.value);
                 }}
+                isDisabled={!dragArea.width || !dragArea.height}
               >
                 <option value="jpg">.JPG</option>
                 <option value="png">.PNG</option>
