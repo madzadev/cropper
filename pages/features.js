@@ -12,6 +12,7 @@ const Features = () => {
         {features.map((feature, index) => {
           return (
             <FeatureCard
+              key={index}
               title={feature.title}
               description={feature.description}
             />

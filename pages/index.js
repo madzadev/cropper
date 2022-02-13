@@ -80,7 +80,7 @@ export default function Home() {
     setCustomWidth(cropper.getCroppedCanvas().width);
     setCustomHeight(cropper.getCroppedCanvas().height);
 
-    setBaseImage(cropper.getCroppedCanvas().toDataURL());
+    // setBaseImage(cropper.getCroppedCanvas().toDataURL());
   };
 
   const onChange = (e) => {
@@ -204,25 +204,25 @@ export default function Home() {
                       placeholder={customWidth}
                       value={customWidth || ""}
                       onChange={(e) => {
-                        console.log("canvas", cropper.getCroppedCanvas().width);
-                        console.log("boxdata", cropper.getCropBoxData().width);
-                        console.log("data", cropper.getData().width);
-                        console.log(
-                          "image width: ",
-                          cropper.getCanvasData().width
-                        );
-                        console.log(
-                          "image height: ",
-                          cropper.getCanvasData().height
-                        );
-                        console.log(
-                          "natural image width: ",
-                          cropper.getCanvasData().naturalWidth
-                        );
-                        console.log(
-                          "natural image height: ",
-                          cropper.getCanvasData().naturalHeight
-                        );
+                        // console.log("canvas", cropper.getCroppedCanvas().width);
+                        // console.log("boxdata", cropper.getCropBoxData().width);
+                        // console.log("data", cropper.getData().width);
+                        // console.log(
+                        //   "image width: ",
+                        //   cropper.getCanvasData().width
+                        // );
+                        // console.log(
+                        //   "image height: ",
+                        //   cropper.getCanvasData().height
+                        // );
+                        // console.log(
+                        //   "natural image width: ",
+                        //   cropper.getCanvasData().naturalWidth
+                        // );
+                        // console.log(
+                        //   "natural image height: ",
+                        //   cropper.getCanvasData().naturalHeight
+                        // );
                         const value = Number(e.target.value);
                         const previousValue =
                           Number(value.toString().slice(0, -1)) || 0;
