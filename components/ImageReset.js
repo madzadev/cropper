@@ -13,7 +13,12 @@ const ImageSelector = ({ onChange }) => {
         Select Image
       </Button>
 
-      <input type="file" className={styles.fileUpload} onChange={onChange} />
+      <input
+        type="file"
+        className={styles.fileUpload}
+        onChange={onChange}
+        accept=".jpg, .png"
+      />
     </div>
   );
 };
