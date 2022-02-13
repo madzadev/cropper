@@ -587,27 +587,20 @@ export default function Home() {
               </div>
             )}
 
-            <Stack direction="row" spacing={2}>
-              <a download={`test.${fileType}`} href={baseImage}>
+            <div className={styles.downloadArea}>
+              <a href={baseImage} download={`test.${fileType}`}>
                 <Button
-                  onClick={() => {
-                    cropper.getCroppedCanvas({
-                      width: "90px",
-                      height: "90px",
-                    });
-                  }}
                   rightIcon={<Icon as={HiDownload} w={5} h={5} />}
                   colorScheme="teal"
                   variant="solid"
-                  w={150}
                   isDisabled={!dragArea.width || !dragArea.height}
+                  w="100%"
                 >
                   Download
                 </Button>
               </a>
 
               <Select
-                w={24}
                 onChange={(e) => {
                   setFileType(e.target.value);
                 }}
@@ -616,7 +609,7 @@ export default function Home() {
                 <option value="jpg">.JPG</option>
                 <option value="png">.PNG</option>
               </Select>
-            </Stack>
+            </div>
           </div>
         </div>
       )}
