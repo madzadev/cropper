@@ -539,7 +539,16 @@ export default function Home() {
             </div>
             {(dragArea.width == 0 || dragArea.height == 0) && (
               <div className={styles.descriptionBox}>
-                <p>Preview not available. Please set width or/and height.</p>
+                <p>Preview not available.</p>
+                <p>
+                  Please set{" "}
+                  {dragArea.width == 0 && dragArea.height == 0
+                    ? "width and height"
+                    : dragArea.width == 0
+                    ? "width"
+                    : "height"}
+                  .
+                </p>
               </div>
             )}
 
