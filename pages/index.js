@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import Cropper from "react-cropper";
 import {
@@ -62,6 +62,18 @@ export default function Home() {
 
   const [customResolutionError, setCustomResolutionError] = useState("");
   const [customAspectRatioError, setCustomAspectRatioError] = useState("");
+
+  const [customRatioLock, setCustomRatioLock] = useState(false);
+
+  useEffect(() => {
+    if (cropper) {
+      if (customRatioLock) {
+        cropper.setAspectRatio(dragArea.width / dragArea.height);
+      } else {
+        cropper.setAspectRatio(NaN);
+      }
+    }
+  }, [customRatioLock]);
 
   const calcCustomRes = (res) =>
     res < 720 ? "SD" : res < 1920 ? "HD" : res < 3840 ? "FHD" : "UHD";
@@ -357,8 +369,12 @@ export default function Home() {
                       placeholder="0"
                       type="number"
                       value={calcWidthAspectRatio(dragArea)}
+                      onFocus={(e) => {
+                        e.target.value = "";
+                      }}
                       onChange={(e) => {
-                        const value = Number(e.target.value);
+                        const value = parseFloat(e.target.value);
+                        console.log(value);
                         const previousValue =
                           Number(value.toString().slice(0, -1)) || 0;
                         const containerWidth = cropper.getContainerData().width;
@@ -382,7 +398,7 @@ export default function Home() {
                             setCustomAspectRatioError("");
                           } else {
                             setCustomAspectRatioError(
-                              `The max aspect ratio is ${(
+                              `The max w ratio is ${(
                                 maxCropperWidth /
                                 (dragArea.height /
                                   calcHeightAspectRatio(dragArea))
@@ -407,16 +423,13 @@ export default function Home() {
                             setCustomAspectRatioError("");
                           } else {
                             setCustomAspectRatioError(
-                              `The max aspect ratio is ${(
+                              `The max w ratio is ${(
                                 naturalImageWidth /
                                 (dragArea.height /
                                   calcHeightAspectRatio(dragArea))
                               ).toFixed(3)}px`
                             );
                             e.target.value = previousValue;
-                            // cropper.setData({
-                            //   width: previousValue,
-                            // });
                             setTimeout(() => {
                               setCustomResolutionError("");
                             }, 2000);
@@ -434,7 +447,73 @@ export default function Home() {
                       placeholder="0"
                       type="number"
                       value={calcHeightAspectRatio(dragArea)}
-                      onChange={(e) => {}}
+                      onChange={(e) => {
+                        const value = Number(e.target.value);
+                        const previousValue =
+                          Number(value.toString().slice(0, -1)) || 0;
+                        const containerHeight =
+                          cropper.getContainerData().height;
+                        const naturalImageHeight =
+                          cropper.getImageData().naturalHeight;
+                        const canvasHeight = cropper.getCanvasData().height;
+                        const heightAspectRatio =
+                          dragArea.width /
+                          (calcWidthAspectRatio(dragArea) / value);
+                        if (canvasHeight > containerHeight) {
+                          const maxCropperHeight = Math.round(
+                            containerHeight /
+                              (canvasHeight / naturalImageHeight)
+                          );
+                          if (heightAspectRatio <= maxCropperHeight) {
+                            console.log(
+                              "image OUTSIDE the height of container"
+                            );
+                            if (activePreset.name) {
+                              setActivePreset({});
+                              cropper.setAspectRatio(NaN);
+                            }
+                            cropper.setData({ height: heightAspectRatio });
+                            setCustomAspectRatioError("");
+                          } else {
+                            setCustomAspectRatioError(
+                              `The max h ratio is ${(
+                                maxCropperHeight /
+                                (dragArea.width /
+                                  calcWidthAspectRatio(dragArea))
+                              ).toFixed(3)}px`
+                            );
+                            e.target.value = previousValue;
+                            setTimeout(() => {
+                              setCustomResolutionError("");
+                            }, 2000);
+                          }
+                        } else {
+                          console.log("image INSIDE the height of container");
+                          if (heightAspectRatio <= naturalImageHeight) {
+                            if (activePreset.name) {
+                              setActivePreset({});
+                              cropper.setAspectRatio(NaN);
+                            }
+                            cropper.setData({ height: heightAspectRatio });
+                            setCustomAspectRatioError("");
+                          } else {
+                            setCustomAspectRatioError(
+                              `The max h ratio is ${(
+                                naturalImageHeight /
+                                (dragArea.width /
+                                  calcWidthAspectRatio(dragArea))
+                              ).toFixed(3)}px`
+                            );
+                            e.target.value = previousValue;
+                            // cropper.setData({
+                            //   width: previousValue,
+                            // });
+                            setTimeout(() => {
+                              setCustomResolutionError("");
+                            }, 2000);
+                          }
+                        }
+                      }}
                     />
                     <InputRightAddon children="h" />
                   </InputGroup>
@@ -442,6 +521,13 @@ export default function Home() {
                 {customAspectRatioError && (
                   <AlertMessage message={customAspectRatioError} />
                 )}
+                <button
+                  onClick={() => {
+                    setCustomRatioLock(!customRatioLock);
+                  }}
+                >
+                  Lock In
+                </button>
               </AccordionSection>
             </Accordion>
           </div>
