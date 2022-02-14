@@ -62,9 +62,24 @@ export default function Home() {
   const [fileType, setFileType] = useState("jpg");
 
   const [customResolutionError, setCustomResolutionError] = useState("");
+  const [customAspectRatioError, setCustomAspectRatioError] = useState("");
 
   const calcCustomRes = (res) =>
     res < 720 ? "SD" : res < 1920 ? "HD" : res < 3840 ? "FHD" : "UHD";
+
+  const calcHeightAspectRatio = (dragArea) =>
+    !dragArea.width || !dragArea.height
+      ? ""
+      : dragArea.width >= dragArea.height
+      ? 1
+      : parseFloat((dragArea.height / dragArea.width).toFixed(2));
+
+  const calcWidthAspectRatio = (dragArea) =>
+    !dragArea.width || !dragArea.height
+      ? ""
+      : dragArea.width >= dragArea.height
+      ? parseFloat((dragArea.width / dragArea.height).toFixed(2))
+      : 1;
 
   const cropperRef = useRef(null);
   const onCrop = () => {
@@ -340,19 +355,70 @@ export default function Home() {
                     <Input
                       placeholder="0"
                       type="number"
-                      value={
-                        !dragArea.width || !dragArea.height
-                          ? ""
-                          : dragArea.width >= dragArea.height
-                          ? parseFloat(
-                              (dragArea.width / dragArea.height).toFixed(2)
-                            )
-                          : 1
-                      }
+                      value={calcWidthAspectRatio(dragArea)}
                       onChange={(e) => {
                         const value = Number(e.target.value);
-                        const ratio = value / dragArea.height;
-                        cropper.setAspectRatio(value / dragArea.height);
+                        const previousValue =
+                          Number(value.toString().slice(0, -1)) || 0;
+                        const containerWidth = cropper.getContainerData().width;
+                        const naturalImageWidth =
+                          cropper.getImageData().naturalWidth;
+                        const canvasWidth = cropper.getCanvasData().width;
+                        const widthAspectRatio =
+                          dragArea.height /
+                          (calcHeightAspectRatio(dragArea) / value);
+                        if (canvasWidth > containerWidth) {
+                          const maxCropperWidth = Math.round(
+                            containerWidth / (canvasWidth / naturalImageWidth)
+                          );
+                          if (widthAspectRatio <= maxCropperWidth) {
+                            console.log("image OUTSIDE the width of container");
+                            if (activePreset.name) {
+                              setActivePreset({});
+                              cropper.setAspectRatio(NaN);
+                            }
+                            cropper.setData({ width: widthAspectRatio });
+                            setCustomAspectRatioError("");
+                          } else {
+                            setCustomAspectRatioError(
+                              `The max aspect ratio is ${
+                                maxCropperWidth /
+                                calcHeightAspectRatio(dragArea)
+                              }px`
+                            );
+                            e.target.value = previousValue;
+                            cropper.setData({
+                              width: previousValue,
+                            });
+                            setTimeout(() => {
+                              setCustomResolutionError("");
+                            }, 2000);
+                          }
+                        } else {
+                          console.log("image INSIDE the width of container");
+                          if (widthAspectRatio <= naturalImageWidth) {
+                            if (activePreset.name) {
+                              setActivePreset({});
+                              cropper.setAspectRatio(NaN);
+                            }
+                            cropper.setData({ width: widthAspectRatio });
+                            setCustomAspectRatioError("");
+                          } else {
+                            setCustomAspectRatioError(
+                              `The max aspect ratio is ${
+                                naturalImageWidth /
+                                calcHeightAspectRatio(dragArea)
+                              }px`
+                            );
+                            e.target.value = previousValue;
+                            cropper.setData({
+                              width: previousValue,
+                            });
+                            setTimeout(() => {
+                              setCustomResolutionError("");
+                            }, 2000);
+                          }
+                        }
                       }}
                     />
                     <InputRightAddon children="w" />
@@ -364,20 +430,15 @@ export default function Home() {
                     <Input
                       placeholder="0"
                       type="number"
-                      value={
-                        !dragArea.width || !dragArea.height
-                          ? ""
-                          : dragArea.width >= dragArea.height
-                          ? 1
-                          : parseFloat(
-                              (dragArea.height / dragArea.width).toFixed(2)
-                            )
-                      }
+                      value={calcHeightAspectRatio(dragArea)}
                       onChange={(e) => {}}
                     />
                     <InputRightAddon children="h" />
                   </InputGroup>
                 </div>
+                {customAspectRatioError && (
+                  <AlertMessage message={customAspectRatioError} />
+                )}
               </AccordionSection>
             </Accordion>
           </div>
