@@ -3,7 +3,6 @@ import Head from "next/head";
 import Cropper from "react-cropper";
 import {
   Icon,
-  Stack,
   Button,
   Select,
   Accordion,
@@ -67,19 +66,19 @@ export default function Home() {
   const calcCustomRes = (res) =>
     res < 720 ? "SD" : res < 1920 ? "HD" : res < 3840 ? "FHD" : "UHD";
 
-  const calcHeightAspectRatio = (dragArea) =>
-    !dragArea.width || !dragArea.height
-      ? ""
-      : dragArea.width >= dragArea.height
-      ? 1
-      : parseFloat((dragArea.height / dragArea.width).toFixed(2));
-
   const calcWidthAspectRatio = (dragArea) =>
     !dragArea.width || !dragArea.height
       ? ""
       : dragArea.width >= dragArea.height
       ? parseFloat((dragArea.width / dragArea.height).toFixed(2))
       : 1;
+
+  const calcHeightAspectRatio = (dragArea) =>
+    !dragArea.width || !dragArea.height
+      ? ""
+      : dragArea.width >= dragArea.height
+      ? 1
+      : parseFloat((dragArea.height / dragArea.width).toFixed(2));
 
   const cropperRef = useRef(null);
   const onCrop = () => {
@@ -381,22 +380,23 @@ export default function Home() {
                             setCustomAspectRatioError("");
                           } else {
                             setCustomAspectRatioError(
-                              `The max aspect ratio is ${
+                              `The max aspect ratio is ${(
                                 maxCropperWidth /
-                                calcHeightAspectRatio(dragArea)
-                              }px`
+                                (dragArea.height /
+                                  calcHeightAspectRatio(dragArea))
+                              ).toFixed(2)}px`
                             );
                             e.target.value = previousValue;
-                            cropper.setData({
-                              width: previousValue,
-                            });
+                            // cropper.setData({
+                            //   width: previousValue,
+                            // });
                             setTimeout(() => {
                               setCustomResolutionError("");
                             }, 2000);
                           }
                         } else {
                           console.log("image INSIDE the width of container");
-                          if (widthAspectRatio <= naturalImageWidth) {
+                          if (widthAspectRatio < naturalImageWidth) {
                             if (activePreset.name) {
                               setActivePreset({});
                               cropper.setAspectRatio(NaN);
@@ -405,15 +405,16 @@ export default function Home() {
                             setCustomAspectRatioError("");
                           } else {
                             setCustomAspectRatioError(
-                              `The max aspect ratio is ${
+                              `The max aspect ratio is ${(
                                 naturalImageWidth /
-                                calcHeightAspectRatio(dragArea)
-                              }px`
+                                (dragArea.height /
+                                  calcHeightAspectRatio(dragArea))
+                              ).toFixed(2)}px`
                             );
                             e.target.value = previousValue;
-                            cropper.setData({
-                              width: previousValue,
-                            });
+                            // cropper.setData({
+                            //   width: previousValue,
+                            // });
                             setTimeout(() => {
                               setCustomResolutionError("");
                             }, 2000);
