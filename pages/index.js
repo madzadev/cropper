@@ -70,7 +70,7 @@ export default function Home() {
     !dragArea.width || !dragArea.height
       ? ""
       : dragArea.width >= dragArea.height
-      ? parseFloat((dragArea.width / dragArea.height).toFixed(2))
+      ? parseFloat((dragArea.width / dragArea.height).toFixed(3))
       : 1;
 
   const calcHeightAspectRatio = (dragArea) =>
@@ -78,7 +78,7 @@ export default function Home() {
       ? ""
       : dragArea.width >= dragArea.height
       ? 1
-      : parseFloat((dragArea.height / dragArea.width).toFixed(2));
+      : parseFloat((dragArea.height / dragArea.width).toFixed(3));
 
   const cropperRef = useRef(null);
   const onCrop = () => {
@@ -384,7 +384,7 @@ export default function Home() {
                                 maxCropperWidth /
                                 (dragArea.height /
                                   calcHeightAspectRatio(dragArea))
-                              ).toFixed(2)}px`
+                              ).toFixed(3)}px`
                             );
                             e.target.value = previousValue;
                             // cropper.setData({
@@ -396,7 +396,7 @@ export default function Home() {
                           }
                         } else {
                           console.log("image INSIDE the width of container");
-                          if (widthAspectRatio < naturalImageWidth) {
+                          if (widthAspectRatio <= naturalImageWidth) {
                             if (activePreset.name) {
                               setActivePreset({});
                               cropper.setAspectRatio(NaN);
@@ -409,7 +409,7 @@ export default function Home() {
                                 naturalImageWidth /
                                 (dragArea.height /
                                   calcHeightAspectRatio(dragArea))
-                              ).toFixed(2)}px`
+                              ).toFixed(3)}px`
                             );
                             e.target.value = previousValue;
                             // cropper.setData({
