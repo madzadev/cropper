@@ -3,7 +3,8 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 5fr;
-  gap: 30px;
+  gap: 100px;
+  margin-top: 50px;
 }
 
 .title {

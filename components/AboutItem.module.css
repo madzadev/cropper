@@ -1,38 +1,8 @@
 .wrapper {
-  background-color: #e5eafe;
-  padding: 20px;
+  /* background-color: #e5eafe; */
+  padding: 10px 20px;
   border-radius: 20px;
 }
-
-/* .leftWrapper {
-  display: grid;
-  grid-template-columns: 4fr 1fr;
-  gap: 30px;
-}
-
-.rightWrapper {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  gap: 30px;
-}
-
-.text {
-  background-color: #e5eafe;
-  padding: 20px;
-  border-radius: 20px;
-}
-
-.imageBox {
-  background-color: #e5eafe;
-  padding: 20px;
-  border-radius: 20px;
-  display: grid;
-  place-items: center;
-}
-
-.image {
-  width: 50px;
-} */
 
 .title {
   font-size: 20px;
