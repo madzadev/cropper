@@ -71,17 +71,18 @@ export const presets = [
         width: 1500,
         height: 750,
       },
-      {
-        name: "Full-width Image",
-        description: "Maxed out image in your Articles",
-        width: 2040,
-        height: 1148,
-      },
+
       {
         name: "Profile Avatar",
         description: "Your Profile Avatar picture",
         width: 1000,
         height: 1000,
+      },
+      {
+        name: "Full-width Image",
+        description: "Maxed out image in your Articles",
+        width: 2040,
+        height: 1148,
       },
     ],
   },
