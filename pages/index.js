@@ -201,6 +201,7 @@ export default function Home() {
                           }
                           onChange={(e) => {
                             if (e.target.checked) {
+                              setCustomRatioLock(false);
                               setActivePreset({
                                 ...activePreset,
                                 site: Object.keys(site),
@@ -287,6 +288,7 @@ export default function Home() {
                           // setCustomAspectRatioError("");
                         }
                       }}
+                      isDisabled={customRatioLock}
                       type="number"
                     />
                     <InputRightAddon children="px" />
@@ -359,6 +361,7 @@ export default function Home() {
                         }
                         // setCustomAspectRatioError("");
                       }}
+                      isDisabled={customRatioLock}
                       type="number"
                     />
                     <InputRightAddon children="px" />
@@ -537,6 +540,7 @@ export default function Home() {
                 <Button
                   onClick={() => {
                     setCustomRatioLock(!customRatioLock);
+                    setActivePreset({});
                   }}
                   leftIcon={
                     customRatioLock ? (
