@@ -11,7 +11,13 @@ import {
   InputRightAddon,
 } from "@chakra-ui/react";
 import { HiDownload } from "react-icons/hi";
-import { FiCrop, FiRotateCcw, FiRotateCw } from "react-icons/fi";
+import {
+  FiCrop,
+  FiRotateCcw,
+  FiRotateCw,
+  FiLock,
+  FiUnlock,
+} from "react-icons/fi";
 import { BsArrowsMove } from "react-icons/bs";
 import { RiZoomInLine, RiZoomOutLine, RiDeleteBinLine } from "react-icons/ri";
 import {
@@ -521,13 +527,29 @@ export default function Home() {
                 {customAspectRatioError && (
                   <AlertMessage message={customAspectRatioError} />
                 )} */}
-                <button
+                {/* <button
                   onClick={() => {
                     setCustomRatioLock(!customRatioLock);
                   }}
                 >
                   Lock In
-                </button>
+                </button> */}
+                <Button
+                  onClick={() => {
+                    setCustomRatioLock(!customRatioLock);
+                  }}
+                  leftIcon={
+                    customRatioLock ? (
+                      <Icon as={FiLock} w={5} h={5} />
+                    ) : (
+                      <Icon as={FiUnlock} w={5} h={5} />
+                    )
+                  }
+                  colorScheme="blue"
+                  variant="solid"
+                >
+                  {customRatioLock ? "Locked In" : "Lock In"}
+                </Button>
               </AccordionSection>
             </Accordion>
           </div>
