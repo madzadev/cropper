@@ -539,11 +539,7 @@ export default function Home() {
                 </div>
               </div>
               <div>
-                {/* <p>Res.score</p> */}
                 {activePreset.width ? (
-                  // <h1 className={styles.croppedRes}>
-                  //   {Math.round((dragArea.width * 100) / activePreset.width)} %
-                  // </h1>
                   <CropScore
                     score={Math.round(
                       (dragArea.width * 100) / activePreset.width
