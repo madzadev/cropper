@@ -1,0 +1,15 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.image {
+  width: 40px;
+  height: 40px;
+}
+
+.description {
+  font-size: 24px;
+}

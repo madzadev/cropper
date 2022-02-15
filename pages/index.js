@@ -37,6 +37,7 @@ import AccordionSection from "../components/AccordionSection";
 import AlertMessage from "../components/AlertMessage";
 import CheckBox from "../components/CheckBox";
 import CropScore from "../components/CropScore";
+import DescriptionCard from "../components/DescriptionCard";
 
 import "cropperjs/dist/cropper.css";
 import styles from "../styles/Home.module.css";
@@ -147,17 +148,24 @@ export default function Home() {
 
             <div className={styles.heroSelect}>
               <div className={styles.heroDescriptionArea}>
-                <p className={styles.heroBullets}>
-                  ❌ Say goodbye to out of positioned, stretched, pixelated, etc
-                  images
-                </p>
-                <p className={styles.heroBullets}>
-                  ❌ Stop spending time on trying to figure out the resolutions
-                  and aspect ratios
-                </p>
-                <p className={styles.heroBullets}>
-                  ✅ Let CropScore sort it out for you!
-                </p>
+                <DescriptionCard
+                  image="/graphics/close.png"
+                  description="Say goodbye to out of positioned, stretched, pixelated, etc
+                  images"
+                />
+                <DescriptionCard
+                  image="/graphics/close.png"
+                  description="Stop spending time on trying to figure out the resolutions
+                  and aspect ratios"
+                />
+                <DescriptionCard
+                  image="/graphics/close.png"
+                  description="Stop using external tools and libraries"
+                />
+                <DescriptionCard
+                  image="/graphics/check.png"
+                  description="Let CropScore sort it out for you!"
+                />
               </div>
               <div className={styles.imageSelectorArea}>
                 <ImageSelector onChange={onChange} />
@@ -367,7 +375,7 @@ export default function Home() {
                       <Icon as={FiUnlock} w={5} h={5} />
                     )
                   }
-                  colorScheme="blue"
+                  colorScheme="teal"
                   variant="solid"
                 >
                   {customRatioLock ? "Locked In" : "Lock In"}
