@@ -150,21 +150,20 @@ export default function Home() {
               <div className={styles.heroDescriptionArea}>
                 <DescriptionCard
                   image="/graphics/close.png"
-                  description="Say goodbye to out of positioned, stretched, pixelated, etc
-                  images"
+                  description="Say goodbye to squeezed, stretched and pixelated images"
                 />
                 <DescriptionCard
                   image="/graphics/close.png"
-                  description="Stop spending time on trying to figure out the resolutions
+                  description="Stop spending time trying to figure out resolutions
                   and aspect ratios"
                 />
                 <DescriptionCard
                   image="/graphics/close.png"
-                  description="Stop using external tools and libraries"
+                  description="Avoid using multiple tools and creating templates for each media type"
                 />
                 <DescriptionCard
                   image="/graphics/check.png"
-                  description="Let CropScore sort it out for you!"
+                  description="Let CropScore sort it all out for you!"
                 />
               </div>
               <div className={styles.imageSelectorArea}>
