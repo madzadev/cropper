@@ -2,7 +2,7 @@
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); */
+  grid-template-columns: 1fr 5fr;
   gap: 30px;
 }
 
@@ -11,4 +11,18 @@
   font-weight: bold;
   margin-bottom: 20px;
   text-align: center;
+}
+
+.imageArea {
+  display: grid;
+  place-items: center;
+}
+
+.image {
+  width: 250px;
+}
+
+.textArea {
+  display: grid;
+  gap: 30px;
 }
