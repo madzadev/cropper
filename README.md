@@ -26,7 +26,7 @@ When using the cropper presets, the images will always be cropped in the
 - Zoom tools - Zoom the image in or out to get the precise crops
 - Rotate tools - Rotate image clockwise or counter-clockwise by 45 degree increments
 - Transform image - Swap image on X or Y axis
-- Crop data - Crop window size data. Updated in real time as you resize the crop
+- Resolution data - Updated in real time as you resize the crop window
 - Crop Score - Automatically calculated crop score for the fit of the recommended resolutions
 - Image preview - The user is allowed to preview the crop.
 - Reset - Reset image and crop windows as they were when the image was uploaded
