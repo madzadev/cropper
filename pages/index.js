@@ -278,7 +278,7 @@ export default function Home() {
                               setCustomResolutionError("");
                             }, 2000);
                           }
-                          setCustomAspectRatioError("");
+                          // setCustomAspectRatioError("");
                         }
                       }}
                       type="number"
@@ -351,7 +351,7 @@ export default function Home() {
                             }, 2000);
                           }
                         }
-                        setCustomAspectRatioError("");
+                        // setCustomAspectRatioError("");
                       }}
                       type="number"
                     />
