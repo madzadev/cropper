@@ -61,7 +61,7 @@ export default function Home() {
   const [fileType, setFileType] = useState("jpg");
 
   const [customResolutionError, setCustomResolutionError] = useState("");
-  const [customAspectRatioError, setCustomAspectRatioError] = useState("");
+  // const [customAspectRatioError, setCustomAspectRatioError] = useState("");
 
   const [customRatioLock, setCustomRatioLock] = useState(false);
 
@@ -78,19 +78,19 @@ export default function Home() {
   const calcCustomRes = (res) =>
     res < 720 ? "SD" : res < 1920 ? "HD" : res < 3840 ? "FHD" : "UHD";
 
-  const calcWidthAspectRatio = (dragArea) =>
-    !dragArea.width || !dragArea.height
-      ? ""
-      : dragArea.width >= dragArea.height
-      ? parseFloat((dragArea.width / dragArea.height).toFixed(3))
-      : 1;
+  // const calcWidthAspectRatio = (dragArea) =>
+  //   !dragArea.width || !dragArea.height
+  //     ? ""
+  //     : dragArea.width >= dragArea.height
+  //     ? parseFloat((dragArea.width / dragArea.height).toFixed(3))
+  //     : 1;
 
-  const calcHeightAspectRatio = (dragArea) =>
-    !dragArea.width || !dragArea.height
-      ? ""
-      : dragArea.width >= dragArea.height
-      ? 1
-      : parseFloat((dragArea.height / dragArea.width).toFixed(3));
+  // const calcHeightAspectRatio = (dragArea) =>
+  //   !dragArea.width || !dragArea.height
+  //     ? ""
+  //     : dragArea.width >= dragArea.height
+  //     ? 1
+  //     : parseFloat((dragArea.height / dragArea.width).toFixed(3));
 
   const cropperRef = useRef(null);
   const onCrop = () => {
@@ -218,7 +218,7 @@ export default function Home() {
                 );
               })}
               <AccordionSection title="Custom size">
-                <h1>Set resolution:</h1>
+                <h1>Set resolution / aspect ratio:</h1>
                 <div className={styles.customInput}>
                   <InputGroup>
                     <Input
@@ -362,7 +362,7 @@ export default function Home() {
                   <AlertMessage message={customResolutionError} />
                 )}
 
-                <h1>Pick an aspect ratio:</h1>
+                {/* <h1>Pick an aspect ratio:</h1>
                 <div className={styles.customInput}>
                   <InputGroup>
                     <Input
@@ -520,7 +520,7 @@ export default function Home() {
                 </div>
                 {customAspectRatioError && (
                   <AlertMessage message={customAspectRatioError} />
-                )}
+                )} */}
                 <button
                   onClick={() => {
                     setCustomRatioLock(!customRatioLock);
