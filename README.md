@@ -17,8 +17,8 @@ When using the cropper presets, the images will always be cropped in the
 
 ## Features
 
-- Image upload - supported formats .JPG, .PNG, .SVG and .WEBP.
-- Presets - Currently there are 30 presets from 12 commonly used platforms
+- Image upload - supported formats .JPG, .PNG.
+- Presets - Currently there are 31 presets from 10 commonly used platforms
 - Custom mode - User is allowed to switch to custom resolutions
 - Ratio lock - User can lock any custom aspect ratio
 - Input validation - Informative warning messages for invalid inputs
@@ -53,7 +53,6 @@ When using the cropper presets, the images will always be cropped in the
 
 ## License
 
-[CropScore](https://cropper.madza.dev) is an open source project.  
-The feature requests are welcome.
+[CropScore](https://cropper.madza.dev) is an open source project. The feature requests are welcome.
 
 The project is under the terms of [MIT license](https://choosealicense.com/licenses/mit/).
