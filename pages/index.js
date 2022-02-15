@@ -564,19 +564,6 @@ export default function Home() {
             <div className={styles.titleBox}>
               <h1 className={styles.sectionTitle}>Image Preview:</h1>
             </div>
-
-            {/* <div
-              style={{
-                height: "auto",
-                width: "100%",
-                position: "relative",
-                marginBottom: "20px",
-              }}
-            >
-              {customWidth!=0?():(
-                
-              )} */}
-
             <div>
               <div
                 className="preview"
