@@ -9,6 +9,8 @@ Also for YT, FB, Instagram,
 
 Preview GIF.
 
+Currently the supported platforms are [Hashnode](https://hashnode.com), [DEV](https://dev.to), [Medium](https://medium.com), [Hackernoon](https://hackernoon.com), [Twitter](https://twitter.com), [LinkedIn](https://linkedin.com), [YouTube](https://youtube.com), [Pinterest](https://pinterest.com), [Facebook](https://facebook.com) and [Instagram](https://instagram.com). In the future I might add other sites recommended by the users.
+
 ## What Cropper solves?
 
 When using the cropper presets, the images will always be cropped in the
