@@ -7,7 +7,7 @@ export const features = [
   {
     title: "Presets",
     description:
-      "Currently there are 30 presets from 12 commonly used platforms",
+      "Currently there are 33 presets from 10 commonly used platforms",
     icon: "/graphics/features",
   },
   {

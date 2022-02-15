@@ -20,6 +20,14 @@
   gap: 30px;
 }
 
+.heroDescriptionArea {
+  padding: 0 50px;
+}
+
+.heroBullets {
+  font-size: 24px;
+}
+
 .imageSelectorArea {
   /* border: 1px solid red; */
   display: grid;

@@ -18,7 +18,7 @@ When using the cropper presets, the images will always be cropped in the
 ## Features
 
 - Image upload - supported formats .JPG, .PNG.
-- Presets - Currently there are 31 presets from 10 commonly used platforms
+- Presets - Currently there are 33 presets from 10 commonly used platforms
 - Custom mode - User is allowed to switch to custom resolutions
 - Ratio lock - User can lock any custom aspect ratio
 - Input validation - Informative warning messages for invalid inputs

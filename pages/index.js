@@ -146,15 +146,17 @@ export default function Home() {
             </p>
 
             <div className={styles.heroSelect}>
-              <div>
-                <p>
-                  {" "}
-                  Say goodbye to out of positioned, stretched, pixelated, etc
+              <div className={styles.heroDescriptionArea}>
+                <p className={styles.heroBullets}>
+                  ❌ Say goodbye to out of positioned, stretched, pixelated, etc
                   images
                 </p>
-                <p>
-                  Stop spending time on trying to figure out the resolutions and
-                  aspect ratios
+                <p className={styles.heroBullets}>
+                  ❌ Stop spending time on trying to figure out the resolutions
+                  and aspect ratios
+                </p>
+                <p className={styles.heroBullets}>
+                  ✅ Let CropScore sort it out for you!
                 </p>
               </div>
               <div className={styles.imageSelectorArea}>
