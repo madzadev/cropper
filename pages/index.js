@@ -67,8 +67,6 @@ export default function Home() {
   const [fileType, setFileType] = useState("jpg");
 
   const [customResolutionError, setCustomResolutionError] = useState("");
-  // const [customAspectRatioError, setCustomAspectRatioError] = useState("");
-
   const [customRatioLock, setCustomRatioLock] = useState(false);
 
   useEffect(() => {
@@ -83,20 +81,6 @@ export default function Home() {
 
   const calcCustomRes = (res) =>
     res < 720 ? "SD" : res < 1920 ? "HD" : res < 3840 ? "FHD" : "UHD";
-
-  // const calcWidthAspectRatio = (dragArea) =>
-  //   !dragArea.width || !dragArea.height
-  //     ? ""
-  //     : dragArea.width >= dragArea.height
-  //     ? parseFloat((dragArea.width / dragArea.height).toFixed(3))
-  //     : 1;
-
-  // const calcHeightAspectRatio = (dragArea) =>
-  //   !dragArea.width || !dragArea.height
-  //     ? ""
-  //     : dragArea.width >= dragArea.height
-  //     ? 1
-  //     : parseFloat((dragArea.height / dragArea.width).toFixed(3));
 
   const cropperRef = useRef(null);
   const onCrop = () => {
@@ -285,7 +269,6 @@ export default function Home() {
                               setCustomResolutionError("");
                             }, 2000);
                           }
-                          // setCustomAspectRatioError("");
                         }
                       }}
                       isDisabled={customRatioLock}
@@ -359,7 +342,6 @@ export default function Home() {
                             }, 2000);
                           }
                         }
-                        // setCustomAspectRatioError("");
                       }}
                       isDisabled={customRatioLock}
                       type="number"
@@ -371,172 +353,6 @@ export default function Home() {
                   <AlertMessage message={customResolutionError} />
                 )}
 
-                {/* <h1>Pick an aspect ratio:</h1>
-                <div className={styles.customInput}>
-                  <InputGroup>
-                    <Input
-                      placeholder="0"
-                      type="number"
-                      value={calcWidthAspectRatio(dragArea)}
-                      onFocus={(e) => {
-                        e.target.value = "";
-                      }}
-                      onChange={(e) => {
-                        const value = parseFloat(e.target.value);
-                        console.log(value);
-                        const previousValue =
-                          Number(value.toString().slice(0, -1)) || 0;
-                        const containerWidth = cropper.getContainerData().width;
-                        const naturalImageWidth =
-                          cropper.getImageData().naturalWidth;
-                        const canvasWidth = cropper.getCanvasData().width;
-                        const widthAspectRatio =
-                          dragArea.height /
-                          (calcHeightAspectRatio(dragArea) / value);
-                        if (canvasWidth > containerWidth) {
-                          const maxCropperWidth = Math.round(
-                            containerWidth / (canvasWidth / naturalImageWidth)
-                          );
-                          if (widthAspectRatio <= maxCropperWidth) {
-                            console.log("image OUTSIDE the width of container");
-                            if (activePreset.name) {
-                              setActivePreset({});
-                              cropper.setAspectRatio(NaN);
-                            }
-                            cropper.setData({ width: widthAspectRatio });
-                            setCustomAspectRatioError("");
-                          } else {
-                            setCustomAspectRatioError(
-                              `The max w ratio is ${(
-                                maxCropperWidth /
-                                (dragArea.height /
-                                  calcHeightAspectRatio(dragArea))
-                              ).toFixed(3)}px`
-                            );
-                            e.target.value = previousValue;
-                            // cropper.setData({
-                            //   width: previousValue,
-                            // });
-                            setTimeout(() => {
-                              setCustomResolutionError("");
-                            }, 2000);
-                          }
-                        } else {
-                          console.log("image INSIDE the width of container");
-                          if (widthAspectRatio <= naturalImageWidth) {
-                            if (activePreset.name) {
-                              setActivePreset({});
-                              cropper.setAspectRatio(NaN);
-                            }
-                            cropper.setData({ width: widthAspectRatio });
-                            setCustomAspectRatioError("");
-                          } else {
-                            setCustomAspectRatioError(
-                              `The max w ratio is ${(
-                                naturalImageWidth /
-                                (dragArea.height /
-                                  calcHeightAspectRatio(dragArea))
-                              ).toFixed(3)}px`
-                            );
-                            e.target.value = previousValue;
-                            setTimeout(() => {
-                              setCustomResolutionError("");
-                            }, 2000);
-                          }
-                        }
-                      }}
-                    />
-                    <InputRightAddon children="w" />
-                  </InputGroup>
-                  <div style={{ display: "grid", placeItems: "center" }}>
-                    <p>x</p>
-                  </div>
-                  <InputGroup>
-                    <Input
-                      placeholder="0"
-                      type="number"
-                      value={calcHeightAspectRatio(dragArea)}
-                      onChange={(e) => {
-                        const value = Number(e.target.value);
-                        const previousValue =
-                          Number(value.toString().slice(0, -1)) || 0;
-                        const containerHeight =
-                          cropper.getContainerData().height;
-                        const naturalImageHeight =
-                          cropper.getImageData().naturalHeight;
-                        const canvasHeight = cropper.getCanvasData().height;
-                        const heightAspectRatio =
-                          dragArea.width /
-                          (calcWidthAspectRatio(dragArea) / value);
-                        if (canvasHeight > containerHeight) {
-                          const maxCropperHeight = Math.round(
-                            containerHeight /
-                              (canvasHeight / naturalImageHeight)
-                          );
-                          if (heightAspectRatio <= maxCropperHeight) {
-                            console.log(
-                              "image OUTSIDE the height of container"
-                            );
-                            if (activePreset.name) {
-                              setActivePreset({});
-                              cropper.setAspectRatio(NaN);
-                            }
-                            cropper.setData({ height: heightAspectRatio });
-                            setCustomAspectRatioError("");
-                          } else {
-                            setCustomAspectRatioError(
-                              `The max h ratio is ${(
-                                maxCropperHeight /
-                                (dragArea.width /
-                                  calcWidthAspectRatio(dragArea))
-                              ).toFixed(3)}px`
-                            );
-                            e.target.value = previousValue;
-                            setTimeout(() => {
-                              setCustomResolutionError("");
-                            }, 2000);
-                          }
-                        } else {
-                          console.log("image INSIDE the height of container");
-                          if (heightAspectRatio <= naturalImageHeight) {
-                            if (activePreset.name) {
-                              setActivePreset({});
-                              cropper.setAspectRatio(NaN);
-                            }
-                            cropper.setData({ height: heightAspectRatio });
-                            setCustomAspectRatioError("");
-                          } else {
-                            setCustomAspectRatioError(
-                              `The max h ratio is ${(
-                                naturalImageHeight /
-                                (dragArea.width /
-                                  calcWidthAspectRatio(dragArea))
-                              ).toFixed(3)}px`
-                            );
-                            e.target.value = previousValue;
-                            // cropper.setData({
-                            //   width: previousValue,
-                            // });
-                            setTimeout(() => {
-                              setCustomResolutionError("");
-                            }, 2000);
-                          }
-                        }
-                      }}
-                    />
-                    <InputRightAddon children="h" />
-                  </InputGroup>
-                </div>
-                {customAspectRatioError && (
-                  <AlertMessage message={customAspectRatioError} />
-                )} */}
-                {/* <button
-                  onClick={() => {
-                    setCustomRatioLock(!customRatioLock);
-                  }}
-                >
-                  Lock In
-                </button> */}
                 <Button
                   onClick={() => {
                     setCustomRatioLock(!customRatioLock);
