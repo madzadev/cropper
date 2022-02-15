@@ -9,13 +9,13 @@ export const presets = [
       },
       {
         name: "Blog Cover",
-        description: "The Cover image of your Blog page",
+        description: "The Cover image of Blog page",
         width: 1600,
         height: 480,
       },
       {
         name: "Profile Avatar",
-        description: "Your profile Avatar used through the Site",
+        description: "Your Profile Avatar picture",
         width: 400,
         height: 400,
       },
@@ -28,14 +28,13 @@ export const presets = [
       {
         name: "Publication Thumbnail",
         description:
-          "Shown as the Blog's logo on mobile screens and used as your Blog's favicon",
+          "Shown as the Blog's Logo on mobile screens and used as your Blog's Favicon",
         width: 500,
         height: 500,
       },
       {
         name: "Social Media Sharing",
-        description:
-          "Used when your Blog is shared on Twitter, Facebook and other social media websites",
+        description: "Used when your Blog is shared on Twitter, Facebook, etc",
         width: 800,
         height: 420,
       },
@@ -51,7 +50,7 @@ export const presets = [
       },
       {
         name: "Profile Avatar",
-        description: "Your profile Avatar used through the Site",
+        description: "Your Profile Avatar picture",
         width: 320,
         height: 320,
       },
@@ -67,7 +66,7 @@ export const presets = [
       },
       {
         name: "Profile Avatar",
-        description: "Your profile Avatar used through the Site",
+        description: "Your Profile Avatar picture",
         width: 500,
         height: 125,
       },
@@ -83,7 +82,7 @@ export const presets = [
       },
       {
         name: "Profile Avatar",
-        description: "Your profile Avatar used through the Site",
+        description: "Your Profile Avatar picture",
         width: 500,
         height: 125,
       },
@@ -93,7 +92,7 @@ export const presets = [
     Twitter: [
       {
         name: "Timeline Photo",
-        description: "An image that you would normally post in your Timeline",
+        description: "An image that you would post in your Timeline",
         width: 1200,
         height: 675,
       },
@@ -105,7 +104,7 @@ export const presets = [
       },
       {
         name: "Profile Avatar",
-        description: "Your profile Avatar used through the Site",
+        description: "Your Profile Avatar picture",
         width: 400,
         height: 400,
       },
@@ -115,7 +114,7 @@ export const presets = [
     LinkedIn: [
       {
         name: "Timeline Photo",
-        description: "An image that you would normally post in your Timeline",
+        description: "An image that you would post in your Timeline",
         width: 1200,
         height: 627,
       },
@@ -127,7 +126,7 @@ export const presets = [
       },
       {
         name: "Profile Avatar",
-        description: "Your profile Avatar used through the Site",
+        description: "Your Profile Avatar picture",
         width: 268,
         height: 268,
       },
@@ -138,7 +137,7 @@ export const presets = [
       {
         name: "Video Thumbnail",
         description:
-          "A preview image that will be used as a cover for the video",
+          "A preview image that will be used as a Cover for the Video",
         width: 1280,
         height: 720,
       },
@@ -150,7 +149,7 @@ export const presets = [
       },
       {
         name: "Profile Avatar",
-        description: "Your profile Avatar used through the Site",
+        description: "Your Profile Avatar picture",
         width: 800,
         height: 800,
       },
@@ -178,7 +177,7 @@ export const presets = [
       },
       {
         name: "Profile Avatar",
-        description: "Your profile Avatar used through the Site",
+        description: "Your Profile Avatar picture",
         width: 280,
         height: 280,
       },
@@ -188,7 +187,7 @@ export const presets = [
     Facebook: [
       {
         name: "Timeline Photo",
-        description: "An image that you would normally post in your Timeline",
+        description: "An image that you would post in your Timeline",
         width: 1200,
         height: 630,
       },
@@ -200,7 +199,7 @@ export const presets = [
       },
       {
         name: "Profile Avatar",
-        description: "Your profile Avatar used through the Site",
+        description: "Your Profile Avatar picture",
         width: 200,
         height: 200,
       },
@@ -210,7 +209,7 @@ export const presets = [
     Instagram: [
       {
         name: "Landscape Photo",
-        description: "An image that you would normally post in your Timeline",
+        description: "An image that you would post in your Timeline",
         width: 1080,
         height: 680,
       },
@@ -222,39 +221,10 @@ export const presets = [
       },
       {
         name: "Profile Avatar",
-        description: "Your profile Avatar used through the Site",
+        description: "Your Profile Avatar picture",
         width: 320,
         height: 320,
       },
     ],
   },
-  // {
-  //   Snapchat: [
-  //     {
-  //       name: "Image Post",
-  //       description:
-  //         "A typical image you would post",
-  //       width: 1080,
-  //       height: 1920,
-  //     },
-  //   ],
-  // },
-  // {
-  //   Tumblr: [
-  //     {
-  //       name: "Image Post",
-  //       description:
-  //         "An image that you would normally post",
-  //       width: 1280,
-  //       height: 1920,
-  //     },
-  //     {
-  //       name: "Profile Avatar",
-  //       description:
-  //         "Your profile Avatar used through the Site",
-  //       width: 128,
-  //       height: 128,
-  //     },
-  //   ],
-  // }
 ];
