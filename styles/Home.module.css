@@ -45,8 +45,6 @@
 }
 
 .presets {
-  /* border: 3px solid tomato; */
-  /* padding: 0 0 0 20px; */
 }
 
 .button {
@@ -66,8 +64,6 @@
 }
 
 .tools {
-  /* border: 3px solid tomato; */
-  /* padding: 20px; */
 }
 
 .titleBox {
@@ -90,7 +86,6 @@
 .croppedInfo {
   display: grid;
   grid-template-columns: 3fr 1fr 3fr 5fr;
-  /* border: 1px solid grey; */
   margin-bottom: 20px;
   text-align: center;
 }
