@@ -1,19 +1,13 @@
-Introducing Cropper - Leave image sizing headaches at bay.
+Introducing Cropper - An online image cropper for developers
+Image resolutions and anspect ratios should be the last things you worry about.
 
 ## About
 
-Cropper is an image cropper specified for the content creators. Especially for Hashnode, DEV, Medium, Hackernoon.
-Specially recommended for reposting.
-
-Also for YT, FB, Instagram,
+[CropScore](https://cropper.madza.dev) calculates the score (since the name) of how well the real-time crop will fit for the target use. The user is in full control of the upper and lower bounds of the resolutions and the correct aspect ratios are automatically set. All you have to do is drag and see the magic.
 
 Preview GIF.
 
 Currently the supported platforms are [Hashnode](https://hashnode.com), [DEV](https://dev.to), [Medium](https://medium.com), [Hackernoon](https://hackernoon.com), [Twitter](https://twitter.com), [LinkedIn](https://linkedin.com), [YouTube](https://youtube.com), [Pinterest](https://pinterest.com), [Facebook](https://facebook.com) and [Instagram](https://instagram.com). In the future I might add other sites recommended by the users.
-
-## What Cropper solves?
-
-When using the cropper presets, the images will always be cropped in the
 
 ## Features
 
