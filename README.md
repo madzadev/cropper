@@ -1,5 +1,5 @@
 Introducing Cropper - An online image cropper for developers
-Image resolutions and anspect ratios should be the last things you worry about.
+Image resolutions and aspect ratios should be the last things you worry about.
 
 ## About
 
