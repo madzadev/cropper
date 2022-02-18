@@ -76,7 +76,6 @@ export default function Home() {
   useEffect(() => {
     if (cropper) {
       const x = cropper.getData().x;
-
       if (customRatioLock) {
         cropper.setAspectRatio(dragArea.width / dragArea.height);
       } else {
@@ -107,8 +106,10 @@ export default function Home() {
   };
 
   const onCropMove = () => {
-    setX(cropper.getData().x);
-    setY(cropper.getData().y);
+    if (cropper) {
+      setX(cropper.getData().x);
+      setY(cropper.getData().y);
+    }
   };
 
   const onChange = (e) => {
@@ -420,6 +421,7 @@ export default function Home() {
             <Cropper
               src={image}
               style={{ height: "480px", width: "100%" }}
+              aspectRatio={width / height}
               guides={true}
               preview=".preview"
               crop={onCrop}
