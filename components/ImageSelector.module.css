@@ -1,9 +1,7 @@
 .wrapper {
   position: relative;
-  /* border: 1px solid red; */
   width: 400px;
   height: 400px;
-  /* line-height: 30px; */
   text-align: center;
   background-color: #e5eafe;
   border-radius: 20px;

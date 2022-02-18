@@ -82,8 +82,7 @@ export default function Home() {
       } else {
         cropper.setAspectRatio(NaN);
       }
-      cropper.setData({ width: dragArea.width, x: x });
-      cropper.setData({ height: dragArea.height, y: y });
+      cropper.setData({ width: dragArea.width, height: dragArea.height, x, y });
     }
   }, [customRatioLock]);
 
@@ -108,10 +107,8 @@ export default function Home() {
   };
 
   const onCropMove = () => {
-    if (cropper) {
-      setX(cropper.getData().x);
-      setY(cropper.getData().y);
-    }
+    setX(cropper.getData().x);
+    setY(cropper.getData().y);
   };
 
   const onChange = (e) => {
@@ -423,14 +420,11 @@ export default function Home() {
             <Cropper
               src={image}
               style={{ height: "480px", width: "100%" }}
-              // aspectRatio={1600 / 840}
               guides={true}
               preview=".preview"
               crop={onCrop}
               cropmove={onCropMove}
               ref={cropperRef}
-              // autoCropArea={1} //0.8 is default
-              // background={false}
               viewMode={2}
               onInitialized={(instance) => {
                 setCropper(instance);
