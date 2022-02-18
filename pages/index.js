@@ -228,6 +228,12 @@ export default function Home() {
                             } else {
                               setActivePreset({});
                               cropper.setAspectRatio(NaN);
+                              cropper.setData({
+                                width: dragArea.width,
+                                height: dragArea.height,
+                                x,
+                                y,
+                              });
                             }
                           }}
                         />
