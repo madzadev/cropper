@@ -1,8 +1,10 @@
-# About CropScore ✂️ 
+# CropScore README ✂️ 
 
-[CropScore](https://cropper.madza.dev) is an online image cropper for content creators.
+## About 👀
 
-It calculates the score of how well the real-time crop will fit for the target use. The user is in full control of the upper and lower bounds of the resolutions and the correct aspect ratios are automatically set. All you have to do is drag and see the magic.
+[CropScore](https://cropper.madza.dev) is an online image cropper for content creators, that calculates the score of how well the real-time crop will fit for the target use.
+
+The user is in full control of the upper and lower bounds of the resolutions and the correct aspect ratios are automatically set. All you have to do is drag and see the magic.
 
 Preview GIF.
 
