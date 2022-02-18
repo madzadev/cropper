@@ -1,4 +1,4 @@
-# CropScore README✂️ 
+# CropScore README 📃
 
 ## About 👀
 
