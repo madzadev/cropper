@@ -45,7 +45,7 @@ export const features = [
   {
     title: "Crop score",
     description:
-      "Automatcally calculated crop score for the fit of the recommended resolutions",
+      "Real-time crop score of the fit for the target use",
     icon: "/graphics/features",
   },
   {

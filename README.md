@@ -23,7 +23,7 @@ Currently the supported platforms are [Hashnode](https://hashnode.com), [DEV](ht
 - Rotate tools - Rotate image clockwise or counter-clockwise by 45 degree increments
 - Transform image - Swap image on X or Y axis
 - Resolution data - Updated in real time as you resize the crop window
-- Crop Score - Automatically calculated crop score for the fit of the recommended resolutions
+- Crop Score - Real-time crop score of the fit for the target use
 - Image preview - The user is allowed to preview the crop.
 - Reset - Reset image and crop windows as they were when the image was uploaded
 - Download - Download the image in popular formats such as .PNG and .JPG
