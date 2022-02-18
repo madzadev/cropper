@@ -69,16 +69,20 @@ export default function Home() {
 
   const [customResolutionError, setCustomResolutionError] = useState("");
   const [customRatioLock, setCustomRatioLock] = useState(false);
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
 
   useEffect(() => {
     if (cropper) {
+      const x = cropper.getData().x;
+
       if (customRatioLock) {
         cropper.setAspectRatio(dragArea.width / dragArea.height);
       } else {
         cropper.setAspectRatio(NaN);
       }
-      cropper.setData({ width: dragArea.width });
-      cropper.setData({ height: dragArea.height });
+      cropper.setData({ width: dragArea.width, x: x });
+      cropper.setData({ height: dragArea.height, y: y });
     }
   }, [customRatioLock]);
 
@@ -369,6 +373,8 @@ export default function Home() {
                   onClick={() => {
                     setCustomRatioLock(!customRatioLock);
                     setActivePreset({});
+                    setX(cropper.getData().x);
+                    setY(cropper.getData().y);
                   }}
                   leftIcon={
                     customRatioLock ? (
