@@ -1,7 +1,4 @@
-# Introducing CropScore - An online image cropper for developers
-Image resolutions and aspect ratios should be the last things you worry about.
-
-## About
+# Introducing CropScore - An online image cropper for content creators
 
 [CropScore](https://cropper.madza.dev) calculates the score (since the name) of how well the real-time crop will fit for the target use. The user is in full control of the upper and lower bounds of the resolutions and the correct aspect ratios are automatically set. All you have to do is drag and see the magic.
 
@@ -11,21 +8,21 @@ Currently the supported platforms are [Hashnode](https://hashnode.com), [DEV](ht
 
 ## Features
 
-- Image upload - supported formats .JPG, .PNG.
-- Presets - Currently there are 33 presets from 10 commonly used platforms
-- Custom mode - User is allowed to switch to custom resolutions
-- Ratio lock - User can lock any custom aspect ratio
-- Input validation - Informative warning messages for invalid inputs
-- Move tools - User can move the image around
-- Zoom tools - Zoom the image in or out to get the precise crops
-- Rotate tools - Rotate image clockwise or counter-clockwise by 45 degree increments
-- Transform image - Swap image on X or Y axis
-- Resolution data - Updated in real time as you resize the crop window
-- Crop Score - Automatically calculated crop score for the fit of the recommended resolutions
-- Image preview - The user is allowed to preview the crop.
-- Reset - Reset image and crop windows as they were when the image was uploaded
-- Download - Download the image in popular formats such as .PNG and .JPG
-- Responsive - Use the Cropper on any device
+Image upload - supported formats .JPG, .PNG.
+Presets - Currently there are 33 presets from 10 commonly used platforms
+Custom mode - User is allowed to switch to custom resolutions
+Ratio lock - User can lock any custom aspect ratio
+Input validation - Informative warning messages for invalid inputs
+Move tools - User can move the image around
+Zoom tools - Zoom the image in or out to get the precise crops
+Rotate tools - Rotate image clockwise or counter-clockwise by 45 degree increments
+Transform image - Swap image on X or Y axis
+Resolution data - Updated in real time as you resize the crop window
+Crop Score - Automatically calculated crop score for the fit of the recommended resolutions
+Image preview - The user is allowed to preview the crop.
+Reset - Reset image and crop windows as they were when the image was uploaded
+Download - Download the image in popular formats such as .PNG and .JPG
+Responsive - Use the Cropper on any device
 
 ## Tech Stack
 
