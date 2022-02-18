@@ -98,7 +98,17 @@ export default function Home() {
       height: cropper.getCroppedCanvas().height,
     });
 
+    setX(cropper.getData().x);
+    setY(cropper.getData().y);
+
     setBaseImage(cropper.getCroppedCanvas().toDataURL());
+  };
+
+  const onCropMove = () => {
+    if (cropper) {
+      setX(cropper.getData().x);
+      setY(cropper.getData().y);
+    }
   };
 
   const onChange = (e) => {
@@ -249,7 +259,7 @@ export default function Home() {
                               setActivePreset({});
                               cropper.setAspectRatio(NaN);
                             }
-                            cropper.setData({ width: value });
+                            cropper.setData({ width: value, x, y });
 
                             setCustomResolutionError("");
                           } else {
@@ -259,6 +269,8 @@ export default function Home() {
                             e.target.value = previousValue;
                             cropper.setData({
                               width: previousValue,
+                              x,
+                              y,
                             });
                             setTimeout(() => {
                               setCustomResolutionError("");
@@ -271,7 +283,7 @@ export default function Home() {
                               setActivePreset({});
                               cropper.setAspectRatio(NaN);
                             }
-                            cropper.setData({ width: value });
+                            cropper.setData({ width: value, x, y });
                             setCustomResolutionError("");
                           } else {
                             setCustomResolutionError(
@@ -280,6 +292,8 @@ export default function Home() {
                             e.target.value = previousValue;
                             cropper.setData({
                               width: previousValue,
+                              x,
+                              y,
                             });
                             setTimeout(() => {
                               setCustomResolutionError("");
@@ -322,7 +336,7 @@ export default function Home() {
                               setActivePreset({});
                               cropper.setAspectRatio(NaN);
                             }
-                            cropper.setData({ height: value });
+                            cropper.setData({ height: value, x, y });
                             setCustomResolutionError("");
                           } else {
                             setCustomResolutionError(
@@ -331,6 +345,8 @@ export default function Home() {
                             e.target.value = previousValue;
                             cropper.setData({
                               height: previousValue,
+                              x,
+                              y,
                             });
                             setTimeout(() => {
                               setCustomResolutionError("");
@@ -343,7 +359,7 @@ export default function Home() {
                               setActivePreset({});
                               cropper.setAspectRatio(NaN);
                             }
-                            cropper.setData({ height: value });
+                            cropper.setData({ height: value, x, y });
                             setCustomResolutionError("");
                           } else {
                             setCustomResolutionError(
@@ -352,6 +368,8 @@ export default function Home() {
                             e.target.value = previousValue;
                             cropper.setData({
                               height: previousValue,
+                              x,
+                              y,
                             });
                             setTimeout(() => {
                               setCustomResolutionError("");
@@ -404,6 +422,7 @@ export default function Home() {
               guides={true}
               preview=".preview"
               crop={onCrop}
+              cropmove={onCropMove}
               ref={cropperRef}
               // autoCropArea={1} //0.8 is default
               // background={false}
