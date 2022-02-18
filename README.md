@@ -1,5 +1,6 @@
-<center><h1>Intruducing CropScore ✂️</h1></center>
-<center>Resolutions and aspect rations should be the last things you worry about.</center>
+# Introducing CropScore ✂️
+
+Resolutions and aspect rations should be the last things you worry about.
 
 ## About 👀
 
@@ -13,7 +14,7 @@ Currently the supported platforms are [Hashnode](https://hashnode.com), [DEV](ht
 
 ## Features ✨
 
-- Image upload - supported formats .JPG, .PNG.
+- Image upload - supported formats .JPG and .PNG
 - Presets - Currently there are 33 presets from 10 commonly used platforms
 - Custom mode - User is allowed to switch to custom resolutions
 - Ratio lock - User can lock any custom aspect ratio
@@ -24,9 +25,9 @@ Currently the supported platforms are [Hashnode](https://hashnode.com), [DEV](ht
 - Transform image - Swap image on X or Y axis
 - Resolution data - Updated in real time as you resize the crop window
 - Crop Score - Real-time crop score of the fit for the target use
-- Image preview - The user is allowed to preview the crop.
+- Image preview - The user is allowed to preview the crop
 - Reset - Reset image and crop windows as they were when the image was uploaded
-- Download - Download the image in popular formats such as .PNG and .JPG
+- Download - Download the image as .PNG or .JPG
 - Responsive - Use the Cropper on any device
 
 ## Tech Stack 🛠️
