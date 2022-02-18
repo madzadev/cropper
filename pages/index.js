@@ -77,6 +77,8 @@ export default function Home() {
       } else {
         cropper.setAspectRatio(NaN);
       }
+      cropper.setData({ width: dragArea.width });
+      cropper.setData({ height: dragArea.height });
     }
   }, [customRatioLock]);
 
@@ -244,6 +246,7 @@ export default function Home() {
                               cropper.setAspectRatio(NaN);
                             }
                             cropper.setData({ width: value });
+
                             setCustomResolutionError("");
                           } else {
                             setCustomResolutionError(
@@ -391,12 +394,11 @@ export default function Home() {
             <Cropper
               src={image}
               style={{ height: "480px", width: "100%" }}
-              aspectRatio={1600 / 840}
+              // aspectRatio={1600 / 840}
               guides={true}
               preview=".preview"
               crop={onCrop}
               ref={cropperRef}
-              disable={false}
               // autoCropArea={1} //0.8 is default
               // background={false}
               viewMode={2}
