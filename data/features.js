@@ -1,7 +1,7 @@
 export const features = [
   {
     title: "Upload",
-    description: "Upload images in the popular formats such as .PNG and .JPG",
+    description: "Supported formats .PNG and .JPG",
     icon: "/graphics/features",
   },
   {
@@ -44,13 +44,12 @@ export const features = [
   },
   {
     title: "Crop score",
-    description:
-      "Real-time crop score of the fit for the target use",
+    description: "Real-time crop score of the fit for the target use",
     icon: "/graphics/features",
   },
   {
     title: "Image Preview",
-    description: "The user is allowed to preview the crop.",
+    description: "The user is allowed to preview the crop",
     icon: "/graphics/features",
   },
   {
@@ -61,7 +60,7 @@ export const features = [
   },
   {
     title: "Download",
-    description: "Download the image in popular formats such as .PNG and .JPG",
+    description: "Download the image as .PNG or .JPG",
     icon: "/graphics/features",
   },
 ];
