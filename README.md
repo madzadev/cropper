@@ -1,4 +1,4 @@
-Introducing Cropper - An online image cropper for developers
+# Introducing CropScore - An online image cropper for developers
 Image resolutions and aspect ratios should be the last things you worry about.
 
 ## About
