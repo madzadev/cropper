@@ -1,6 +1,6 @@
 # Introducing CropScore ✂️
 
-Resolutions and aspect rations should be the last things you worry about.
+Resolutions and aspect ratios should be the last things you worry about.
 
 ## About 👀
 
