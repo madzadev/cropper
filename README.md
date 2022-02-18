@@ -1,4 +1,5 @@
-# CropScore README 📃
+<center><h1>Intruducing CropScore ✂️</h1></center>
+<center>Resolutions and aspect rations should be the last things you worry about.</center>
 
 ## About 👀
 
