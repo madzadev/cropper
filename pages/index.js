@@ -50,6 +50,7 @@ export default function Home() {
 
   const [image, setImage] = useState();
   const [baseImage, setBaseImage] = useState();
+  const [fileName, setFileName] = useState("");
   const [cropper, setCropper] = useState();
 
   const [activePreset, setActivePreset] = useState({
@@ -89,6 +90,8 @@ export default function Home() {
   const calcCustomRes = (res) =>
     res < 720 ? "SD" : res < 1920 ? "HD" : res < 3840 ? "FHD" : "UHD";
 
+  const getFileName = (file) => file.substr(0, file.lastIndexOf(".")) || x;
+
   const cropperRef = useRef(null);
   const onCrop = () => {
     let cropper = cropperRef.current.cropper;
@@ -116,8 +119,10 @@ export default function Home() {
     let files;
     if (e.dataTransfer) {
       files = e.dataTransfer.files;
+      setFileName(getFileName(e.dataTransfer.files[0].name));
     } else if (e.target) {
       files = e.target.files;
+      setFileName(getFileName(e.target.files[0].name));
     }
     const reader = new FileReader();
     reader.onload = () => {
@@ -632,7 +637,7 @@ export default function Home() {
             )}
 
             <div className={styles.downloadArea}>
-              <a href={baseImage} download={`test.${fileType}`}>
+              <a href={baseImage} download={`${fileName}-cropped.${fileType}`}>
                 <Button
                   rightIcon={<Icon as={HiDownload} w={5} h={5} />}
                   colorScheme="teal"
