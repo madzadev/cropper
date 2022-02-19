@@ -17,7 +17,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   /* border: 1px solid grey; */
-  margin-top: 50px;
+  margin-top: 70px;
   gap: 30px;
 }
 
