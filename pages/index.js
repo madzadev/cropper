@@ -162,7 +162,7 @@ export default function Home() {
             </h1>
             <p className={styles.heroSubTitle}>
               Resolutions and aspect ratios should be the last things you worry
-              about.
+              about
             </p>
 
             <div className={styles.heroSelect}>

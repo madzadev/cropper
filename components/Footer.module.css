@@ -5,11 +5,13 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  background-color: #e5eafe;
+  /* background-color: #e5eafe; */
   padding: 10px 20px;
   color: #001052;
   /* color: white; */
-  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  /* background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%); */
+  /* background-image: linear-gradient(to right, #434343 0%, black 100%); */
+  /* background-image: linear-gradient(-225deg, #d7fffe 0%, #fffeff 100%); */
 }
 
 .text {
