@@ -7,7 +7,7 @@ import { about } from "../data/about.js";
 const About = () => {
   return (
     <ContentWrapper>
-      <h1 className={styles.title}>About CropScore</h1>
+      <h1 className={styles.title}>CropScore FAQ</h1>
       <div className={styles.wrapper}>
         <div className={styles.imageArea}>
           <img src="/graphics/map.png" alt="" className={styles.image} />
