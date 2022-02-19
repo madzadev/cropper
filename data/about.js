@@ -17,7 +17,7 @@ export const about = [
   {
     question: "Why was it built?",
     answers: [
-      "The aim was to prevent users to calculate everything manually and avoid creating multiple templates.",
+      "I wanted to create an effective solution that would help content creators to format the images.",
       "The project was built specifically as an entry for the Hashnode and Netlify hackathon.",
     ],
     image: "/graphics/about/idea.png",
