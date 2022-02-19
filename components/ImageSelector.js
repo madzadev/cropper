@@ -12,15 +12,10 @@ const ImageSelector = ({ onChange }) => {
           alt="select"
         />
         <Button
+          className={styles.button}
           rightIcon={<Icon as={MdUpload} w={8} h={8} />}
           size="lg"
-          width="280px"
-          height="60px"
           colorScheme="teal"
-          // style={{
-          //   backgroundColor:
-          //     "linear-gradient(-225deg, #DFFFCD 0%, #90F9C4 48%, #39F3BB 100%);",
-          // }}
         >
           Select Image
         </Button>

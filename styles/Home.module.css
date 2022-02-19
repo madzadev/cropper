@@ -111,9 +111,20 @@
   gap: 10px;
 }
 
+@media only screen and (max-width: 1020px) {
+  .creatorArea {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 50px;
+    padding: 0 20px;
+    padding-bottom: 120px;
+  }
+}
+
 @media only screen and (max-width: 900px) {
   .heroTitle {
     text-align: center;
+    font-size: 32px;
   }
 
   .heroSubTitle {
@@ -133,7 +144,16 @@
 }
 
 @media only screen and (max-width: 500px) {
+  .heroTitle {
+    margin-top: 10px;
+    font-size: 26px;
+  }
+
   .heroSubTitle {
     display: none;
+  }
+
+  .heroSelect {
+    margin-top: 30px;
   }
 }

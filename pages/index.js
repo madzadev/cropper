@@ -426,7 +426,7 @@ export default function Home() {
           >
             <Cropper
               src={image}
-              style={{ height: "480px", width: "100%" }}
+              style={{ height: "480px", width: "auto" }}
               aspectRatio={width / height}
               guides={true}
               preview=".preview"

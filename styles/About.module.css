@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: 1fr 5fr;
   gap: 100px;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .title {
@@ -30,9 +30,7 @@
 
 @media only screen and (max-width: 1050px) {
   .wrapper {
-    display: grid;
     grid-template-columns: 1fr;
-    margin-top: 50px;
   }
 
   .imageArea {

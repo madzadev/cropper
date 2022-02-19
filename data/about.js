@@ -17,7 +17,7 @@ export const about = [
   {
     question: "Why was it built?",
     answers: [
-      "I wanted to create an app that would not require manual calculations and external tools.",
+      "I wanted to create an app that would prepare upload-ready images without any manual calculations.",
       "The project was built specifically as an entry for the Hashnode and Netlify hackathon.",
     ],
     image: "/graphics/about/idea.png",
