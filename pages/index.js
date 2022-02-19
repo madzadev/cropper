@@ -169,16 +169,16 @@ export default function Home() {
               <div className={styles.heroDescriptionArea}>
                 <DescriptionCard
                   image="/graphics/close.png"
-                  description="Say goodbye to squeezed, stretched and pixelated images"
+                  description="Say goodbye to squeezed, stretched and pixelated images..."
                 />
                 <DescriptionCard
                   image="/graphics/close.png"
                   description="Stop spending time trying to figure out resolutions
-                  and aspect ratios"
+                  and aspect ratios..."
                 />
                 <DescriptionCard
                   image="/graphics/close.png"
-                  description="Avoid using multiple tools and creating templates for each media type"
+                  description="Avoid using multiple tools and creating templates for each media type..."
                 />
                 <DescriptionCard
                   image="/graphics/check.png"
