@@ -562,7 +562,11 @@ export default function Home() {
             </div>
 
             <div className={styles.titleBox}>
-              <h1 className={styles.sectionTitle}>Cropped Data:</h1>
+              {activePreset.site ? (
+                <h1 className={styles.sectionTitle}>Fit for Target Use:</h1>
+              ) : (
+                <h1 className={styles.sectionTitle}>Crop Window Data:</h1>
+              )}
             </div>
 
             <div className={styles.croppedInfo}>
@@ -584,9 +588,14 @@ export default function Home() {
               <div>
                 {activePreset.width ? (
                   <CropScore
-                    score={Math.round(
-                      (dragArea.width * 100) / activePreset.width
-                    )}
+                    score={
+                      Math.round((dragArea.width * 100) / activePreset.width) >
+                      100
+                        ? "100+"
+                        : Math.round(
+                            (dragArea.width * 100) / activePreset.width
+                          )
+                    }
                     value={Math.round(
                       (dragArea.width * 100) / activePreset.width
                     )}
