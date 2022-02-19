@@ -9,17 +9,17 @@
   place-items: center;
   grid-template-rows: 6fr 2fr 1fr;
   padding: 20px;
-  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.13);
+  /* box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.13);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  box-shadow: rgba(240, 46, 170, 0.4) -5px 5px,
-    rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px,
-    rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
-  /* background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%); */
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px; */
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   background-color: white;
 }
 
 .wrapper:hover {
-  background-color: #d3dbfd;
+  /* background-color: #d3dbfd; */
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 
 .fileUpload {

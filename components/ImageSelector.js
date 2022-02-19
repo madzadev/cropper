@@ -16,7 +16,7 @@ const ImageSelector = ({ onChange }) => {
           size="lg"
           width="280px"
           height="60px"
-          // colorScheme="teal"
+          colorScheme="teal"
           // style={{
           //   backgroundColor:
           //     "linear-gradient(-225deg, #DFFFCD 0%, #90F9C4 48%, #39F3BB 100%);",
