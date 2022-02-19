@@ -17,7 +17,7 @@ export const about = [
   {
     question: "Why was it built?",
     answers: [
-      "I wanted to create an effective solution that would help content creators to format the images.",
+      "I wanted to create an effective solution that would provide automa.",
       "The project was built specifically as an entry for the Hashnode and Netlify hackathon.",
     ],
     image: "/graphics/about/idea.png",

@@ -27,3 +27,15 @@
   display: grid;
   gap: 30px;
 }
+
+@media only screen and (max-width: 1050px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 50px;
+  }
+
+  .imageArea {
+    display: none;
+  }
+}

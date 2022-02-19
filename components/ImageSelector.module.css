@@ -9,11 +9,11 @@
   place-items: center;
   grid-template-rows: 6fr 2fr 1fr;
   padding: 20px;
-
-  /* box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  /* 
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
 
-  background-color: white;
+  /* background-color: white; */
   transition: 0.5s;
 }
 
