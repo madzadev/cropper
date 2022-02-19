@@ -7,6 +7,7 @@
   border-radius: 20px;
   display: grid;
   place-items: center;
+  grid-template-rows: 6fr 2fr 1fr;
   padding: 20px;
 }
 
