@@ -9,6 +9,8 @@
   place-items: center;
   grid-template-rows: 6fr 2fr 1fr;
   padding: 20px;
+  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.13);
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
 }
 
 .wrapper:hover {

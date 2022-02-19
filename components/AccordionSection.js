@@ -13,7 +13,11 @@ const AccordionSection = ({ title, children }) => {
       <h2>
         <AccordionButton
           _expanded={{ borderRadius: "5" }}
-          style={{ backgroundColor: "#E5EAFE" }}
+          style={{
+            backgroundColor: "#E5EAFE",
+            backgroundImage:
+              "linear-gradient(to top, #00c6fb 0%, #005bea 100%)",
+          }}
         >
           <Box flex="1" textAlign="left" fontSize="18" fontWeight="600">
             {title}

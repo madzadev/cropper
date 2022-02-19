@@ -8,6 +8,8 @@
   background-color: #e5eafe;
   padding: 10px 20px;
   color: #001052;
+  /* color: white; */
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
 }
 
 .text {
