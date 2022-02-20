@@ -550,14 +550,23 @@ export default function Home() {
                   {activePreset.site} {activePreset.name}:
                 </h1>
               ) : (
-                <h1 className={styles.sectionTitle}>Custom Resolution:</h1>
+                <h1 className={styles.sectionTitle}>
+                  {!customRatioLock
+                    ? "Custom Resolution"
+                    : "Locked Aspect Ratio"}
+                  :
+                </h1>
               )}
             </div>
             <div className={styles.descriptionBox}>
               {activePreset.site ? (
                 <p>{activePreset.description}</p>
               ) : (
-                <p>Draw any crop area you want</p>
+                <p>
+                  {!customRatioLock
+                    ? "Draw any crop area you want"
+                    : "Draw any crop within aspect ratio"}
+                </p>
               )}
             </div>
 
