@@ -439,16 +439,14 @@ export default function Home() {
               }}
             />
             <div className={styles.controls}>
-              <Button
+              <ActionButton
                 onClick={() => {
                   cropper.setDragMode("crop");
                 }}
-                leftIcon={<Icon as={FiCrop} w={5} h={5} />}
-                colorScheme="blue"
-                variant="solid"
-              >
-                Draw crop
-              </Button>
+                icon={FiCrop}
+                color="blue"
+                title=" Draw crop"
+              />
 
               <div style={{ display: "grid", gap: "10px" }}>
                 <ActionButton
@@ -520,16 +518,14 @@ export default function Home() {
                   title="Flip Y axis"
                 />
               </div>
-              <Button
+              <ActionButton
                 onClick={() => {
                   cropper.setDragMode("move");
                 }}
-                leftIcon={<Icon as={BsArrowsMove} w={5} h={5} />}
-                colorScheme="blue"
-                variant="solid"
-              >
-                Move image
-              </Button>
+                icon={BsArrowsMove}
+                color="blue"
+                title="Move image"
+              />
             </div>
 
             <div className={styles.resets}>

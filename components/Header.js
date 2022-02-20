@@ -9,8 +9,17 @@ const Header = () => {
         <a>
           <img
             className={styles.logo}
-            src="/logo.svg"
+            src="/logo.png"
             alt="logo"
+            onClick={() => {
+              window.location.pathname === "/" &&
+                Router.reload(window.location.pathname);
+            }}
+          />
+          <img
+            className={styles.logoText}
+            src="/logoText.svg"
+            alt="logo-text"
             onClick={() => {
               window.location.pathname === "/" &&
                 Router.reload(window.location.pathname);

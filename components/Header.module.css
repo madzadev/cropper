@@ -16,9 +16,15 @@
   ); */
 }
 
-.logo {
+.logoText {
   min-width: 200px;
   max-width: 200px;
+}
+
+.logo {
+  height: 45px;
+  width: 45px;
+  display: none;
 }
 
 .navItem {
@@ -33,7 +39,17 @@
 }
 
 @media only screen and (max-width: 500px) {
-  .logo {
+  .logoText {
     display: none;
   }
+
+  .logo {
+    display: block;
+  }
 }
+
+/* @media only screen and (max-width: 444px) {
+  .wrapper {
+    padding-bottom: 123px;
+  }
+} */
