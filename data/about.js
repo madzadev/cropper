@@ -1,9 +1,3 @@
-// What is CropScore?
-// Why was it built?
-// How was it built?
-// Who built it?
-// Whats the license?
-
 export const about = [
   {
     question: "What is CropScore?",
