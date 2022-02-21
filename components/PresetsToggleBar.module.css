@@ -3,3 +3,9 @@
   background-color: limegreen;
   margin-bottom: 20px;
 }
+
+@media only screen and (min-width: 1020px) {
+  .wrapper {
+    display: none;
+  }
+}

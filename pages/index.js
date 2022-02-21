@@ -200,14 +200,15 @@ export default function Home() {
           <PresetsToggleBar
             onClick={() => {
               setPresetBarVisible(!presetBarVisible);
-              console.log(isMobile);
             }}
             active={presetBarVisible}
           />
           <div
             className={styles.presetsArea}
             style={{
-              display: `${presetBarVisible && isMobile ? "block" : "none"}`,
+              display: `${
+                (presetBarVisible && isMobile) || !isMobile ? "block" : "none"
+              }`,
             }}
           >
             <Accordion defaultIndex={[0]} allowToggle>
@@ -228,6 +229,7 @@ export default function Home() {
                               : false
                           }
                           onChange={(e) => {
+                            setPresetBarVisible(false);
                             if (e.target.checked) {
                               setCustomRatioLock(false);
                               setActivePreset({
