@@ -1,11 +1,11 @@
-import { Icon, Button, useMediaQuery } from "@chakra-ui/react";
+import { Icon, IconButton, Button, useMediaQuery } from "@chakra-ui/react";
 
 const ActionButton = ({ onClick, icon, color, title }) => {
-  const [isMobile] = useMediaQuery("(min-width: 1300px)");
-  return (
+  const [isMobile] = useMediaQuery("(min-width: 1500px)");
+  return isMobile ? (
     <Button
       onClick={onClick}
-      leftIcon={isMobile && <Icon as={icon} w={5} h={5} />}
+      leftIcon={<Icon as={icon} w={5} h={5} />}
       colorScheme={color}
       variant="solid"
       justifyContent="flex-start"
@@ -16,6 +16,19 @@ const ActionButton = ({ onClick, icon, color, title }) => {
     >
       {title}
     </Button>
+  ) : (
+    <IconButton
+      onClick={onClick}
+      aria-label="icon"
+      colorScheme={color}
+      variant="solid"
+      as={icon}
+      style={{ width: "100%", height: "40px", padding: "8px 0" }}
+      // w={5}
+      // h={5}
+      fontSize="22px"
+      size="sm"
+    />
   );
 };
 
