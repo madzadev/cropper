@@ -193,7 +193,7 @@ export default function Home() {
         </ContentWrapper>
       ) : (
         <div className={styles.creatorArea}>
-          <div className={styles.presets}>
+          <div className={styles.presetsArea}>
             <Accordion defaultIndex={[0]} allowToggle>
               {presets.map((site, i) => {
                 return (
@@ -419,7 +419,7 @@ export default function Home() {
             </Accordion>
           </div>
 
-          <div>
+          <div className={styles.cropperArea}>
             <Cropper
               src={image}
               style={{ height: "480px", width: "100%" }}
@@ -535,7 +535,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={styles.tools}>
+          <div className={styles.toolsArea}>
             <div className={styles.titleBox}>
               {activePreset.site ? (
                 <h1 className={styles.sectionTitle}>
