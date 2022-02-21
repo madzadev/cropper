@@ -102,8 +102,6 @@
 
 @media only screen and (max-width: 1020px) {
   .creatorArea {
-    /* grid-template-columns: none; */
-    /* gap: 20px; */
     display: block;
     margin-top: 50px;
     padding: 0 20px;
@@ -117,6 +115,10 @@
 
   .cropperArea {
     margin-bottom: 20px;
+  }
+
+  .sectionTitle {
+    text-align: center;
   }
 }
 
