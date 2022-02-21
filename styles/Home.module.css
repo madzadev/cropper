@@ -37,9 +37,6 @@
   padding: 0 20px;
 }
 
-.presets {
-}
-
 .button {
   padding: 10px 30px;
   background-color: gold;
@@ -53,9 +50,6 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 10px;
-}
-
-.tools {
 }
 
 .titleBox {
@@ -108,11 +102,20 @@
 
 @media only screen and (max-width: 1020px) {
   .creatorArea {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    /* grid-template-columns: none; */
+    /* gap: 20px; */
+    display: block;
     margin-top: 50px;
     padding: 0 20px;
     padding-bottom: 120px;
+  }
+
+  .presetsArea {
+    margin-bottom: 20px;
+  }
+
+  .cropperArea {
+    margin-bottom: 20px;
   }
 }
 
