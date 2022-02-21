@@ -9,7 +9,6 @@ const ActionButton = ({ onClick, icon, color, title }) => {
       colorScheme={color}
       variant="solid"
       justifyContent="flex-start"
-      // height={[`${text.length > 30 ? "60px" : "40px"}`, "40px"]}
       style={{
         whiteSpace: "normal",
         wordWrap: "break-word",

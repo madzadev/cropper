@@ -202,6 +202,10 @@ export default function Home() {
               setPresetBarVisible(!presetBarVisible);
             }}
             active={presetBarVisible}
+            color={presetBarVisible ? "red" : "teal"}
+            openIcon={FaArrowDown}
+            closeIcon={FaArrowUp}
+            isMobile={isMobile}
           />
           <div
             className={styles.presetsArea}

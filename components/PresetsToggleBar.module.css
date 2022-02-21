@@ -1,7 +1,9 @@
 .wrapper {
-  height: 100px;
-  background-color: limegreen;
+  height: 40px;
   margin-bottom: 20px;
+  width: 100%;
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 @media only screen and (min-width: 1020px) {
