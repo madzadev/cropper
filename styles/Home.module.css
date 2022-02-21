@@ -31,7 +31,7 @@
 
 .creatorArea {
   display: grid;
-  grid-template-columns: 300px auto 300px;
+  grid-template-columns: repeat(auto-fit, 300px minmax(100px, 1fr) 300px);
   gap: 20px;
   margin-top: 50px;
   padding: 0 20px;

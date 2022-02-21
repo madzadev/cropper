@@ -419,14 +419,10 @@ export default function Home() {
             </Accordion>
           </div>
 
-          <div
-            style={{
-              margin: "0 auto",
-            }}
-          >
+          <div>
             <Cropper
               src={image}
-              style={{ height: "480px", width: "auto" }}
+              style={{ height: "480px", width: "100%" }}
               aspectRatio={width / height}
               guides={true}
               preview=".preview"
