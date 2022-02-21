@@ -9,6 +9,7 @@ import {
   InputGroup,
   Input,
   InputRightAddon,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import { HiDownload } from "react-icons/hi";
 import {
@@ -38,6 +39,7 @@ import AlertMessage from "../components/AlertMessage";
 import CheckBox from "../components/CheckBox";
 import CropScore from "../components/CropScore";
 import DescriptionCard from "../components/DescriptionCard";
+import PresetsToggleBar from "../components/PresetsToggleBar";
 
 import "cropperjs/dist/cropper.css";
 import styles from "../styles/Home.module.css";
@@ -60,6 +62,8 @@ export default function Home() {
     height,
     width,
   });
+  const [presetBarVisible, setPresetBarVisible] = useState(false);
+  const [isMobile] = useMediaQuery("(max-width: 1020px)");
 
   const [dragArea, setDragArea] = useState({
     width,
@@ -193,7 +197,19 @@ export default function Home() {
         </ContentWrapper>
       ) : (
         <div className={styles.creatorArea}>
-          <div className={styles.presetsArea}>
+          <PresetsToggleBar
+            onClick={() => {
+              setPresetBarVisible(!presetBarVisible);
+              console.log(isMobile);
+            }}
+            active={presetBarVisible}
+          />
+          <div
+            className={styles.presetsArea}
+            style={{
+              display: `${presetBarVisible && isMobile ? "block" : "none"}`,
+            }}
+          >
             <Accordion defaultIndex={[0]} allowToggle>
               {presets.map((site, i) => {
                 return (
