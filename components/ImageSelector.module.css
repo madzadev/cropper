@@ -66,11 +66,13 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
   .wrapper {
     width: calc(100vw - 40px);
   }
+}
 
+@media only screen and (max-width: 600px) {
   .button {
     width: 100%;
   }
