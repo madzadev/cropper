@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import Head from "next/head";
 import Cropper from "react-cropper";
 import {
   Icon,
@@ -151,14 +150,6 @@ export default function Home() {
 
   return (
     <div>
-      <Head>
-        <title>CropScore: An Online Image Cropper for Content Creators</title>
-        <meta
-          name="description"
-          content="An Online Image Cropper for Content Creators"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       {!image ? (
         <ContentWrapper>
           <div className={styles.heroArea}>
