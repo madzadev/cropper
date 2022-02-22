@@ -24,8 +24,6 @@ const ActionButton = ({ onClick, icon, color, title }) => {
       variant="solid"
       as={icon}
       style={{ width: "100%", height: "40px", padding: "8px 0" }}
-      // w={5}
-      // h={5}
       fontSize="22px"
       size="sm"
     />

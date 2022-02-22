@@ -22,8 +22,8 @@
 }
 
 .logo {
-  height: 43px;
-  width: 43px;
+  max-height: 43px;
+  max-width: 43px;
   display: none;
 }
 
