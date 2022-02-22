@@ -33,6 +33,7 @@ import {
 import ContentWrapper from "../components/ContentWrapper";
 import ImageSelector from "../components/ImageSelector";
 import ImageReset from "../components/ImageReset";
+import CropReset from "../components/CropReset";
 import ActionButton from "../components/ActionButton";
 import AccordionSection from "../components/AccordionSection";
 import AlertMessage from "../components/AlertMessage";
@@ -548,12 +549,7 @@ export default function Home() {
 
             <div className={styles.resets}>
               <ImageReset onChange={onChange} />
-              <ActionButton
-                onClick={reset}
-                icon={RiDeleteBinLine}
-                color="red"
-                title="Reset crop"
-              />
+              <CropReset onClick={reset} />
             </div>
           </div>
 
