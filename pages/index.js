@@ -19,7 +19,7 @@ import {
   FiUnlock,
 } from "react-icons/fi";
 import { BsArrowsMove } from "react-icons/bs";
-import { RiZoomInLine, RiZoomOutLine, RiDeleteBinLine } from "react-icons/ri";
+import { RiZoomInLine, RiZoomOutLine } from "react-icons/ri";
 import {
   FaArrowLeft,
   FaArrowRight,
@@ -50,11 +50,6 @@ export default function Home() {
   const initialSite = Object.keys(presets[0])[0];
   const { name, description, height, width } = presets[0][initialSite][0];
 
-  const [image, setImage] = useState();
-  const [baseImage, setBaseImage] = useState();
-  const [fileName, setFileName] = useState("");
-  const [cropper, setCropper] = useState();
-
   const [activePreset, setActivePreset] = useState({
     site: initialSite,
     name,
@@ -62,6 +57,13 @@ export default function Home() {
     height,
     width,
   });
+
+  const [image, setImage] = useState();
+  const [baseImage, setBaseImage] = useState();
+  const [fileName, setFileName] = useState("");
+  const [fileType, setFileType] = useState("jpg");
+  const [cropper, setCropper] = useState();
+
   const [presetBarVisible, setPresetBarVisible] = useState(false);
   const [isMobile] = useMediaQuery("(max-width: 1020px)");
 
@@ -69,8 +71,6 @@ export default function Home() {
     width,
     height,
   });
-
-  const [fileType, setFileType] = useState("jpg");
 
   const [customResolutionError, setCustomResolutionError] = useState("");
   const [customRatioLock, setCustomRatioLock] = useState(false);
