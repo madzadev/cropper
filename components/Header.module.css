@@ -3,17 +3,7 @@
   display: grid;
   grid-template-columns: auto 100px 100px;
   background-color: #e5eafe;
-  /* background-color: #e2e7ed; */
   padding: 10px 20px;
-  /* background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
-  background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
-  background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
-  background-image: linear-gradient(
-    -225deg,
-    #dfffcd 0%,
-    #90f9c4 48%,
-    #39f3bb 100%
-  ); */
 }
 
 .logoText {
@@ -22,13 +12,10 @@
 }
 
 .logo {
-  max-height: 43px;
-  max-width: 43px;
   display: none;
 }
 
 .navItem {
-  text-align: center;
   display: grid;
   place-items: center;
 }
@@ -45,11 +32,11 @@
 
   .logo {
     display: block;
+    min-width: 45px;
+    max-width: 45px;
+  }
+
+  .navItem {
+    place-items: center end;
   }
 }
-
-/* @media only screen and (max-width: 444px) {
-  .wrapper {
-    padding-bottom: 123px;
-  }
-} */

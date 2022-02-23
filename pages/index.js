@@ -194,7 +194,7 @@ export default function Home() {
               setPresetBarVisible(!presetBarVisible);
             }}
             active={presetBarVisible}
-            color={presetBarVisible ? "red" : "teal"}
+            color={presetBarVisible ? "red" : "gray"}
             openIcon={FaArrowDown}
             closeIcon={FaArrowUp}
             isMobile={isMobile}

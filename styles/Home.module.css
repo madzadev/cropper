@@ -103,7 +103,7 @@
 @media only screen and (max-width: 1020px) {
   .creatorArea {
     display: block;
-    margin-top: 50px;
+    margin-top: 30px;
     padding: 0 20px;
     padding-bottom: 120px;
   }
@@ -115,6 +115,11 @@
 
   .cropperArea {
     margin-bottom: 20px;
+  }
+
+  .croppedInfo {
+    max-width: 500px;
+    margin: 0 auto 20px auto;
   }
 
   .sectionTitle {
@@ -150,10 +155,6 @@
   .heroDescriptionArea {
     display: none;
   }
-
-  .creatorArea {
-    margin-top: 30px;
-  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -169,6 +170,7 @@
   .heroSelect {
     margin-top: 30px;
   }
+
   .resets {
     max-width: 100%;
   }

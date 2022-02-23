@@ -9,7 +9,7 @@ const Header = () => {
         <a>
           <img
             className={styles.logo}
-            src="/logo.svg"
+            src="/logo.png"
             alt="logo"
             onClick={() => {
               window.location.pathname === "/" &&
