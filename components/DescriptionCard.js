@@ -6,7 +6,6 @@ const DescriptionCard = ({ image, description }) => {
       <div className={styles.imageWrapper}>
         <img src={image} alt="img" className={styles.image} />
       </div>
-
       <h3 className={styles.description}>{description}</h3>
     </div>
   );
