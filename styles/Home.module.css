@@ -120,6 +120,15 @@
   .sectionTitle {
     text-align: center;
   }
+
+  .descriptionBox {
+    text-align: center;
+  }
+
+  .downloadArea {
+    max-width: 320px;
+    margin: 0 auto;
+  }
 }
 
 @media only screen and (max-width: 900px) {
@@ -159,5 +168,12 @@
 
   .heroSelect {
     margin-top: 30px;
+  }
+  .resets {
+    max-width: 100%;
+  }
+
+  .downloadArea {
+    max-width: 100%;
   }
 }

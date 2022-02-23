@@ -634,6 +634,7 @@ export default function Home() {
                   overflow: "hidden",
                   position: "relative",
                   marginBottom: "20px",
+                  margin: "0 auto 20px auto",
                   display: `${
                     dragArea.width == 0 || dragArea.height == 0
                       ? "none"
