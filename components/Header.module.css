@@ -6,12 +6,12 @@
   padding: 10px 20px;
 }
 
-.logoText {
+.logo {
   min-width: 200px;
   max-width: 200px;
 }
 
-.logo {
+.scissors {
   display: none;
 }
 
@@ -26,11 +26,11 @@
 }
 
 @media only screen and (max-width: 500px) {
-  .logoText {
+  .logo {
     display: none;
   }
 
-  .logo {
+  .scissors {
     display: block;
     min-width: 45px;
     max-width: 45px;

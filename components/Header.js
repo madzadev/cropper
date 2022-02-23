@@ -8,18 +8,18 @@ const Header = () => {
       <Link href="/">
         <a>
           <img
-            className={styles.logo}
-            src="/logo.png"
-            alt="logo"
+            className={styles.scissors}
+            src="/scissors.png"
+            alt="scissors"
             onClick={() => {
               window.location.pathname === "/" &&
                 Router.reload(window.location.pathname);
             }}
           />
           <img
-            className={styles.logoText}
-            src="/logoText.svg"
-            alt="logo-text"
+            className={styles.logo}
+            src="/logo.svg"
+            alt="logo"
             onClick={() => {
               window.location.pathname === "/" &&
                 Router.reload(window.location.pathname);
