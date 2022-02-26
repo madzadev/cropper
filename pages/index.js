@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Cropper from "react-cropper";
+
 import {
   Icon,
   Button,
@@ -10,24 +11,6 @@ import {
   InputRightAddon,
   useMediaQuery,
 } from "@chakra-ui/react";
-import { HiDownload } from "react-icons/hi";
-import {
-  FiCrop,
-  FiRotateCcw,
-  FiRotateCw,
-  FiLock,
-  FiUnlock,
-} from "react-icons/fi";
-import { BsArrowsMove } from "react-icons/bs";
-import { RiZoomInLine, RiZoomOutLine } from "react-icons/ri";
-import {
-  FaArrowLeft,
-  FaArrowRight,
-  FaArrowUp,
-  FaArrowDown,
-  FaArrowsAltH,
-  FaArrowsAltV,
-} from "react-icons/fa";
 
 import ContentWrapper from "../components/ContentWrapper";
 import ImageSelector from "../components/ImageSelector";
@@ -40,6 +23,12 @@ import CheckBox from "../components/CheckBox";
 import CropScore from "../components/CropScore";
 import DescriptionCard from "../components/DescriptionCard";
 import PresetsToggleBar from "../components/PresetsToggleBar";
+
+import * as Hi from "react-icons/hi";
+import * as Fi from "react-icons/fi";
+import * as Bs from "react-icons/bs";
+import * as Ri from "react-icons/ri";
+import * as Fa from "react-icons/fa";
 
 import "cropperjs/dist/cropper.css";
 import styles from "../styles/Home.module.css";
@@ -195,8 +184,8 @@ export default function Home() {
             }}
             active={presetBarVisible}
             color={presetBarVisible ? "red" : "gray"}
-            openIcon={FaArrowDown}
-            closeIcon={FaArrowUp}
+            openIcon={Fa.FaArrowDown}
+            closeIcon={Fa.FaArrowUp}
             isMobile={isMobile}
           />
           <div
@@ -419,9 +408,9 @@ export default function Home() {
                   }}
                   leftIcon={
                     customRatioLock ? (
-                      <Icon as={FiLock} w={5} h={5} />
+                      <Icon as={Fi.FiLock} w={5} h={5} />
                     ) : (
-                      <Icon as={FiUnlock} w={5} h={5} />
+                      <Icon as={Fi.FiUnlock} w={5} h={5} />
                     )
                   }
                   colorScheme="teal"
@@ -453,7 +442,7 @@ export default function Home() {
                 onClick={() => {
                   cropper.setDragMode("crop");
                 }}
-                icon={FiCrop}
+                icon={Fi.FiCrop}
                 color="blue"
                 title=" Draw crop"
               />
@@ -461,13 +450,13 @@ export default function Home() {
               <div style={{ display: "grid", gap: "10px" }}>
                 <ActionButton
                   onClick={zoomIn}
-                  icon={RiZoomInLine}
+                  icon={Ri.RiZoomInLine}
                   color="blue"
                   title="Zoom in"
                 />
                 <ActionButton
                   onClick={zoomOut}
-                  icon={RiZoomOutLine}
+                  icon={Ri.RiZoomOutLine}
                   color="blue"
                   title="Zoom out"
                 />
@@ -475,13 +464,13 @@ export default function Home() {
               <div style={{ display: "grid", gap: "10px" }}>
                 <ActionButton
                   onClick={moveLeft}
-                  icon={FaArrowLeft}
+                  icon={Fa.FaArrowLeft}
                   color="blue"
                   title="Move left"
                 />
                 <ActionButton
                   onClick={moveRight}
-                  icon={FaArrowRight}
+                  icon={Fa.FaArrowRight}
                   color="blue"
                   title="Move right"
                 />
@@ -489,13 +478,13 @@ export default function Home() {
               <div style={{ display: "grid", gap: "10px" }}>
                 <ActionButton
                   onClick={moveUp}
-                  icon={FaArrowUp}
+                  icon={Fa.FaArrowUp}
                   color="blue"
                   title="Move up"
                 />
                 <ActionButton
                   onClick={moveDown}
-                  icon={FaArrowDown}
+                  icon={Fa.FaArrowDown}
                   color="blue"
                   title="Move Down"
                 />
@@ -503,13 +492,13 @@ export default function Home() {
               <div style={{ display: "grid", gap: "10px" }}>
                 <ActionButton
                   onClick={rotateLeft}
-                  icon={FiRotateCcw}
+                  icon={Fi.FiRotateCcw}
                   color="blue"
                   title="Rotate left"
                 />
                 <ActionButton
                   onClick={rotateRight}
-                  icon={FiRotateCw}
+                  icon={Fi.FiRotateCw}
                   color="blue"
                   title="Rotate right"
                 />
@@ -517,13 +506,13 @@ export default function Home() {
               <div style={{ display: "grid", gap: "10px" }}>
                 <ActionButton
                   onClick={swapX}
-                  icon={FaArrowsAltH}
+                  icon={Fa.FaArrowsAltH}
                   color="blue"
                   title="Flip X axis"
                 />
                 <ActionButton
                   onClick={swapY}
-                  icon={FaArrowsAltV}
+                  icon={Fa.FaArrowsAltV}
                   color="blue"
                   title="Flip Y axis"
                 />
@@ -532,7 +521,7 @@ export default function Home() {
                 onClick={() => {
                   cropper.setDragMode("move");
                 }}
-                icon={BsArrowsMove}
+                icon={Bs.BsArrowsMove}
                 color="blue"
                 title="Move image"
               />
@@ -661,7 +650,7 @@ export default function Home() {
             <div className={styles.downloadArea}>
               <a href={baseImage} download={`${fileName}-cropped.${fileType}`}>
                 <Button
-                  rightIcon={<Icon as={HiDownload} w={5} h={5} />}
+                  rightIcon={<Icon as={Hi.HiDownload} w={5} h={5} />}
                   colorScheme="teal"
                   variant="solid"
                   isDisabled={!dragArea.width || !dragArea.height}
