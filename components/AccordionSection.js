@@ -6,7 +6,6 @@ import {
   AccordionPanel,
   AccordionIcon,
 } from "@chakra-ui/react";
-import styles from "./AccordionSection.module.css";
 
 const AccordionSection = ({ title, children }) => {
   return (
@@ -14,7 +13,7 @@ const AccordionSection = ({ title, children }) => {
       <h2>
         <AccordionButton
           _expanded={{ borderRadius: "5" }}
-          className={styles.accordionButton}
+          style={{ backgroundColor: "#e5eafe" }}
         >
           <Box flex="1" textAlign="left" fontSize="18" fontWeight="600">
             {title}

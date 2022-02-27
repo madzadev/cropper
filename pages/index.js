@@ -36,44 +36,38 @@ import styles from "../styles/Home.module.css";
 import { presets } from "../data/presets.js";
 
 export default function Home() {
-  const initialSite = Object.keys(presets[0])[0];
-  const { name, description, height, width } = presets[0][initialSite][0];
+  const site = Object.keys(presets[0])[0];
+  const { name, description, height, width } = presets[0][site][0];
 
   const [activePreset, setActivePreset] = useState({
-    site: initialSite,
+    site,
     name,
     description,
     height,
     width,
   });
-
+  const [cropper, setCropper] = useState();
   const [image, setImage] = useState();
   const [baseImage, setBaseImage] = useState();
-  const [fileName, setFileName] = useState("");
+  const [fileName, setFileName] = useState();
   const [fileType, setFileType] = useState("jpg");
-  const [cropper, setCropper] = useState();
-
-  const [presetBarVisible, setPresetBarVisible] = useState(false);
-  const [isMobile] = useMediaQuery("(max-width: 1020px)");
-
   const [dragArea, setDragArea] = useState({
     width,
     height,
   });
-
   const [customResolutionError, setCustomResolutionError] = useState("");
   const [customRatioLock, setCustomRatioLock] = useState(false);
+  const [presetBarVisible, setPresetBarVisible] = useState(false);
+  const [isTablet] = useMediaQuery("(max-width: 1020px)");
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
 
   useEffect(() => {
     if (cropper) {
       const x = cropper.getData().x;
-      if (customRatioLock) {
-        cropper.setAspectRatio(dragArea.width / dragArea.height);
-      } else {
-        cropper.setAspectRatio(NaN);
-      }
+      customRatioLock
+        ? cropper.setAspectRatio(dragArea.width / dragArea.height)
+        : cropper.setAspectRatio(NaN);
       cropper.setData({ width: dragArea.width, height: dragArea.height, x, y });
     }
   }, [customRatioLock]);
@@ -108,10 +102,7 @@ export default function Home() {
   const onChange = (e) => {
     e.preventDefault();
     let files;
-    if (e.dataTransfer) {
-      files = e.dataTransfer.files;
-      setFileName(getFileName(e.dataTransfer.files[0].name));
-    } else if (e.target) {
+    if (e.target) {
       files = e.target.files;
       setFileName(getFileName(e.target.files[0].name));
     }
@@ -134,7 +125,6 @@ export default function Home() {
     cropper.getData().scaleX === 1 ? cropper.scaleX(-1) : cropper.scaleX(1);
   const swapY = () =>
     cropper.getData().scaleY === 1 ? cropper.scaleY(-1) : cropper.scaleY(1);
-
   const reset = () => cropper.reset();
 
   return (
@@ -186,13 +176,13 @@ export default function Home() {
             color={presetBarVisible ? "red" : "gray"}
             openIcon={Fa.FaArrowDown}
             closeIcon={Fa.FaArrowUp}
-            isMobile={isMobile}
+            isTablet={isTablet}
           />
           <div
             className={styles.presetsArea}
             style={{
               display: `${
-                (presetBarVisible && isMobile) || !isMobile ? "block" : "none"
+                (presetBarVisible && isTablet) || !isTablet ? "block" : "none"
               }`,
             }}
           >
@@ -266,7 +256,6 @@ export default function Home() {
                             containerWidth / (canvasWidth / naturalImageWidth)
                           );
                           if (value <= maxCropperWidth) {
-                            console.log("image OUTSIDE the width of container");
                             if (activePreset.name) {
                               setActivePreset({});
                               cropper.setAspectRatio(NaN);
@@ -289,7 +278,6 @@ export default function Home() {
                             }, 2000);
                           }
                         } else {
-                          console.log("image INSIDE the width of container");
                           if (value <= naturalImageWidth) {
                             if (activePreset.name) {
                               setActivePreset({});
@@ -341,9 +329,6 @@ export default function Home() {
                               (canvasHeight / naturalImageHeight)
                           );
                           if (value <= maxCropperHeight) {
-                            console.log(
-                              "image OUTSIDE the height of container"
-                            );
                             if (activePreset.name) {
                               setActivePreset({});
                               cropper.setAspectRatio(NaN);
@@ -365,7 +350,6 @@ export default function Home() {
                             }, 2000);
                           }
                         } else {
-                          console.log("image INSIDE the height of container");
                           if (value <= naturalImageHeight) {
                             if (activePreset.name) {
                               setActivePreset({});
@@ -646,7 +630,6 @@ export default function Home() {
                 </p>
               </div>
             )}
-
             <div className={styles.downloadArea}>
               <a href={baseImage} download={`${fileName}-cropped.${fileType}`}>
                 <Button
@@ -659,7 +642,6 @@ export default function Home() {
                   Download
                 </Button>
               </a>
-
               <Select
                 onChange={(e) => {
                   setFileType(e.target.value);
