@@ -8,7 +8,7 @@ Resolutions and aspect ratios should be the last things you worry about.
 
 The user is in full control of the upper and lower bounds of the resolutions and the correct aspect ratios are automatically set. All you have to do is drag and see the magic.
 
-Preview GIF.
+![Preview](https://github.com/madzadev/cropper/blob/main/public/social-card.png)
 
 Currently the supported platforms are [Hashnode](https://hashnode.com), [DEV](https://dev.to), [Medium](https://medium.com), [Hackernoon](https://hackernoon.com), [Twitter](https://twitter.com), [LinkedIn](https://linkedin.com), [YouTube](https://youtube.com), [Pinterest](https://pinterest.com), [Facebook](https://facebook.com) and [Instagram](https://instagram.com). In the future I might add other sites recommended by the users.
 
