@@ -25,7 +25,7 @@ const ImageSelector = ({ onChange }) => {
           type="file"
           className={styles.fileUpload}
           onChange={onChange}
-          accept=".jpg, .png"
+          accept=".jpg, .jpeg, .png"
         />
       </div>
     </form>
