@@ -3,7 +3,7 @@
   width: 400px;
   height: 400px;
   text-align: center;
-  background-color: #e5eafe;
+  /* background-color: #e5eafe; */
   border-radius: 20px;
   display: grid;
   place-items: center;
@@ -13,7 +13,7 @@
 }
 
 .wrapper:hover {
-  background-color: #d3dbfd;
+  /* background-color: #d3dbfd; */
 }
 
 .fileUpload {
@@ -47,14 +47,17 @@
   0% {
     transform: translateY(0);
   }
+
   100% {
     transform: translateY(-20px);
   }
 }
+
 @keyframes mover {
   0% {
     transform: translateY(0);
   }
+
   100% {
     transform: translateY(-20px);
   }
