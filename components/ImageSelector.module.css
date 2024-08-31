@@ -10,10 +10,12 @@
   grid-template-rows: 6fr 2fr 1fr;
   padding: 20px;
   transition: 0.5s;
+  /* border: dashed 5px #e5eafe; */
 }
 
 .wrapper:hover {
   /* background-color: #d3dbfd; */
+  /* border: dashed 5px #d3dbfd; */
 }
 
 .fileUpload {
